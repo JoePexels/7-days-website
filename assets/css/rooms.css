@@ -1535,7 +1535,7 @@ input[type="date"]::-webkit-clear-button {
     .room-card {
         width: 90%;
         height: auto;
-        min-height: 450px;
+        min-height: 460px;
         margin: 0 20px;
     }
 
