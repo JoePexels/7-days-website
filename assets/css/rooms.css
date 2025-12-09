@@ -1525,7 +1525,7 @@ input[type="date"]::-webkit-clear-button {
 @media (max-width: 768px) {
     .carousels-containers {
         max-width: 100%;
-        padding: 0 10px;
+        padding: 0 5px;
     }
 
     .carousels-wrapper {
@@ -1536,7 +1536,7 @@ input[type="date"]::-webkit-clear-button {
         width: 90%;
         height: auto;
         min-height: 480px;
-        margin: 0 30px;
+        margin: 0 20px;
     }
 
     .image-section {
