@@ -1,7 +1,7 @@
 // Luxury loader control with 5-second maximum timeout
 (function() {
   // Configuration
-  const MAX_DISPLAY_TIME = 5000; // 5 seconds maximum
+  const MAX_DISPLAY_TIME = 8000; // 5 seconds maximum
   const FADE_OUT_DURATION = 1000; // 1 second fade-out
   
   // State tracking
