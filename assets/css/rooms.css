@@ -1399,7 +1399,7 @@ input[type="date"]::-webkit-clear-button {
     }
 
     .room-card {
-        width: 350px;
+        width: 380px;
         height: 470px;
     }
 
@@ -1414,7 +1414,7 @@ input[type="date"]::-webkit-clear-button {
     }
 
     .room-card {
-        width: 320px;
+        width: 360px;
         height: 450px;
     }
 
@@ -1529,7 +1529,7 @@ input[type="date"]::-webkit-clear-button {
     }
 
     .carousels-wrapper {
-        padding: 20px 0;
+        padding: 5px 0;
     }
 
     .room-card {
