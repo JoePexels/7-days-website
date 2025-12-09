@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Dining | 7Days Motel Entebbe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/dining.css">
+<link rel="stylesheet" href="assets/css/loader.css">
+</head>
+<body>
+        <!-- Luxury Loading Animation -->
+    <div class="luxury-loader" id="luxuryLoader">
+        <div class="rings-container">
+            <div class="base-circle"></div>
+
+            <!-- Four rings rotating in opposite directions -->
+            <div class="ring-1"></div>
+            <div class="ring-2"></div>
+            <div class="ring-3"></div>
+            <div class="ring-4"></div>
+
+            <!-- Crimson accents -->
+            <div class="crimson-accent accent-1"></div>
+            <div class="crimson-accent accent-2"></div>
+            <div class="crimson-accent accent-3"></div>
+            <div class="crimson-accent accent-4"></div>
+
+            <!-- Enlarged logo centerpiece -->
+            <div class="logo-center">
+                <img src="assets/images/7 days motel.png" alt="7Days Motel Logo" class="logo-img">
+            </div>
+
+        </div>
+    </div>
+   
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element"></div>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-info">
+            <div class="top-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:256762017465">+1 (555) 123-4567</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:7dayshotel2@gmail.com">7dayshotel2@gmail.com</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <!-- Language Selector -->
+            <div class="dropdown language-dropdown" id="languageDropdown">
+                <button class="dropdown-toggle" id="languageButton">
+                    <span class="flag fi fi-us" id="currentFlag"></span>
+                    <span id="currentLanguage">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="languageDropdownMenu">
+                    <!-- Language options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Currency Converter -->
+            <div class="dropdown" id="currency-dropdown">
+                <button class="dropdown-toggle" id="currency-button">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span id="currentCurrency">USD</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="currency-dropdown-menu">
+                    <!-- Currency options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <a href="#" class="reserve-now">RESERVE NOW</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="#">
+                <img src="assets/images/7 days motel.png" alt="logo" class="logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Rooms & Suites</a></li>
+                <li><a href="#">Spa & Wellness</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!-- Advanced Hamburger Menu -->
+            <label class="hamburger" id="hamburger-menu">
+                <input type="checkbox" id="hamburger-checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-header-controls">
+                    <!-- Language Selector for Mobile -->
+                    <div class="relative">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center justify-between w-full px-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-globe text-xl text-gray-600"></i>
+                                <span class="font-medium text-gray-800">Language</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span id="mobileCurrentLanguage" class="font-medium text-gray-700">EN</span>
+                                <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                            </div>
+                        </button>
+
+                        <div id="mobileLanguageDropdown"
+                            class="language-dropdown-mobile absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-10">
+                            <div class="py-2">
+                                <!-- Language options will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Currency Converter for Mobile -->
+                    <div class="mobile-currency-dropdown" id="mobile-currency-dropdown">
+                        <button class="mobile-currency-toggle">
+                            <span>Currency: <span id="mobileCurrentCurrency">USD</span></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="mobile-currency-menu">
+                            <!-- Currency options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation Links - Reduced to 5 items -->
+                <ul class="mobile-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Rooms & Suites</a></li>
+                    <li><a href="#">Spa & Wellness</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <!-- Full Width Reserve Button -->
+                <a href="#" class="mobile-reserve-now">RESERVE NOW</a>
+
+                <div class="mobile-contact-info">
+                    <div class="mobile-contact-items">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="mobile-contact-items">
+                        <i class="fas fa-envelope"></i>
+                        <span>7dayshotel2@gmail.com</span>
+                    </div>
+                    <div class="mobile-contact-items">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-subtitle">Exquisite Dining Experience</div>
+            <h1 class="hero-title">Where Culinary <span>Artistry</span> Meets Luxury</h1>
+            <p class="hero-description">Indulge in an unforgettable dining journey at 7Days Motel Entebbe, where world-class chefs craft exceptional dishes using the finest local ingredients, presented with impeccable service in an elegant ambiance.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">
+                    <i class="fas fa-calendar-plus"></i> Reserve Your Table
+                </a>
+                <a href="#menu" class="btn btn-outline">
+                    <i class="fas fa-utensils"></i> View Our Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Middle Content Section -->
+        <main class="main-content">
+            <!-- Article Section -->
+            <section class="article-section">
+                <div class="article-tag">
+                    <div class="motel-tag">7DAYS MOTEL SIGNATURE DINING</div>
+                    <div class="read-time">5 MIN READ</div>
+                </div>
+                
+                <h1 class="article-title">An Unparalleled Culinary Experience in the Heart of Entebbe</h1>
+                
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxurious dining area" class="rounded-img">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Exquisite cuisine" class="rounded-img">
+                </div>
+                
+                <div class="article-content">
+                    <p>At 7Days Motel Entebbe, we've redefined luxury dining with an unwavering commitment to excellence. Our executive chefs, trained at some of the world's most prestigious culinary institutions, blend international techniques with Uganda's vibrant local ingredients to create dishes that are both visually stunning and extraordinarily flavorful.</p>
+                    
+                    <p>Every element of our dining experience is carefully curated—from the hand-selected crystal glassware and fine linen to the bespoke service provided by our professionally trained staff. Our sommelier has curated an exceptional wine list featuring rare vintages and local favorites, perfectly paired to complement each dish on our seasonal menu.</p>
+                    
+                    <p>Beyond the food and ambiance, we offer private dining rooms for intimate celebrations, chef's table experiences with personalized menus, and exclusive wine tasting events. Whether you're joining us for breakfast overlooking Lake Victoria, a business lunch in our conservatory, or a romantic dinner under the stars, every moment at 7Days Motel is crafted to be memorable.</p>
+                </div>
+                
+                <button class="btn btn-primary" id="readMoreBtn">
+                    Discover Our Story <i class="fas fa-arrow-right"></i>
+                </button>
+            </section>
+
+            <!-- SIMPLIFIED MENU SECTION - No Categories, No Filters -->
+            <section class="menu-section" id="menu">
+                <h2 class="section-title">Our Signature Menu</h2>
+                <p class="article-content" style="margin-bottom: 30px;">Browse our exquisite selection of culinary creations, each crafted with passion and precision by our award-winning chefs.</p>
+                
+                <div class="menu-items-grid">
+                    <!-- Dish 1 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Crispy Nile Perch Bites" class="menu-item-img">
+                            <div class="menu-item-badge">Chef's Special</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Crispy Nile Perch Bites</h3>
+                                <div class="menu-item-price">UGX 35,000</div>
+                            </div>
+                            <p class="menu-item-description">Fresh Nile perch coated in a light cassava flour batter, served with mango ginger dip and lime wedges. A perfect fusion of local flavors with a crispy texture.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag">Local</span>
+                                    <span class="menu-tag">Seafood</span>
+                                    <span class="menu-tag spicy">Spicy</span>
+                                </div>
+                                <button class="order-btn" data-dish="Crispy Nile Perch Bites" data-price="35000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 2 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1546834363-9eb0c66e07c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Plantain & Avocado Salad" class="menu-item-img">
+                            <div class="menu-item-badge">Vegetarian</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Plantain & Avocado Salad</h3>
+                                <div class="menu-item-price">UGX 28,000</div>
+                            </div>
+                            <p class="menu-item-description">Grilled sweet plantains served with fresh avocado, cherry tomatoes, red onion, and a tangy passion fruit vinaigrette. Garnished with toasted sesame seeds.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag vegetarian">Vegetarian</span>
+                                    <span class="menu-tag gluten-free">Gluten Free</span>
+                                    <span class="menu-tag">Healthy</span>
+                                </div>
+                                <button class="order-btn" data-dish="Plantain & Avocado Salad" data-price="28000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 3 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ugandan Samosas Trio" class="menu-item-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Ugandan Samosas Trio</h3>
+                                <div class="menu-item-price">UGX 32,000</div>
+                            </div>
+                            <p class="menu-item-description">A trio of traditional samosas with modern twists: minced beef with African spices, vegetable with lentils, and smoked fish with herbs. Served with tamarind chutney.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag">Traditional</span>
+                                    <span class="menu-tag spicy">Spicy</span>
+                                    <span class="menu-tag">Shareable</span>
+                                </div>
+                                <button class="order-btn" data-dish="Ugandan Samosas Trio" data-price="32000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 4 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1981&q=80" alt="Lake Victoria Tilapia" class="menu-item-img">
+                            <div class="menu-item-badge">Best Seller</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Lake Victoria Tilapia</h3>
+                                <div class="menu-item-price">UGX 48,000</div>
+                            </div>
+                            <p class="menu-item-description">Whole tilapia grilled with lemon, garlic, and African herbs, served with matoke (plantain mash) and sautéed seasonal vegetables. A traditional Ugandan favorite elevated.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag">Seafood</span>
+                                    <span class="menu-tag">Local</span>
+                                    <span class="menu-tag gluten-free">Gluten Free</span>
+                                </div>
+                                <button class="order-btn" data-dish="Lake Victoria Tilapia" data-price="48000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 5 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ugandan Beef Stew" class="menu-item-img">
+                            <div class="menu-item-badge">House Specialty</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Ugandan Beef Stew with G-Nut Sauce</h3>
+                                <div class="menu-item-price">UGX 42,000</div>
+                            </div>
+                            <p class="menu-item-description">Tender beef slow-cooked in a rich peanut sauce with African spices, served with irish potatoes and steamed rice. A hearty and flavorful traditional dish.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag">Traditional</span>
+                                    <span class="menu-tag">Comfort Food</span>
+                                    <span class="menu-tag spicy">Spicy</span>
+                                </div>
+                                <button class="order-btn" data-dish="Ugandan Beef Stew with G-Nut Sauce" data-price="42000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 6 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Vegetable Curry" class="menu-item-img">
+                            <div class="menu-item-badge">Vegan</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">East African Vegetable Curry</h3>
+                                <div class="menu-item-price">UGX 38,000</div>
+                            </div>
+                            <p class="menu-item-description">A vibrant curry with sweet potatoes, chickpeas, spinach, and okra in a coconut milk and turmeric sauce. Served with chapati or steamed rice.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag vegan">Vegan</span>
+                                    <span class="menu-tag gluten-free">Gluten Free</span>
+                                    <span class="menu-tag">Healthy</span>
+                                </div>
+                                <button class="order-btn" data-dish="East African Vegetable Curry" data-price="38000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 7 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Passion Fruit Panna Cotta" class="menu-item-img">
+                            <div class="menu-item-badge">Seasonal</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Passion Fruit Panna Cotta</h3>
+                                <div class="menu-item-price">UGX 25,000</div>
+                            </div>
+                            <p class="menu-item-description">Silky smooth panna cotta infused with fresh passion fruit, topped with a mango coulis and garnished with mint leaves and toasted coconut flakes.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag">Sweet</span>
+                                    <span class="menu-tag gluten-free">Gluten Free</span>
+                                    <span class="menu-tag">Fruity</span>
+                                </div>
+                                <button class="order-btn" data-dish="Passion Fruit Panna Cotta" data-price="25000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 8 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1989&q=80" alt="Banana Cake" class="menu-item-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Ugandan Banana Cake</h3>
+                                <div class="menu-item-price">UGX 22,000</div>
+                            </div>
+                            <p class="menu-item-description">Moist banana cake made with local matooke bananas, served warm with a dollop of vanilla bean ice cream and drizzled with homemade caramel sauce.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag">Local</span>
+                                    <span class="menu-tag">Sweet</span>
+                                    <span class="menu-tag">Comfort</span>
+                                </div>
+                                <button class="order-btn" data-dish="Ugandan Banana Cake" data-price="22000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dish 9 -->
+                    <div class="menu-item-card">
+                        <div class="menu-item-img-container">
+                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Tropical Sunset Mocktail" class="menu-item-img">
+                            <div class="menu-item-badge">Non-Alcoholic</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3 class="menu-item-title">Tropical Sunset Mocktail</h3>
+                                <div class="menu-item-price">UGX 18,000</div>
+                            </div>
+                            <p class="menu-item-description">A refreshing blend of fresh pineapple juice, passion fruit, mango puree, and a hint of ginger, topped with sparkling water and garnished with a pineapple wedge.</p>
+                            <div class="menu-item-footer">
+                                <div class="menu-item-tags">
+                                    <span class="menu-tag">Refreshing</span>
+                                    <span class="menu-tag">Fruity</span>
+                                    <span class="menu-tag">Non-Alcoholic</span>
+                                </div>
+                                <button class="order-btn" data-dish="Tropical Sunset Mocktail" data-price="18000">
+                                    <i class="fas fa-shopping-cart"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- REDESIGNED BOOKING FORM with Order Summary -->
+        <aside class="booking-sidebar-premium" id="booking">
+            <div class="booking-form-container-premium">
+                <div class="form-header-premium">
+                    <h2 class="form-title-premium">Reserve Your Table</h2>
+                    <p class="form-subtitle-premium">Experience fine dining at its finest. Book your table in advance to guarantee your preferred time.</p>
+                </div>
+                
+                <div class="form-body-premium">
+                    <!-- Order Summary -->
+                    <div class="order-summary" id="orderSummary">
+                        <h3 class="order-summary-title">
+                            <i class="fas fa-shopping-cart"></i> Your Order Summary
+                        </h3>
+                        <div id="selectedDishes">
+                            <!-- Selected dishes will appear here -->
+                        </div>
+                        <div class="selected-dish">
+                            <div>
+                                <div class="selected-dish-name">Total:</div>
+                            </div>
+                            <div class="selected-dish-price" id="totalPrice">UGX 0</div>
+                        </div>
+                    </div>
+                    
+                    <form id="diningBookingForm">
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="name">Full Name</label>
+                            <input type="text" id="name" class="form-input-premium" placeholder="Enter your full name" required>
+                            <div class="form-icon"><i class="fas fa-user"></i></div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="email">Email Address</label>
+                            <input type="email" id="email" class="form-input-premium" placeholder="Enter your email address" required>
+                            <div class="form-icon"><i class="fas fa-envelope"></i></div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input-premium" placeholder="Enter your phone number" required>
+                            <div class="form-icon"><i class="fas fa-phone"></i></div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="date">Reservation Date *</label>
+                            <div class="date-picker-container">
+                                <input type="date" id="date" class="form-input-premium" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="time">Preferred Time *</label>
+                            <div class="select-container">
+                                <select id="time" class="form-select-premium" required>
+                                    <option value="">Select dining time</option>
+                                    <option value="07:00">7:00 AM - Breakfast</option>
+                                    <option value="08:00">8:00 AM - Breakfast</option>
+                                    <option value="12:00">12:00 PM - Lunch</option>
+                                    <option value="13:30">1:30 PM - Lunch</option>
+                                    <option value="18:00">6:00 PM - Dinner</option>
+                                    <option value="19:30">7:30 PM - Dinner</option>
+                                    <option value="21:00">9:00 PM - Late Dining</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="guests">Number of Guests *</label>
+                            <div class="select-container">
+                                <select id="guests" class="form-select-premium" required>
+                                    <option value="">Select number of guests</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7+ People</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="occasion">Special Occasion</label>
+                            <div class="select-container">
+                                <select id="occasion" class="form-select-premium">
+                                    <option value="">None</option>
+                                    <option value="anniversary">Anniversary</option>
+                                    <option value="birthday">Birthday</option>
+                                    <option value="business">Business Dinner</option>
+                                    <option value="proposal">Marriage Proposal</option>
+                                    <option value="other">Other Celebration</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium" for="specialRequests">Special Requests</label>
+                            <div class="textarea-container">
+                                <textarea id="specialRequests" class="form-textarea-premium" placeholder="Dietary restrictions, seating preferences, etc."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="whatsapp-btn" id="sendToWhatsApp">
+                            <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+                        </button>
+                        
+                        <button type="submit" class="submit-btn-premium">
+                            <i class="fas fa-calendar-check"></i> Confirm Reservation
+                        </button>
+                    </form>
+                    
+                    <div class="booking-features-premium">
+                        <h3 class="features-title-premium">Exclusive Dining Benefits</h3>
+                        <ul class="features-list-premium">
+                            <li>
+                                <div class="feature-icon-premium"><i class="fas fa-crown"></i></div>
+                                <div class="feature-text-premium">
+                                    <strong>Priority Seating</strong>
+                                    <span>Hotel guests receive priority reservations</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon-premium"><i class="fas fa-wine-glass-alt"></i></div>
+                                <div class="feature-text-premium">
+                                    <strong>Welcome Drink</strong>
+                                    <span>Complimentary welcome drink for first-time visitors</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon-premium"><i class="fas fa-utensils"></i></div>
+                                <div class="feature-text-premium">
+                                    <strong>Seasonal Menu</strong>
+                                    <span>Fresh, locally sourced ingredients changed seasonally</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon-premium"><i class="fas fa-parking"></i></div>
+                                <div class="feature-text-premium">
+                                    <strong>Valet Parking</strong>
+                                    <span>Complimentary valet service for all dining guests</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+ <!-- Modern Modal for Read More -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <div class="close-modal" id="closeModal">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="modal-hero">
+            <div class="modal-hero-content">
+                <h2 class="modal-main-title">Experience Culinary Excellence</h2>
+                <p class="modal-subtitle">Uganda's Premier Destination for Authentic Fine Dining</p>
+                <div class="hero-cta">
+                    <span class="hero-cta-text"><i class="fas fa-award"></i> Consistently Rated #1 in Entebbe</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Photo Gallery Section - Now First After Hero -->
+        <div class="modal-section gallery-section">
+            <div class="gallery-grid">
+                <div class="gallery-item main-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Elegant Restaurant Interior" class="modal-img">
+                    <div class="gallery-caption">Our Elegant Dining Space</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Executive Chef in Action" class="modal-img">
+                    <div class="gallery-caption">Masterful Culinary Craftsmanship</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Premium Beverage Selection" class="modal-img">
+                    <div class="gallery-caption">Premium Beverage Collection</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Artistic Dessert Presentation" class="modal-img">
+                    <div class="gallery-caption">Signature Dessert Creations</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Artistic Dessert Presentation" class="modal-img">
+                    <div class="gallery-caption">Signature Dessert Creations</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <!-- About Our Philosophy Section -->
+            <div class="modal-section philosophy-section">
+                <div class="section-header">
+                    <h3 class="section-title">Our Culinary Philosophy</h3>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="philosophy-content">
+                    <div class="philosophy-text">
+                        <p>At 7Days Motel, we believe that exceptional dining is about creating moments that linger in memory. Our approach is built on three pillars that define every aspect of your experience with us.</p>
+                        
+                        <div class="philosophy-points">
+                            <div class="philosophy-point">
+                                <i class="fas fa-leaf"></i>
+                                <div>
+                                    <h4>Local Sourcing & Sustainability</h4>
+                                    <p>We partner directly with Ugandan farmers, fishermen, and producers to bring you the freshest ingredients while supporting our community and ecosystem.</p>
+                                </div>
+                            </div>
+                            <div class="philosophy-point">
+                                <i class="fas fa-user-clock"></i>
+                                <div>
+                                    <h4>Personalized Hospitality</h4>
+                                    <p>Our service combines professional standards with genuine Ugandan hospitality, ensuring every guest feels personally attended to and valued.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="philosophy-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cooking in Progress - Kitchen Action">
+                        <div class="image-caption">Our kitchen team crafting exquisite dishes</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Signature Features Section -->
+            <div class="modal-section features-section">
+                <div class="section-header">
+                    <h3 class="section-title">What Sets Us Apart</h3>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Unique elements that define our dining experience</p>
+                </div>
+                
+                <div class="features-grid modern-grid">
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <div class="feature-icon modern-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4>Seasonal & Local Focus</h4>
+                        </div>
+                        <div class="feature-card-body">
+                            <p>Our menus evolve with Uganda's seasons, showcasing the best local produce and ensuring peak freshness in every dish we serve.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Menu changes with local harvests</li>
+                                <li><i class="fas fa-check-circle"></i> Direct relationships with farmers</li>
+                                <li><i class="fas fa-check-circle"></i> Sustainable kitchen practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <div class="feature-icon modern-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4>Professional Service Team</h4>
+                        </div>
+                        <div class="feature-card-body">
+                            <p>Our staff undergoes comprehensive training in hospitality excellence, blending international standards with authentic Ugandan warmth.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Professional hospitality training</li>
+                                <li><i class="fas fa-check-circle"></i> Detailed menu knowledge</li>
+                                <li><i class="fas fa-check-circle"></i> Attentive, personalized service</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <div class="feature-icon modern-icon">
+                                <i class="fas fa-concierge-bell"></i>
+                            </div>
+                            <h4>Impeccable Ambiance</h4>
+                        </div>
+                        <div class="feature-card-body">
+                            <p>Our dining space combines modern elegance with Ugandan cultural elements, creating a sophisticated yet welcoming atmosphere.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Elegant, comfortable seating</li>
+                                <li><i class="fas fa-check-circle"></i> Subtle Ugandan cultural touches</li>
+                                <li><i class="fas fa-check-circle"></i> Perfect lighting and acoustics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Premium Amenities Section -->
+            <div class="modal-section amenities-section">
+                <div class="section-header">
+                    <h3 class="section-title">Exclusive Dining Options</h3>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Special experiences we offer our guests</p>
+                </div>
+                
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <div class="amenity-content">
+                            <h4>Garden Terrace Dining</h4>
+                            <p>Enjoy your meal in our beautiful outdoor terrace surrounded by tropical gardens, with views overlooking our property.</p>
+                            <span class="amenity-tag">Seasonal</span>
+                        </div>
+                    </div>
+                    
+                    <div class="amenity-item">
+                        <div class="amenity-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <div class="amenity-content">
+                            <h4>Private Dining Rooms</h4>
+                            <p>Perfect for special occasions or business meetings, our private spaces offer exclusivity with personalized service.</p>
+                            <span class="amenity-tag">Exclusive</span>
+                        </div>
+                    </div>
+                    
+                    <div class="amenity-item">
+                        <div class="amenity-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="amenity-content">
+                            <h4>Customized Tasting Menus</h4>
+                            <p>Experience a curated journey through our culinary offerings with personalized tasting menus designed by our chefs.</p>
+                            <span class="amenity-tag">Premium</span>
+                        </div>
+                    </div>
+                    
+                    <div class="amenity-item">
+                        <div class="amenity-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="amenity-content">
+                            <h4>Special Event Catering</h4>
+                            <p>We provide exceptional catering services for events, bringing our restaurant-quality experience to your venue.</p>
+                            <span class="amenity-tag">Flexible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Guest Recognition Section -->
+            <div class="modal-section highlights-section">
+                <div class="section-header">
+                    <h3 class="section-title">Guest Recognition</h3>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="highlights-container">
+                    <div class="highlight-stat">
+                        <div class="stat-number">4.9/5</div>
+                        <div class="stat-label">Guest Rating</div>
+                        <div class="stat-desc">Based on 500+ reviews</div>
+                    </div>
+                    
+                    <div class="highlight-stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Repeat Guests</div>
+                        <div class="stat-desc">Customer Loyalty Rate</div>
+                    </div>
+                    
+                    <div class="highlight-stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Culinary Experts</div>
+                        <div class="stat-desc">Our Kitchen Team</div>
+                    </div>
+                    
+                    <div class="highlight-stat">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Years Excellence</div>
+                        <div class="stat-desc">Serving Entebbe Since 2016</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="modal-cta-section">
+                <div class="cta-content">
+                    <h3>Ready to Experience Exceptional Dining?</h3>
+                    <p>Join us for a memorable culinary journey that celebrates Uganda's finest flavors.</p>
+                    <div class="cta-buttons">
+                        <a href="#booking" class="modal-cta-btn primary-cta">
+                            <i class="fas fa-calendar-alt"></i> Book Your Table
+                        </a>
+                        <button class="modal-cta-btn secondary-cta" id="closeModalAlt">
+                            <i class="fas fa-book-open"></i> Explore Our Menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer class="luxury-footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-border"></div>
+        <div class="footer-watermark">
+            <h1>7 DAYS MOTEL</h1>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-section motel-description">
+                    <div class="logo-text">7Days<span> Motel</span></div>
+                    <p>Experience unparalleled luxury at 7Days Motel Entebbe, where world-class hospitality meets
+                        exceptional service. Your sanctuary of comfort awaits in the heart of Uganda.</p>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="animated-link">Home <i class="fas fa-chevron-right link-arrow"></i></a>
+                        </li>
+                        <li><a href="#" class="animated-link">Rooms & Suites <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="#" class="animated-link">Dining Experience <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="#" class="animated-link">Special Packages <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="#" class="animated-link">Contact Us <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Location -->
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="contact-infos">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Plot 40, Buku Road</strong><br>Opposite UN Base Office<br>Entebbe,
+                                Uganda</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Call Us:</strong><br>+256 709 093 939<br>+256 701 880 222</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong><br>7dayshotel2@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 4: Luxury Amenities -->
+                <div class="footer-section">
+                    <h3>Luxury Amenities</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <div class="amenity-text">Premium Suites</div>
+                            <div class="amenity-badge">Luxury</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="amenity-text">High-Speed WiFi</div>
+                            <div class="amenity-badge">Free</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="amenity-text">Fine Dining</div>
+                            <div class="amenity-badge">5-Star</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <div class="amenity-text">Spa Services</div>
+                            <div class="amenity-badge">Relax</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 7Days Motel Entebbe. All rights reserved. | Excellence in Hospitality
+                </div>
+
+                <div class="designer-credit">
+                    Crafted by <a href="https://vernoxdesigns.com" target="_blank">Vernox <i
+                            class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Luxury Payment Methods -->
+                <div class="payment-methods">
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-visa"></i>
+                        <div class="payment-tooltip">Visa</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                        <div class="payment-tooltip">Debit Card</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-mastercard"></i>
+                        <div class="payment-tooltip">Mastercard</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="payment-tooltip">Cash</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-sim-card"></i>
+                        <div class="payment-tooltip">Airtel Money</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+<script>
+    // Add event listener for the secondary close button
+    document.getElementById('closeModalAlt')?.addEventListener('click', () => {
+        document.getElementById('modalOverlay')?.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        
+        // Scroll to menu section
+        const menuSection = document.getElementById('menu');
+        if (menuSection) {
+            setTimeout(() => {
+                menuSection.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }
+    });
+</script>
+    <script>
+        // Modal functionality
+        const readMoreBtn = document.getElementById('readMoreBtn');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeModal = document.getElementById('closeModal');
+        
+        // Open modal when Read More button is clicked
+        readMoreBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close modal when X button is clicked
+        closeModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside the modal content
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Order management
+        let selectedDishes = [];
+        
+        // Order button functionality
+        const orderBtns = document.querySelectorAll('.order-btn');
+        const orderSummary = document.getElementById('orderSummary');
+        const selectedDishesContainer = document.getElementById('selectedDishes');
+        const totalPriceElement = document.getElementById('totalPrice');
+        
+        orderBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const dishName = btn.getAttribute('data-dish');
+                const dishPrice = parseInt(btn.getAttribute('data-price'));
+                
+                // Add dish to selected dishes
+                selectedDishes.push({
+                    name: dishName,
+                    price: dishPrice
+                });
+                
+                // Update order summary
+                updateOrderSummary();
+                
+                // Show order summary
+                orderSummary.classList.add('active');
+                
+                // Scroll to booking form
+                document.getElementById('booking').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Animate the button
+                btn.innerHTML = '<i class="fas fa-check"></i> Added';
+                btn.style.background = 'linear-gradient(135deg, #0F3A34, #0D2F2B)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Order Now';
+                    btn.style.background = 'linear-gradient(135deg, var(--evergreen), var(--evergreen-dark))';
+                }, 2000);
+            });
+        });
+        
+        // Function to update order summary
+        function updateOrderSummary() {
+            selectedDishesContainer.innerHTML = '';
+            let total = 0;
+            
+            selectedDishes.forEach((dish, index) => {
+                total += dish.price;
+                
+                const dishElement = document.createElement('div');
+                dishElement.className = 'selected-dish';
+                dishElement.innerHTML = `
+                    <div>
+                        <div class="selected-dish-name">${dish.name}</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div class="selected-dish-price">UGX ${dish.price.toLocaleString()}</div>
+                        <button class="remove-dish" data-index="${index}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+                
+                selectedDishesContainer.appendChild(dishElement);
+            });
+            
+            // Update total
+            totalPriceElement.textContent = `UGX ${total.toLocaleString()}`;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-dish').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    selectedDishes.splice(index, 1);
+                    updateOrderSummary();
+                    
+                    // Hide order summary if no dishes
+                    if (selectedDishes.length === 0) {
+                        orderSummary.classList.remove('active');
+                    }
+                });
+            });
+        }
+        
+        // WhatsApp functionality
+        const whatsappBtn = document.getElementById('sendToWhatsApp');
+        const bookingForm = document.getElementById('diningBookingForm');
+        
+        whatsappBtn.addEventListener('click', () => {
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const occasion = document.getElementById('occasion').value;
+            const specialRequests = document.getElementById('specialRequests').value.trim();
+            
+            // Validate required fields
+            if (!name || !email || !phone || !date || !time || !guests) {
+                alert('Please fill in all required fields (marked with *) before sending via WhatsApp.');
+                return;
+            }
+            
+            if (selectedDishes.length === 0) {
+                alert('Please add at least one dish to your order before sending via WhatsApp.');
+                return;
+            }
+            
+            // Format the date
+            const formattedDate = new Date(date).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Get the selected time text
+            const timeSelect = document.getElementById('time');
+            const selectedTimeText = timeSelect.options[timeSelect.selectedIndex].text;
+            
+            // Occasion text
+            let occasionText = '';
+            if (occasion) {
+                const occasionSelect = document.getElementById('occasion');
+                occasionText = `• Occasion: ${occasionSelect.options[occasionSelect.selectedIndex].text}\n`;
+            }
+            
+            // Calculate total
+            let total = 0;
+            selectedDishes.forEach(dish => {
+                total += dish.price;
+            });
+            
+            // Build order list
+            let orderList = '';
+            selectedDishes.forEach((dish, index) => {
+                orderList += `${index + 1}. ${dish.name} - UGX ${dish.price.toLocaleString()}\n`;
+            });
+            
+            // Build WhatsApp message
+            const whatsappMessage = `*NEW ORDER - 7Days Motel Entebbe* 🍽️\n\n` +
+                                  `*Customer Details:*\n` +
+                                  `• Name: ${name}\n` +
+                                  `• Phone: ${phone}\n` +
+                                  `• Email: ${email}\n\n` +
+                                  
+                                  `*Reservation Details:*\n` +
+                                  `• Date: ${formattedDate}\n` +
+                                  `• Time: ${selectedTimeText}\n` +
+                                  `• Guests: ${guests} person(s)\n` +
+                                  `${occasionText}` +
+                                  (specialRequests ? `• Special Requests: ${specialRequests}\n\n` : '\n') +
+                                  
+                                  `*Order Summary:*\n${orderList}\n` +
+                                  `*Total: UGX ${total.toLocaleString()}*\n\n` +
+                                  `_Order placed via website_`;
+            
+            // Encode message for WhatsApp URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Your WhatsApp number
+            const whatsappNumber = '256762017465';
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form and order after sending
+            setTimeout(() => {
+                bookingForm.reset();
+                selectedDishes = [];
+                updateOrderSummary();
+                orderSummary.classList.remove('active');
+                
+                // Reset date to tomorrow
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const formattedTomorrow = tomorrow.toISOString().split('T')[0];
+                document.getElementById('date').value = formattedTomorrow;
+                
+                // Reset selects
+                document.querySelectorAll('.form-select-premium').forEach(select => {
+                    select.selectedIndex = 0;
+                });
+                
+                alert('Your order has been prepared for WhatsApp. Please check your WhatsApp to send the message.');
+            }, 1000);
+        });
+        
+        // Form submission handling (alternative to WhatsApp)
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (selectedDishes.length === 0) {
+                alert('Please add at least one dish to your order before submitting.');
+                return;
+            }
+            
+            alert('For immediate order processing, please use the "Send Order via WhatsApp" button above. This ensures your order reaches us instantly!');
+        });
+        
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const formattedTomorrow = tomorrow.toISOString().split('T')[0];
+        document.getElementById('date').value = formattedTomorrow;
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').min = today;
+        
+        // Format date input to show placeholder style when empty
+        const dateInput = document.getElementById('date');
+        dateInput.addEventListener('input', function() {
+            if (this.value) {
+                this.style.color = '#333';
+            } else {
+                this.style.color = '#aaa';
+            }
+        });
+        
+        // Initialize date input color
+        if (!dateInput.value) {
+            dateInput.style.color = '#aaa';
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Enhance dropdown focus styles
+        const selects = document.querySelectorAll('.form-select-premium');
+        selects.forEach(select => {
+            select.addEventListener('focus', function() {
+                this.parentElement.style.zIndex = '10';
+            });
+            
+            select.addEventListener('blur', function() {
+                this.parentElement.style.zIndex = '1';
+            });
+        });
+    </script>
+
+   <!-- Header  -->
+    <script>
+        // Language data with country flags
+        const languages = [
+            { code: 'en', name: 'English', flag: 'us' },
+            { code: 'es', name: 'Español', flag: 'es' },
+            { code: 'fr', name: 'Français', flag: 'fr' },
+            { code: 'de', name: 'Deutsch', flag: 'de' },
+            { code: 'it', name: 'Italiano', flag: 'it' },
+            { code: 'pt', name: 'Português', flag: 'pt' },
+            { code: 'ru', name: 'Русский', flag: 'ru' },
+            { code: 'zh-CN', name: '中文 (简体)', flag: 'cn' },
+            { code: 'zh-TW', name: '中文 (繁體)', flag: 'tw' },
+            { code: 'ja', name: '日本語', flag: 'jp' },
+            { code: 'ko', name: '한국어', flag: 'kr' },
+            { code: 'vi', name: 'Tiếng Việt', flag: 'vn' },
+            { code: 'nl', name: 'Nederlands', flag: 'nl' },
+            { code: 'pl', name: 'Polski', flag: 'pl' },
+            { code: 'tr', name: 'Türkçe', flag: 'tr' },
+            { code: 'sw', name: 'Kiswahili', flag: 'ke' },
+            { code: 'zu', name: 'isiZulu', flag: 'za' },
+            { code: 'af', name: 'Afrikaans', flag: 'za' }
+        ];
+
+        // Currency data
+        const currencies = [
+            { code: 'USD', name: 'US Dollar', symbol: '$' },
+            { code: 'EUR', name: 'Euro', symbol: '€' },
+            { code: 'GBP', name: 'British Pound', symbol: '£' },
+            { code: 'AED', name: 'UAE Dirham', symbol: 'د.إ' },
+
+            // Added East African currencies
+            { code: 'UGX', name: 'Ugandan Shilling', symbol: 'USh' },
+            { code: 'KES', name: 'Kenyan Shilling', symbol: 'KSh' },
+            { code: 'TZS', name: 'Tanzanian Shilling', symbol: 'TSh' },
+            { code: 'RWF', name: 'Rwandan Franc', symbol: 'RF' }
+        ]
+            ;
+
+        // Exchange rates (relative to USD)
+        const exchangeRates = {
+            USD: 1,
+            EUR: 0.92,
+            GBP: 0.79,
+            AED: 3.67,
+            // East African currencies
+            UGX: 3850,   // Ugandan Shilling
+            KES: 160,    // Kenyan Shilling
+            TZS: 2600,   // Tanzanian Shilling
+            RWF: 1320    // Rwandan Franc
+        };
+
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en', autoDisplay: false },
+                'google_translate_element'
+            );
+
+            // Hide Google Translate toolbar and banner
+            var style = document.createElement('style');
+            style.innerHTML = `
+                .goog-te-banner-frame, .goog-te-menu-frame { 
+                    display: none !important; 
+                }
+                body { 
+                    top: 0px !important; 
+                }
+                .goog-tooltip {
+                    display: none !important;
+                }
+                .goog-tooltip:hover {
+                    display: none !important;
+                }
+                .goog-text-highlight {
+                    background-color: transparent !important;
+                    border: none !important;
+                    box-shadow: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Load Google Translate script
+        window.addEventListener('load', function () {
+            const gtScript = document.createElement('script');
+            gtScript.type = 'text/javascript';
+            gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(gtScript);
+        });
+
+        // Populate language dropdowns
+        function populateLanguageDropdowns() {
+            // Desktop dropdown
+            const desktopDropdown = document.getElementById('languageDropdownMenu');
+            languages.forEach(lang => {
+                const option = document.createElement('button');
+                option.className = 'dropdown-item notranslate';
+                option.setAttribute('data-lang', lang.code);
+
+                // Create flag element using flag-icons CSS classes
+                const flagElement = document.createElement('span');
+                flagElement.className = `flag fi fi-${lang.flag}`;
+
+                // Create language name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = lang.name;
+
+                option.appendChild(flagElement);
+                option.appendChild(nameElement);
+                desktopDropdown.appendChild(option);
+            });
+
+            // Mobile dropdown
+            const mobileDropdown = document.getElementById('mobileLanguageDropdown').querySelector('.py-2');
+            languages.forEach(lang => {
+                const option = document.createElement('button');
+                option.className = 'mobile-language-option notranslate';
+                option.setAttribute('data-lang', lang.code);
+
+                // Create flag element using flag-icons CSS classes
+                const flagElement = document.createElement('span');
+                flagElement.className = `flag fi fi-${lang.flag}`;
+
+                // Create language name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = lang.name;
+
+                option.appendChild(flagElement);
+                option.appendChild(nameElement);
+                mobileDropdown.appendChild(option);
+            });
+        }
+
+        // Populate currency dropdowns
+        function populateCurrencyDropdowns() {
+            // Desktop dropdown
+            const desktopDropdown = document.getElementById('currency-dropdown-menu');
+            currencies.forEach(currency => {
+                const option = document.createElement('button');
+                option.className = 'dropdown-item notranslate';
+                option.setAttribute('data-currency', currency.code);
+
+                // Create icon element
+                const iconElement = document.createElement('i');
+                iconElement.className = `fas fa-${currency.code === 'EUR' ? 'euro-sign' :
+                    currency.code === 'GBP' ? 'pound-sign' :
+                        currency.code === 'JPY' || currency.code === 'CNY' ? 'yen-sign' :
+                            currency.code === 'INR' ? 'rupee-sign' :
+                                currency.code === 'RUB' ? 'ruble-sign' :
+                                    currency.code === 'THB' ? 'baht-sign' :
+                                        currency.code === 'KRW' ? 'won-sign' :
+                                            currency.code === 'TRY' ? 'lira-sign' :
+                                                currency.code === 'AED' || currency.code === 'SAR' ? 'hashtag' : 'dollar-sign'}`;
+
+                // Create currency name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = `${currency.code} - ${currency.name}`;
+
+                option.appendChild(iconElement);
+                option.appendChild(nameElement);
+                desktopDropdown.appendChild(option);
+            });
+
+            // Mobile dropdown
+            const mobileDropdown = document.querySelector('.mobile-currency-menu');
+            currencies.forEach(currency => {
+                const option = document.createElement('button');
+                option.className = 'mobile-currency-item notranslate';
+                option.setAttribute('data-currency', currency.code);
+
+                // Create icon element
+                const iconElement = document.createElement('i');
+                iconElement.className = `fas fa-${currency.code === 'EUR' ? 'euro-sign' :
+                    currency.code === 'GBP' ? 'pound-sign' :
+                        currency.code === 'JPY' || currency.code === 'CNY' ? 'yen-sign' :
+                            currency.code === 'INR' ? 'rupee-sign' :
+                                currency.code === 'RUB' ? 'ruble-sign' :
+                                    currency.code === 'THB' ? 'baht-sign' :
+                                        currency.code === 'KRW' ? 'won-sign' :
+                                            currency.code === 'TRY' ? 'lira-sign' :
+                                                currency.code === 'AED' || currency.code === 'SAR' ? 'hashtag' : 'dollar-sign'}`;
+
+                // Create currency name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = `${currency.code} - ${currency.name}`;
+
+                option.appendChild(iconElement);
+                option.appendChild(nameElement);
+                mobileDropdown.appendChild(option);
+            });
+        }
+
+        // Function to change language
+        function changeLanguage(lang) {
+            // Update desktop language display
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            if (currentLanguageElement) {
+                currentLanguageElement.textContent = lang.toUpperCase();
+            }
+
+            // Update mobile language display
+            const mobileCurrentLanguageElement = document.getElementById('mobileCurrentLanguage');
+            if (mobileCurrentLanguageElement) {
+                mobileCurrentLanguageElement.textContent = lang.toUpperCase();
+            }
+
+            // Update active states
+            document.querySelectorAll('.dropdown-item, .mobile-language-option').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-lang') === lang) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Update flag on desktop
+            const langData = languages.find(l => l.code === lang);
+            if (langData && document.getElementById('currentFlag')) {
+                // Remove all existing flag classes
+                const flagElement = document.getElementById('currentFlag');
+                flagElement.className = 'flag fi';
+                // Add the new flag class
+                flagElement.classList.add(`fi-${langData.flag}`);
+            }
+
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Trigger Google Translate if available
+            if (typeof google !== 'undefined' && google.translate) {
+                // Wait for the Google Translate element to be fully loaded
+                setTimeout(function () {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = lang;
+                        select.dispatchEvent(new Event('change'));
+                        console.log('Google Translate language changed to:', lang);
+                    } else {
+                        console.warn('Google Translate select element not found');
+                    }
+                }, 500);
+            } else {
+                console.warn('Google Translate not loaded yet');
+            }
+
+            console.log('Language changed to:', lang);
+        }
+
+        // Function to convert prices
+        function convertPrices(currency) {
+            const rate = exchangeRates[currency];
+            const currencyData = currencies.find(c => c.code === currency);
+            const symbol = currencyData ? currencyData.symbol : '$';
+
+            document.querySelectorAll('.price').forEach(priceElement => {
+                const basePrice = parseFloat(priceElement.getAttribute('data-base-price'));
+                const convertedPrice = (basePrice * rate).toFixed(2);
+                // Get text after the price (like "per night")
+                const originalText = priceElement.textContent;
+                const textParts = originalText.split(' ');
+                const textAfterPrice = textParts.slice(1).join(' ');
+                priceElement.textContent = `${symbol}${convertedPrice} ${textAfterPrice}`;
+            });
+
+            // Update currency displays
+            document.getElementById('currentCurrency').textContent = currency;
+            document.getElementById('mobileCurrentCurrency').textContent = currency;
+
+            // Update active states
+            document.querySelectorAll('.dropdown-item, .mobile-currency-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll(`[data-currency="${currency}"]`).forEach(item => {
+                item.classList.add('active');
+            });
+
+            localStorage.setItem('preferredCurrency', currency);
+
+            console.log('Currency changed to:', currency);
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Populate dropdowns
+            populateLanguageDropdowns();
+            populateCurrencyDropdowns();
+
+            // Desktop Language Dropdown
+            const languageButton = document.getElementById('languageButton');
+            const languageDropdown = document.getElementById('languageDropdown');
+
+            if (languageButton && languageDropdown) {
+                // Toggle dropdown
+                languageButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('active');
+
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        if (dropdown !== languageDropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+
+                // Close when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!languageButton.contains(e.target) && !languageDropdown.contains(e.target)) {
+                        languageDropdown.classList.remove('active');
+                    }
+                });
+
+                // Language selection
+                document.querySelectorAll('#languageDropdownMenu .dropdown-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        changeLanguage(lang);
+                        languageDropdown.classList.remove('active');
+                    });
+                });
+            }
+
+            // Mobile Language Dropdown
+            const mobileLanguageButton = document.getElementById('mobileLanguageButton');
+            const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+
+            if (mobileLanguageButton && mobileLanguageDropdown) {
+                mobileLanguageButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileLanguageDropdown.classList.toggle('active');
+
+                    // Rotate chevron
+                    const icon = this.querySelector('.fa-chevron-down');
+                    if (mobileLanguageDropdown.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0)';
+                    }
+
+                    // Close other dropdowns
+                    document.querySelectorAll('.mobile-currency-dropdown').forEach(dropdown => {
+                        if (dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                            const otherIcon = dropdown.querySelector('i');
+                            if (otherIcon) {
+                                otherIcon.style.transform = 'rotate(0)';
+                            }
+                        }
+                    });
+                });
+
+                // Mobile language selection
+                document.querySelectorAll('#mobileLanguageDropdown .mobile-language-option').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        changeLanguage(lang);
+                        mobileLanguageDropdown.classList.remove('active');
+                        mobileLanguageButton.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+                    });
+                });
+            }
+
+            // Desktop Currency Dropdown
+            const currencyButton = document.getElementById('currency-button');
+            const currencyDropdown = document.getElementById('currency-dropdown');
+
+            if (currencyButton && currencyDropdown) {
+                // Toggle dropdown
+                currencyButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    currencyDropdown.classList.toggle('active');
+
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        if (dropdown !== currencyDropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+
+                // Close when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!currencyButton.contains(e.target) && !currencyDropdown.contains(e.target)) {
+                        currencyDropdown.classList.remove('active');
+                    }
+                });
+
+                // Currency selection
+                document.querySelectorAll('#currency-dropdown-menu .dropdown-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currency = this.getAttribute('data-currency');
+                        convertPrices(currency);
+                        currencyDropdown.classList.remove('active');
+                    });
+                });
+            }
+
+            // Mobile Currency Dropdown
+            const mobileCurrencyButton = document.querySelector('#mobile-currency-dropdown .mobile-currency-toggle');
+            const mobileCurrencyDropdown = document.getElementById('mobile-currency-dropdown');
+
+            if (mobileCurrencyButton && mobileCurrencyDropdown) {
+                mobileCurrencyButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileCurrencyDropdown.classList.toggle('active');
+
+                    // Rotate chevron
+                    const icon = this.querySelector('i');
+                    if (mobileCurrencyDropdown.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0)';
+                    }
+
+                    // Close other dropdowns
+                    if (mobileLanguageDropdown && mobileLanguageDropdown.classList.contains('active')) {
+                        mobileLanguageDropdown.classList.remove('active');
+                        const langIcon = mobileLanguageButton.querySelector('.fa-chevron-down');
+                        if (langIcon) {
+                            langIcon.style.transform = 'rotate(0)';
+                        }
+                    }
+                });
+
+                // Mobile currency selection
+                document.querySelectorAll('.mobile-currency-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currency = this.getAttribute('data-currency');
+                        convertPrices(currency);
+                        mobileCurrencyDropdown.classList.remove('active');
+                        mobileCurrencyButton.querySelector('i').style.transform = 'rotate(0)';
+                    });
+                });
+            }
+
+            // Initialize with saved preferences
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+
+            const savedCurrency = localStorage.getItem('preferredCurrency') || 'USD';
+            convertPrices(savedCurrency);
+
+            // Mobile menu toggle
+            const hamburgerCheckbox = document.getElementById('hamburger-checkbox');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+            if (hamburgerCheckbox && mobileMenu && mobileMenuOverlay) {
+                hamburgerCheckbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        mobileMenu.classList.add('active');
+                        mobileMenuOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                // Close mobile menu when clicking on overlay
+                mobileMenuOverlay.addEventListener('click', function () {
+                    hamburgerCheckbox.checked = false;
+                    mobileMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+
+                // Close mobile menu when clicking on a link
+                document.querySelectorAll('.mobile-links a, .mobile-reserve-now').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerCheckbox.checked = false;
+                        mobileMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+            }
+
+            // Add active state to navigation links
+            document.querySelectorAll('.nav-links a, .mobile-links a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Remove active class from all links
+                    document.querySelectorAll('.nav-links a, .mobile-links a').forEach(l => {
+                        l.classList.remove('active');
+                    });
+
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                });
+            });
+
+            // Close mobile menu when window is resized to larger size
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    if (hamburgerCheckbox) {
+                        hamburgerCheckbox.checked = false;
+                    }
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                    }
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.classList.remove('active');
+                    }
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+    <!-- header -->
+    <script>
+        // Add this script to prevent horizontal scrolling on mobile
+        document.addEventListener('DOMContentLoaded', function () {
+            // Variables to track touch position
+            let startX = 0;
+            let startY = 0;
+
+            // Detect if on mobile device
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                // Prevent touch events that cause horizontal scroll
+                document.addEventListener('touchstart', function (e) {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                }, { passive: false });
+
+                document.addEventListener('touchmove', function (e) {
+                    const currentX = e.touches[0].clientX;
+                    const currentY = e.touches[0].clientY;
+
+                    // Calculate movement
+                    const diffX = Math.abs(currentX - startX);
+                    const diffY = Math.abs(currentY - startY);
+
+                    // If horizontal movement is greater than vertical, prevent it
+                    if (diffX > diffY) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+
+                // Add this CSS via JavaScript for iOS
+                const style = document.createElement('style');
+                style.textContent = `
+            @media (max-width: 768px) {
+                * {
+                    -webkit-user-drag: none;
+                    -khtml-user-drag: none;
+                    -moz-user-drag: none;
+                    -o-user-drag: none;
+                    user-drag: none;
+                }
+                
+                body, html {
+                    overscroll-behavior-x: none !important;
+                    overflow-x: hidden !important;
+                    width: 100vw !important;
+                    position: relative !important;
+                }
+                
+                /* Fix for iOS Safari */
+                @supports (-webkit-touch-callout: none) {
+                    body, html {
+                        height: -webkit-fill-available;
+                    }
+                }
+            }
+        `;
+                document.head.appendChild(style);
+            }
+        });
+    </script>
+
+<script src="assets/js/loader.js"></script>
+</body>
+
+</html>

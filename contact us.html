@@ -1,0 +1,5415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Days Motel Entebbe - Premium Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Inter:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --crimson: #C32026;
+            --crimson-dark: #741721;
+            --evergreen: #0F3A34;
+            --evergreen-dark: #0D2F2B;
+            --gold: #D4AF37;
+            --star: #FFB400;
+            --dark-gold: #B8860B;
+            --text-dark: #1A1A1A;
+            --text-light: #777777;
+            --blue: #3498db;
+            --light-blue: #5dade2;
+            --gold: #D4AF37;
+            --gold-light: #E8C55C;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --gray-light: #6B7280;
+            --gray: #4B5563;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.18);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.22);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gold-dark: #C7B8A2;
+            --ivory: #F7F4EC;
+            --charcoal: #1A1A1A;
+            --mist: #E2E2E2;
+            --smoke: #444444;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--charcoal);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
+        /* Google Translate Fixes */
+        .skiptranslate {
+            display: none !important;
+        }
+
+
+        .notranslate {
+            transform: none !important;
+        }
+
+        /* Hide Google Translate banner and toolbar */
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+
+        .goog-te-menu-frame {
+            max-width: 100% !important;
+        }
+
+        .goog-te-menu2 {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
+
+
+
+        /* Section Header Style */
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        /* Luxury Header */
+        .luxury-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .luxury-header-3-container {
+            display: flex;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .luxury-border-side {
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--evergreen), transparent);
+            opacity: 0.4;
+        }
+
+        .luxury-header-content {
+            padding: 0 4rem;
+            text-align: center;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .ribbon {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            --r: .8em;
+
+            border-block: .5em solid #0000;
+            padding-inline: calc(var(--r) + .25em) .5em;
+            line-height: 1.8;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 calc(100% - .25em), var(--r) 50%, 0 .25em);
+            background:
+                radial-gradient(.2em 50% at right, #000a, #0000) border-box,
+                var(--crimson) padding-box;
+            width: fit-content;
+            margin: 0 auto 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .luxury-header-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--evergreen-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .luxury-header-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+        }
+
+        .luxury-header-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--evergreen);
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto;
+            opacity: 0.85;
+        }
+
+        /* Top Header Styles */
+        .top-header {
+            background: linear-gradient(90deg, var(--evergreen-dark) 0%, var(--evergreen) 100%);
+            color: var(--ivory);
+            padding: 2px 2%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .top-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .top-item {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .top-item a {
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .top-item a:hover {
+            color: var(--off-white);
+            transform: translateY(-2px);
+        }
+
+        .top-item i {
+            color: var(--crimson);
+            font-size: 0.9rem;
+            background-color: var(--white);
+            padding: 7px;
+            border-radius: 5px;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .reserve-now {
+            background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 4px 10px rgba(195, 32, 38, 0.3);
+        }
+
+        .reserve-now:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .reserve-now:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(195, 32, 38, 0.4);
+        }
+
+        .reserve-now:hover:before {
+            left: 0;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--ivory);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .dropdown-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--crimson);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 150%;
+            right: 0;
+            background: var(--white);
+            min-width: 250px;
+            max-height: 320px;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+            border-radius: 6px;
+            padding: 10px 0;
+            z-index: 10001;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            border: 1px solid var(--mist);
+        }
+
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: var(--transition);
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: var(--ivory);
+            color: var(--crimson);
+            padding-left: 25px;
+        }
+
+        .dropdown-item.active {
+            color: var(--crimson);
+            font-weight: 500;
+            background: var(--ivory);
+        }
+
+        .flag {
+            width: 24px;
+            height: 18px;
+            border-radius: 2px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        /* Currency Converter Styles */
+        .currency-converter {
+            padding: 15px;
+            border-bottom: 1px solid var(--mist);
+        }
+
+        .currency-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--mist);
+            border-radius: 6px;
+            background: var(--ivory);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .currency-select:focus {
+            border-color: var(--crimson);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(195, 32, 38, 0.2);
+        }
+
+        .currency-info {
+            padding: 10px;
+            background: var(--ivory);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--crimson);
+            font-weight: 500;
+        }
+
+        /* Main Navigation Styles */
+        .main-header {
+            background: rgba(15, 58, 52, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo {
+            width: 100px;
+            background-color: var(--ivory);
+            border-radius: 10px;
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background: var(--crimson);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(195, 32, 38, 0.3);
+        }
+
+        .nav-links a.active {
+            background: var(--crimson);
+            color: var(--white);
+            box-shadow: 0 3px 10px rgba(195, 32, 38, 0.3);
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .hamburger input {
+            display: none;
+        }
+
+        .hamburger svg {
+            height: 50px;
+            transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .line {
+            fill: none;
+            stroke: var(--white);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 3;
+            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .line-top-bottom {
+            stroke-dasharray: 12 63;
+        }
+
+        .hamburger input:checked+svg {
+            transform: rotate(-45deg);
+        }
+
+        .hamburger input:checked+svg .line-top-bottom {
+            stroke-dasharray: 20 300;
+            stroke-dashoffset: -32.42;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -400px;
+            width: 400px;
+            height: 85vh;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 15px 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            border-left: 1px solid var(--mist);
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            margin-top: 0;
+            /* Enhanced scrollbar styling */
+            scrollbar-width: thin;
+            scrollbar-color: var(--crimson) var(--ivory);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-header-controls {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+            gap: 12px;
+            flex-shrink: 0;
+            padding: 0 15px;
+        }
+
+        /* Enhanced Scrollbar Styling for Mobile Menu */
+        .mobile-menu::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .mobile-menu::-webkit-scrollbar-track {
+            background: var(--ivory);
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+
+        .mobile-menu::-webkit-scrollbar-thumb {
+            background: var(--crimson);
+            border-radius: 4px;
+            border: 2px solid var(--ivory);
+        }
+
+        .mobile-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--crimson-dark);
+        }
+
+        .mobile-menu::-webkit-scrollbar-thumb:active {
+            background: var(--crimson-dark);
+        }
+
+        /* Firefox scrollbar */
+        .mobile-menu {
+            scrollbar-width: thin;
+            scrollbar-color: var(--crimson) var(--ivory);
+        }
+
+        /* Updated Mobile Language Dropdown Styles */
+        .relative {
+            position: relative;
+            width: 100%;
+        }
+
+        #mobileLanguageButton {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--ivory);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        #mobileLanguageButton:hover {
+            background: var(--mist);
+        }
+
+        #mobileLanguageButton .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        #mobileLanguageButton .space-x-3>*+* {
+            margin-left: 12px;
+        }
+
+        #mobileLanguageButton .space-x-2>*+* {
+            margin-left: 8px;
+        }
+
+        #mobileLanguageButton i {
+            color: var(--smoke);
+            font-size: 1.1rem;
+        }
+
+        #mobileLanguageButton .font-medium {
+            font-weight: 500;
+        }
+
+        #mobileLanguageButton .text-gray-800 {
+            color: var(--charcoal);
+        }
+
+        #mobileLanguageButton .text-gray-700 {
+            color: var(--smoke);
+        }
+
+        .language-dropdown-mobile {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            margin-top: 8px;
+            background: var(--white);
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--mist);
+            z-index: 10;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .language-dropdown-mobile.active {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .language-dropdown-mobile .py-2 {
+            padding: 8px 0;
+        }
+
+        .mobile-language-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: var(--transition);
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--mist);
+        }
+
+        .mobile-language-option:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-language-option:hover {
+            background: var(--ivory);
+            color: var(--crimson);
+        }
+
+        .mobile-language-option.active {
+            color: var(--crimson);
+            font-weight: 500;
+            background: var(--ivory);
+        }
+
+        /* Mobile Currency Dropdown */
+        .mobile-currency-dropdown {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .mobile-currency-toggle {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: var(--ivory);
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-currency-toggle:hover {
+            background: var(--mist);
+        }
+
+        .mobile-currency-menu {
+            width: 100%;
+            background: var(--white);
+            border-radius: 6px;
+            margin-top: 5px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            border: 1px solid var(--mist);
+        }
+
+        .mobile-currency-dropdown.active .mobile-currency-menu {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .mobile-currency-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: var(--transition);
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--mist);
+        }
+
+        .mobile-currency-item:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-currency-item:hover {
+            background: var(--ivory);
+            color: var(--crimson);
+        }
+
+        .mobile-links {
+            list-style: none;
+            width: 95%;
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+
+        .mobile-links li {
+            border-bottom: 1px solid var(--mist);
+        }
+
+        .mobile-links li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-links a {
+            display: block;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .mobile-links a:hover,
+        .mobile-links a.active {
+            background: var(--ivory);
+            color: var(--crimson);
+            padding-left: 20px;
+        }
+
+        .mobile-links a:after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 0;
+            top: 0;
+            left: 0;
+            background: var(--crimson);
+            transition: height 0.3s ease;
+        }
+
+        .mobile-links a:hover:after,
+        .mobile-links a.active:after {
+            height: 100%;
+        }
+
+        /* Full Width Mobile Reserve Now Button */
+        .mobile-reserve-now {
+            background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition);
+            width: 95%;
+            margin: 0;
+            box-shadow: 0 4px 10px rgba(195, 32, 38, 0.3);
+            flex-shrink: 0;
+            margin-top: auto;
+            display: block;
+        }
+
+        .mobile-reserve-now:hover {
+            background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(195, 32, 38, 0.4);
+        }
+
+        .mobile-contact-info {
+            width: 100%;
+            padding: 15px;
+            background: var(--ivory);
+            border-radius: 6px;
+            text-align: center;
+            flex-shrink: 0;
+            margin: 15px;
+        }
+
+        .mobile-contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: var(--smoke);
+            font-size: 0.9rem;
+        }
+
+        .mobile-contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-contact-item i {
+            color: var(--crimson);
+        }
+
+        /* Google Translate Styles */
+        #google_translate_element {
+            display: none !important;
+        }
+
+        .goog-te-gadget {
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+
+        /* Currency Price Display */
+        .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--crimson);
+            margin-top: 10px;
+        }
+
+        /* Scrollbar Styling */
+        .mobile-menu::-webkit-scrollbar,
+        .dropdown-menu::-webkit-scrollbar,
+        .language-dropdown-mobile::-webkit-scrollbar,
+        .mobile-currency-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .mobile-menu::-webkit-scrollbar-track,
+        .dropdown-menu::-webkit-scrollbar-track,
+        .language-dropdown-mobile::-webkit-scrollbar-track,
+        .mobile-currency-menu::-webkit-scrollbar-track {
+            background: var(--ivory);
+            border-radius: 3px;
+        }
+
+        .mobile-menu::-webkit-scrollbar-thumb,
+        .dropdown-menu::-webkit-scrollbar-thumb,
+        .language-dropdown-mobile::-webkit-scrollbar-thumb,
+        .mobile-currency-menu::-webkit-scrollbar-thumb {
+            background: var(--crimson);
+            border-radius: 3px;
+        }
+
+        .mobile-menu::-webkit-scrollbar-thumb:hover,
+        .dropdown-menu::-webkit-scrollbar-thumb:hover,
+        .language-dropdown-mobile::-webkit-scrollbar-thumb:hover,
+        .mobile-currency-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--crimson-dark);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 5px;
+            }
+
+            .nav-links a {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .top-header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+
+            .contact-info {
+                gap: 20px;
+            }
+
+            .header-controls {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .top-header {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                width: 100px;
+                padding: 5px;
+            }
+
+            .contact-info {
+                display: none;
+            }
+
+            .header-controls {
+                display: none;
+            }
+
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .dropdown-menu {
+                right: auto;
+                left: 0;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .luxury-header-3-container {
+                flex-direction: column;
+            }
+
+            .luxury-border-side {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .luxury-header-content {
+                padding: 0;
+            }
+        }
+
+        /* Hide mobile menu on larger screens */
+        @media (min-width: 769px) {
+
+            .mobile-menu,
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 2rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+
+            /* Adjust mobile menu for very small screens */
+            .mobile-menu {
+                width: 100%;
+                right: -100%;
+            }
+
+            .mobile-menu::-webkit-scrollbar {
+                width: 6px;
+            }
+        }
+
+        /* UPDATED HERO SECTION - CENTERED CONTENT */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            overflow: hidden;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(13, 47, 43, 0.5) 0%, rgba(26, 26, 26, 0.7) 100%),
+                url('https://www.novum-hospitality.com/wp-content/uploads/select-hotels-header.webp');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transition: transform 8s ease;
+        }
+
+        .hero:hover .hero-bg {
+            transform: scale(1.05);
+        }
+
+        .hero-content {
+            color: var(--white);
+            max-width: 900px;
+            position: relative;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            padding: 0 20px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .motel-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(195, 32, 38, 0.9) 0%, rgba(116, 23, 33, 0.9) 100%);
+            border-left: 3px solid var(--gold);
+            padding: 8px 20px;
+            margin-bottom: 30px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 2px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            color: var(--white);
+        }
+
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        /* Horizontal Progress Line - CENTERED */
+        .heading-progress-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            width: 120px;
+        }
+
+        .heading-progress-bar {
+            width: 0;
+            height: 2px;
+            background: var(--crimson-dark);
+            animation: progressBar 3s ease-out forwards;
+        }
+
+        @keyframes progressBar {
+            to {
+                width: 60px;
+            }
+        }
+
+        .heading-progress-static {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+            color: var(--white);
+            border: none;
+            box-shadow: 0 4px 15px rgba(195, 32, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--crimson-dark) 0%, var(--crimson) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(195, 32, 38, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-3px);
+        }
+
+        /* Synchronized Scroll Indicator - CENTERED */
+        .scroll-indicator {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 10;
+        }
+
+        .scroll-text {
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            animation: scrollText 0.8s infinite alternate;
+        }
+
+        .scroll-line-container {
+            position: relative;
+            width: 1px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            animation: scrollLineContainer 0.8s infinite alternate;
+        }
+
+        .scroll-line-moving {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to bottom, var(--crimson-dark), var(--crimson));
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes scrollLineContainer {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-25px);
+            }
+        }
+
+        /* Remove the vertical text elements */
+        .vertical-text,
+        .vertical-line-middle {
+            display: none;
+        }
+
+        /* Remove hero stats */
+        .hero-stats {
+            display: none;
+        }
+
+        /* Responsive Styles for Hero Section */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 90vh;
+                min-height: 700px;
+            }
+
+            .hero-content {
+                top: 10px;
+                padding: 0 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 400px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 80vh;
+                min-height: 600px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        /* Rest of your existing styles (Contact Form, Features, Testimonials, etc.) remain the same */
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Section Header Style */
+        .section-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        /* Luxury Header - CENTERED (for all sections except hero) */
+        .luxury-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .luxury-header-3-container {
+            display: flex;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .luxury-border-side {
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--evergreen), transparent);
+            opacity: 0.4;
+        }
+
+        .luxury-header-content {
+            padding: 0 4rem;
+            text-align: center;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .ribbon {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            --r: .8em;
+            border-block: .5em solid #0000;
+            padding-inline: calc(var(--r) + .25em) .5em;
+            line-height: 1.8;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 calc(100% - .25em), var(--r) 50%, 0 .25em);
+            background: radial-gradient(.2em 50% at right, #000a, #0000) border-box, var(--crimson) padding-box;
+            width: fit-content;
+            margin: 0 auto 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .luxury-header-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--evergreen-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .luxury-header-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+        }
+
+        .luxury-header-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--evergreen);
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto;
+            opacity: 0.85;
+        }
+
+        /* Main Content */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--evergreen);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--crimson);
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(195, 32, 38, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--crimson);
+            font-size: 20px;
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            color: var(--evergreen);
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            color: var(--text-light);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--evergreen);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--evergreen);
+            box-shadow: 0 0 0 2px rgba(15, 58, 52, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--crimson);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--crimson-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(195, 32, 38, 0.2);
+        }
+
+        /* Map Section with Google Maps */
+        .map-section {
+            margin-bottom: 80px;
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(15, 58, 52, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 35px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(15, 58, 52, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--evergreen);
+            font-size: 28px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--evergreen);
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Testimonial Carousel Section - Large Card Design */
+        .testimonial-carousel-section {
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .testimonial-carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .testimonial-large-card {
+            margin-left: 30px;
+            flex: 0 0 calc(100% - 20px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            min-height: 500px;
+        }
+
+        .testimonial-client-side {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+        }
+
+        .client-image-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .client-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(13, 47, 43, 0.85), rgba(13, 47, 43, 0.4));
+            z-index: 1;
+        }
+
+        .client-info {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .client-name-glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            width: fit-content;
+            color: white;
+        }
+
+        .client-name-glass h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .client-name-glass p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .testimonial-content-side {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .quote-icon {
+            font-size: 80px;
+            color: rgba(195, 32, 38, 0.15);
+            position: absolute;
+            top: -30px;
+            left: -10px;
+        }
+
+        .quote-icon.end {
+            top: auto;
+            left: auto;
+            bottom: -50px;
+            right: 0;
+            transform: rotate(180deg);
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            line-height: 1.5;
+            color: var(--evergreen);
+            font-style: italic;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-rating {
+            color: var(--gold);
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .testimonial-meta {
+            padding: 0 20px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--evergreen);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--crimson);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(195, 32, 38, 0.3);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 10px;
+            margin: 0 20px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(15, 58, 52, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background-color: var(--crimson);
+            transform: scale(1.2);
+        }
+
+        /* Expanded Gallery Section with 8 items */
+        .gallery-section {
+            margin-bottom: 100px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 280px;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(13, 47, 43, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: white;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .gallery-caption p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 1000px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            animation: lightboxFade 0.3s ease;
+        }
+
+        @keyframes lightboxFade {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .lightbox-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: var(--evergreen);
+            color: white;
+        }
+
+        .lightbox-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .lightbox-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--crimson);
+        }
+
+        .lightbox-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .lightbox-image-container {
+            height: 440px;
+            overflow: hidden;
+        }
+
+        .lightbox-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lightbox-info {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .lightbox-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .lightbox-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .feature-tag {
+            background-color: rgba(15, 58, 52, 0.1);
+            color: var(--evergreen);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-tag i {
+            color: var(--crimson);
+        }
+
+        .lightbox-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* WhatsApp Redirect Modal */
+        .whatsapp-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .whatsapp-modal.active {
+            display: flex;
+        }
+
+        .whatsapp-modal-content {
+            max-width: 500px;
+            width: 100%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            animation: modalFade 0.3s ease;
+        }
+
+        @keyframes modalFade {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .whatsapp-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: #25D366;
+            color: white;
+        }
+
+        .whatsapp-modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-modal-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .whatsapp-modal-body p {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .whatsapp-modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-whatsapp-confirm {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp-confirm:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+/* Newsletter Section Styles */
+.newsletter-section {
+    background: linear-gradient(135deg, var(--evergreen-dark) 0%, var(--evergreen) 100%);
+    border-radius: 16px;
+    padding: 50px 40px;
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 15px 40px rgba(13, 47, 43, 0.25);
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+}
+
+/* Luxury decorative elements */
+.newsletter-section::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(195, 32, 38, 0.15) 0%, transparent 70%);
+}
+
+/* Luxury badge */
+.luxury-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: rgba(212, 175, 55, 0.15);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+
+.newsletter-section::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+}
+
+/* Left side content */
+.newsletter-content {
+    flex: 1;
+    padding-right: 60px;
+    z-index: 1;
+    max-width: 55%;
+}
+
+.newsletter-title {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.newsletter-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--crimson);
+}
+
+.newsletter-description {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-top: 15px;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Right side form */
+.newsletter-form {
+    flex: 1;
+    max-width: 45%;
+    z-index: 1;
+}
+
+.form-groups {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+
+/* Form container - input takes 2x button width */
+.form-container {
+    flex: 2;
+    /* Input takes 2 parts */
+    position: relative;
+    min-width: 0;
+    /* Prevent flex item from overflowing */
+}
+
+/* Button container - takes 1 part */
+.button-container {
+    flex: 1;
+    /* Button takes 1 part */
+    min-width: 0;
+    /* Prevent flex item from overflowing */
+}
+
+/* Modern form control styles */
+.form-controls {
+    position: relative;
+    width: 100%;
+}
+
+.form-controls input {
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 16px;
+    color: var(--charcoal);
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    outline: none;
+    height: 60px;
+}
+
+/* Modern input focus state */
+.form-controls input:focus {
+    background-color: var(--white);
+    border-color: var(--gold);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+    color: var(--evergreen);
+    transform: translateY(-2px);
+}
+
+/* Input with value (valid) state */
+.form-controls input:valid {
+    background-color: var(--white);
+    border-color: var(--evergreen);
+    color: var(--evergreen);
+}
+
+/* Modern animated label */
+.form-controls label {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    pointer-events: none;
+    transition: var(--transition);
+    font-size: 16px;
+    color: var(--evergreen);
+    font-weight: 500;
+    display: flex;
+    white-space: nowrap;
+}
+
+.form-controls label span {
+    display: inline-block;
+    transition: var(--transition);
+    transition-delay: calc(var(--index) * 30ms);
+}
+
+/* Label animation when input is focused or has value */
+.form-controls input:focus+label,
+.form-controls input:valid+label {
+    top: -10px;
+    left: 15px;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 600;
+    background-color: var(--gold);
+    padding: 2px 10px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual letter animation when focused */
+.form-controls input:focus+label span {
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Individual letter animation when valid */
+.form-controls input:valid+label span {
+    color: var(--gold);
+}
+
+/* Modern button styles */
+.btns {
+    padding: 0 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: var(--transition);
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    height: 60px;
+    width: 100%;
+}
+
+.btns-primary {
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+    color: var(--white);
+    box-shadow: 0 6px 20px rgba(195, 32, 38, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.btns-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.btns-primary:hover {
+    background: linear-gradient(135deg, var(--crimson-dark) 0%, var(--crimson) 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(195, 32, 38, 0.5);
+}
+
+.btns-primary:hover::before {
+    left: 100%;
+}
+
+/* Success message */
+.success-message {
+    display: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(244, 228, 166, 0.9) 100%);
+    padding: 22px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: var(--evergreen);
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    animation: fadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 4px solid var(--gold);
+    font-size: 15px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Subscription stats */
+.subscription-stats {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.stats-icon {
+    margin-right: 10px;
+    color: var(--gold);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .newsletter-section {
+        padding: 45px 50px;
+    }
+
+    .newsletter-description {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .newsletter-section {
+        flex-direction: column;
+        padding: 40px 35px;
+    }
+
+    .newsletter-content {
+        padding-right: 0;
+        margin-bottom: 35px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .newsletter-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .newsletter-description {
+        font-size: 22px;
+    }
+
+    .newsletter-form {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-groups {
+        flex-direction: column;
+    }
+
+    .form-container,
+    .button-container {
+        width: 100%;
+        flex: none;
+    }
+
+    .btns {
+        width: 100%;
+    }
+
+    .luxury-badge {
+        display: none;
+    }
+
+
+    .testimonial-content-side {
+        padding: 40px 30px;
+    }
+
+    .testimonial-text {
+        font-size: 22px;
+    }
+
+
+    .testimonial-large-card {
+        margin-left: 20px;
+        flex: 0 0 calc(100% - 10px);
+    }
+}
+
+@media (max-width: 576px) {
+    .newsletter-section {
+        padding: 35px 25px;
+    }
+
+    .newsletter-description {
+        font-size: 20px;
+    }
+
+    .form-controls input {
+        padding: 16px 18px;
+        font-size: 15px;
+        height: 56px;
+    }
+
+    .testimonial-client-side {
+        min-height: 300px;
+    }
+
+    .btns {
+        padding: 0 25px;
+        font-size: 14px;
+        height: 56px;
+    }
+}
+
+
+
+        /* Luxury Footer with Hotel Elegance */
+        .luxury-footer {
+            background-color: var(--white);
+            color: var(--gray);
+            padding: 70px 0 35px;
+            position: relative;
+            overflow: hidden;
+            width: 1460px;
+            max-width: 1460px;
+            border-radius: 20px;
+            margin: 40px auto;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            min-height: 500px;
+        }
+
+        /* Hotel-themed background pattern */
+        .footer-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(195, 32, 38, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(15, 58, 52, 0.03) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        /* Elegant border decoration */
+        .footer-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .footer-border:before,
+        .footer-border:after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            height: 1px;
+            width: 80%;
+            left: 10%;
+        }
+
+        .footer-border:before {
+            top: 0;
+        }
+
+        .footer-border:after {
+            bottom: 0;
+        }
+
+        /* Desktop height 600px */
+        @media (min-width: 1024px) {
+            .luxury-footer {
+                height: 650px;
+                max-height: 650px;
+            }
+        }
+
+        .footer-container {
+            width: 1450px;
+            max-width: 1450px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .footer-watermark {
+            position: absolute;
+            bottom: 43px;
+            right: 40px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.1;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-watermark h1 {
+            font-size: 100px;
+            font-weight: 900;
+            color: var(--evergreen);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        /* Footer Top - Four Columns Layout */
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .footer-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            color: var(--evergreen);
+            position: relative;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--crimson), var(--crimson-dark));
+            border-radius: 3px;
+        }
+
+        /* Motel Description Column */
+        .motel-description {
+            padding-right: 30px;
+        }
+
+        .motel-description .logo-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--evergreen);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .motel-description .logo-text span {
+            color: var(--crimson);
+            position: relative;
+        }
+
+        .motel-description .logo-text span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--crimson-dark), var(--crimson));
+            border-radius: 2px;
+        }
+
+        .motel-description p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* Contact Information - Modern Card Style */
+        .contact-infos {
+            margin-top: 10px;
+        }
+
+        .contact-infos p {
+            margin-bottom: 0;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.6;
+            position: relative;
+            padding: 18px 20px;
+            transition: var(--transition);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background: var(--off-white);
+            border: 1px solid transparent;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-infos p:hover {
+            transform: translateY(-5px);
+            border: 1px solid var(--evergreen);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-infos i {
+            color: var(--evergreen);
+            margin-right: 20px;
+            margin-top: 2px;
+            min-width: 50px;
+            font-size: 1.2rem;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--white), #f0f0f0);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-infos p:hover i {
+            color: var(--white);
+            background: linear-gradient(135deg, var(--evergreen-dark), var(--evergreen));
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Quick Links Section - Elegant with animations */
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        /* Animated Link Styles with elegant hover */
+        .animated-link {
+            display: flex;
+            align-items: center;
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 1.05rem;
+            position: relative;
+            padding: 16px 20px;
+            transition: var(--transition);
+            overflow: hidden;
+            border-radius: 10px;
+            background: var(--off-white);
+            font-weight: 500;
+        }
+
+        .animated-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 0%;
+            background: linear-gradient(to bottom, var(--crimson), var(--crimson-dark));
+            transition: height 0.4s ease;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .animated-link:hover {
+            color: var(--evergreen);
+            padding-left: 30px;
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .animated-link:hover::before {
+            height: 100%;
+        }
+
+        .link-arrow {
+            margin-left: auto;
+            opacity: 0;
+            transform: translateX(-10px);
+            color: var(--evergreen);
+            transition: var(--transition);
+        }
+
+        .animated-link:hover .link-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Luxury Amenities Section - Hotel Style Icons */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .amenity-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 10px;
+            transition: var(--transition);
+            border-radius: 16px;
+            position: relative;
+            background: var(--off-white);
+            border: 2px solid transparent;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .amenity-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--crimson), var(--crimson-dark));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .amenity-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .ammenity-icons {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--evergreen), var(--evergreen-dark));
+            color: white;
+            font-size: 1.8rem;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 20px rgba(15, 58, 52, 0.2);
+        }
+
+        .amenity-item:hover .ammenity-icons {
+            background: linear-gradient(135deg, var(--crimson), var(--crimson-dark));
+            transform: translateY(-10px) rotate(15deg) scale(1.1);
+            box-shadow: 0 15px 30px rgba(195, 32, 38, 0.3);
+        }
+
+        .amenity-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .amenity-item:hover .amenity-text {
+            color: var(--evergreen);
+            transform: translateY(-5px);
+        }
+
+        /* Luxury Badge Effect */
+        .amenity-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--gold);
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            opacity: 0;
+            z-index: 1000;
+            transform: translateY(-10px);
+            transition: var(--transition);
+        }
+
+        .amenity-item:hover .amenity-badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Social Links - Luxury Style */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--white), #f0f0f0);
+            color: var(--evergreen);
+            font-size: 1.3rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid transparent;
+            text-decoration: none;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--evergreen-dark), var(--evergreen));
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: 50%;
+        }
+
+        .social-link i {
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.1);
+            border: 2px solid var(--gold);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-link:hover i {
+            color: white;
+            transform: rotate(360deg);
+        }
+
+        /* Footer Bottom - Luxury Style */
+        .footer-bottom {
+            border-top: 1px solid rgba(15, 58, 52, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .designer-credit {
+            display: flex;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .designer-credit::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .designer-credit a {
+            color: var(--evergreen);
+            text-decoration: none;
+            margin-left: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .designer-credit a:hover {
+            color: var(--crimson);
+        }
+
+        .designer-credit a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .designer-credit a:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Luxury Payment Methods */
+        .payment-methods {
+            display: flex;
+            gap: 18px;
+            font-size: 1.5rem;
+            color: var(--gray-light);
+        }
+
+        .payment-icon {
+            position: relative;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .payment-icon i {
+            transition: var(--transition);
+            filter: grayscale(1);
+            opacity: 0.7;
+        }
+
+        .payment-icon:hover i {
+            filter: grayscale(0);
+            opacity: 1;
+            color: var(--evergreen);
+            transform: translateY(-2px) scale(1.2);
+        }
+
+        /* Tooltip for payment icons */
+        .payment-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: var(--evergreen);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+        }
+
+        .payment-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--evergreen);
+        }
+
+        .payment-icon:hover .payment-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1520px) {
+            .luxury-footer {
+                width: 95%;
+                max-width: 95%;
+            }
+
+            .footer-container {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .footer-watermark h1 {
+                font-size: 90px;
+            }
+
+            .footer-top {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 40px;
+            }
+
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .luxury-footer {
+                height: auto !important;
+                max-height: none !important;
+                padding: 50px 0 25px;
+            }
+
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+            }
+
+            .footer-watermark h1 {
+                font-size: 70px;
+                bottom: 10px;
+                right: 20px;
+            }
+
+            .motel-description .logo-text {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                padding: 0 25px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .footer-watermark h1 {
+                font-size: 50px;
+                position: relative;
+                bottom: auto;
+                right: auto;
+                text-align: center;
+                margin-top: 30px;
+                opacity: 0.1;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .designer-credit::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-container {
+                padding: 0 20px;
+            }
+
+            .footer-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .contact-infos p {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-infos i {
+                margin-bottom: 10px;
+            }
+
+            .payment-methods {
+                font-size: 1.7rem;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .motel-description .logo-text {
+                font-size: 2rem;
+            }
+
+            .amenity-item {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Responsive Styles for the Rest */
+        @media (max-width: 1100px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-large-card {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lightbox-body {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-image-container {
+                height: 300px;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-contact-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .luxury-header-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .luxury-header-content p {
+                font-size: 1.1rem;
+            }
+
+            .ribbon {
+                margin-bottom: 2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-content-side {
+                padding: 40px 30px;
+            }
+
+            .testimonial-text {
+                font-size: 22px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .luxury-header-3-container {
+                flex-direction: column;
+            }
+
+            .luxury-border-side {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .luxury-header-content {
+                padding: 0;
+            }
+
+            .testimonial-large-card {
+                margin-left: 20px;
+                flex: 0 0 calc(100% - 10px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .luxury-header-content h2 {
+                font-size: 2rem;
+            }
+
+            .ribbon {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .testimonial-client-side {
+                min-height: 300px;
+            }
+
+            .lightbox-content {
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            .whatsapp-modal-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element"></div>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-info">
+            <div class="top-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:256762017465">+1 (555) 123-4567</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:7dayshotel2@gmail.com">7dayshotel2@gmail.com</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <!-- Language Selector -->
+            <div class="dropdown language-dropdown" id="languageDropdown">
+                <button class="dropdown-toggle" id="languageButton">
+                    <span class="flag fi fi-us" id="currentFlag"></span>
+                    <span id="currentLanguage">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="languageDropdownMenu">
+                    <!-- Language options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Currency Converter -->
+            <div class="dropdown" id="currency-dropdown">
+                <button class="dropdown-toggle" id="currency-button">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span id="currentCurrency">USD</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="currency-dropdown-menu">
+                    <!-- Currency options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <a href="#" class="reserve-now">RESERVE NOW</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="#">
+                <img src="assets/images/7 days motel.png" alt="logo" class="logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Rooms & Suites</a></li>
+                <li><a href="#">Spa & Wellness</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!-- Advanced Hamburger Menu -->
+            <label class="hamburger" id="hamburger-menu">
+                <input type="checkbox" id="hamburger-checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-header-controls">
+                    <!-- Language Selector for Mobile -->
+                    <div class="relative">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center justify-between w-full px-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-globe text-xl text-gray-600"></i>
+                                <span class="font-medium text-gray-800">Language</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span id="mobileCurrentLanguage" class="font-medium text-gray-700">EN</span>
+                                <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                            </div>
+                        </button>
+
+                        <div id="mobileLanguageDropdown"
+                            class="language-dropdown-mobile absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-10">
+                            <div class="py-2">
+                                <!-- Language options will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Currency Converter for Mobile -->
+                    <div class="mobile-currency-dropdown" id="mobile-currency-dropdown">
+                        <button class="mobile-currency-toggle">
+                            <span>Currency: <span id="mobileCurrentCurrency">USD</span></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="mobile-currency-menu">
+                            <!-- Currency options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation Links - Reduced to 5 items -->
+                <ul class="mobile-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Rooms & Suites</a></li>
+                    <li><a href="#">Spa & Wellness</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <!-- Full Width Reserve Button -->
+                <a href="#" class="mobile-reserve-now">RESERVE NOW</a>
+
+                <div class="mobile-contact-info">
+                    <div class="mobile-contact-items">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="mobile-contact-items">
+                        <i class="fas fa-envelope"></i>
+                        <span>7dayshotel2@gmail.com</span>
+                    </div>
+                    <div class="mobile-contact-items">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- UPDATED HERO SECTION - CENTERED CONTENT -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="motel-tag">7DAYS MOTEL ENTEBBE</div>
+                <h1>Luxury Experience <span>Exceptional Service</span></h1>
+                <div class="heading-progress-container">
+                    <div class="heading-progress-bar"></div>
+                    <div class="heading-progress-static"></div>
+                </div>
+                <p>Experience luxury accommodation at 7Days Motel in Entebbe. Our premium rooms, exceptional service,
+                    and prime location near the airport make us the perfect choice for discerning travelers.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-concierge-bell"></i>
+                        Book Your Stay
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-phone-alt"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">SCROLL</div>
+            <div class="scroll-line-container">
+                <div class="scroll-line-moving"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Contact Section - CENTERED HEADER -->
+        <div class="section-header">
+            <div class="luxury-header">
+                <div class="luxury-header-3-container">
+                    <div class="luxury-border-side"></div>
+                    <div class="luxury-header-content">
+                        <div class="ribbon">Contact Us</div>
+                        <h2>Get in Touch</h2>
+                        <p>Our dedicated team is ready to assist you with reservations, inquiries, and planning your
+                            perfect luxurious stay in Entebbe.</p>
+                    </div>
+                    <div class="luxury-border-side"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2 class="section-title">Our Information</h2>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Our Location</h3>
+                        <p>Plot 40, Buku Road<br>Opposite UN Base, Entebbe, Uganda</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone Number</h3>
+                        <p>+256 762 017 465<br>+256 41 712 3456<br>+256 70 123 4567</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email Address</h3>
+                        <p>reservations@7daysmotel.co.ug<br>7dayshotel2@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Operating Hours</h3>
+                        <p>24/7 Reception<br>Check-in: 2:00 PM | Check-out: 11:00 AM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form" id="contact">
+                <h2 class="section-title">Send a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email address"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" class="form-control">
+                            <option value="">Select number of guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5+">5+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date</label>
+                        <input type="date" id="checkin" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" class="form-control" placeholder="What is this regarding?"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" class="form-control" placeholder="Please type your message here..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="button" class="whatsapp-btn" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section with Google Maps - CENTERED HEADER -->
+        <div class="map-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Location</div>
+                            <h2>Find Us in Entebbe</h2>
+                            <p>Our premium motel is conveniently located in the heart of Entebbe, with easy access to
+                                local attractions and the international airport.</p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.9082828893952!2d32.4566381015772!3d0.05373357520054011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177d87007324a94d%3A0xbda7c1f0e627e14b!2s7%20days%20motel!5e0!3m2!1sen!2sug!4v1764681450025!5m2!1sen!2sug"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Features Section - CENTERED HEADER -->
+        <div class="features-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Amenities</div>
+                            <h2>Premium Services</h2>
+                            <p>Enjoy our exclusive amenities designed to provide you with the ultimate luxury experience
+                                during your stay.</p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>24/7 Concierge</h3>
+                    <p>Our dedicated staff is available round the clock to assist with all your needs and ensure a
+                        seamless stay.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Premium Security</h3>
+                    <p>Your safety is our priority with state-of-the-art security systems and 24/7 surveillance
+                        throughout the property.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>High-Speed Internet</h3>
+                    <p>Stay connected with our complimentary high-speed WiFi available in all rooms and common areas.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Carousel Section - Large Card Design - CENTERED HEADER -->
+        <div class="testimonial-carousel-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Guest Experiences</div>
+                            <h2>What Our Guests Say</h2>
+                            <p>Hear from our valued guests about their luxurious experiences at 7Days Motel Entebbe.</p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-carousel-container">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial Card 1 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>James Davidson</h3>
+                                    <p>Business Executive • New York</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "My stay at 7Days Motel was nothing short of exceptional. The attention to detail,
+                                    from the luxurious bedding to the impeccable service, exceeded all my expectations.
+                                    This is truly a haven of comfort in Entebbe."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Executive Suite</strong> for 5 nights in October 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 2 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616c113a1c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>Sarah Anderson</h3>
+                                    <p>Marketing Director • London</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "The Ethiopian coffee lounge was absolutely delightful! Waking up to that authentic
+                                    coffee aroma every morning made our vacation unforgettable. The staff's attention to
+                                    detail made us feel like royalty throughout our stay."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Deluxe Room</strong> for 7 nights in August 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 3 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>Michael Roberts</h3>
+                                    <p>Entrepreneur • Dubai</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "As a frequent business traveler, I've stayed in many hotels, but 7Days Motel stands
+                                    out for its perfect blend of luxury and functionality. The high-speed WiFi, premium
+                                    bar, and secure parking made my stay perfect."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Business Suite</strong> for 3 nights in September 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 4 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>Jessica Williams</h3>
+                                    <p>Travel Blogger • Cape Town</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "The spa and massage services were absolutely rejuvenating! After a long flight, the
+                                    therapeutic massage was exactly what I needed. The beautiful gardens provided the
+                                    perfect setting for morning meditation."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Premium Suite</strong> for 4 nights in July 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 5 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>David Chen</h3>
+                                    <p>Photographer • Singapore</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "The architecture and interior design of 7Days Motel are absolutely stunning. Every
+                                    corner is Instagram-worthy! The combination of modern luxury with local Ugandan
+                                    elements creates a truly unique experience."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Panoramic Suite</strong> for 6 nights in November 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-dots" id="carouselDots">
+                        <!-- Dots will be added dynamically -->
+                    </div>
+                    <button class="carousel-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expanded Gallery Section with 8 items - CENTERED HEADER -->
+        <div class="gallery-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Our Luxury Spaces</div>
+                            <h2>Explore Our Premium Amenities</h2>
+                            <p>Take a visual journey through our exquisite accommodations and world-class facilities.
+                            </p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 - Executive Suite -->
+                <div class="gallery-item" data-index="0">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Luxury Suite" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Executive Suite</h4>
+                            <p>Spacious suite with panoramic city views</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 - Ethiopian Coffee Lounge -->
+                <div class="gallery-item" data-index="1">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Ethiopian Coffee Lounge" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Ethiopian Coffee Lounge</h4>
+                            <p>Authentic coffee experience in a cozy setting</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 - Premium Bar -->
+                <div class="gallery-item" data-index="2">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Premium Bar" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Premium Bar</h4>
+                            <p>Extensive selection of spirits and cocktails</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 - Gardens -->
+                <div class="gallery-item" data-index="3">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Beautiful Gardens" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Serene Gardens</h4>
+                            <p>Beautifully landscaped gardens for relaxation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 - Spa & Massage -->
+                <div class="gallery-item" data-index="4">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Spa and Massage" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Spa & Massage</h4>
+                            <p>Relaxing therapeutic treatments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 - Secure Parking -->
+                <div class="gallery-item" data-index="5">
+                    <img src="https://images.unsplash.com/photo-1551524165-6b6e5a6166f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Secure Parking" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Secure Parking</h4>
+                            <p>24/7 monitored parking facilities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 - Grand Lobby -->
+                <div class="gallery-item" data-index="6">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Grand Lobby" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Grand Lobby</h4>
+                            <p>Elegant reception with luxurious decor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 - Fine Dining Restaurant -->
+                <div class="gallery-item" data-index="7">
+                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Fine Dining Restaurant" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Fine Dining Restaurant</h4>
+                            <p>Gourmet cuisine in an elegant setting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox for Gallery -->
+        <div class="lightbox" id="galleryLightbox">
+            <div class="lightbox-content">
+                <div class="lightbox-header">
+                    <div class="lightbox-title" id="lightboxTitle">Executive Suite</div>
+                    <button class="lightbox-close" id="closeLightbox">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="lightbox-body">
+                    <div class="lightbox-image-container">
+                        <img src="" alt="" class="lightbox-image" id="lightboxImage">
+                    </div>
+                    <div class="lightbox-info">
+                        <div class="lightbox-description" id="lightboxDescription">
+                            Our Executive Suite offers unparalleled luxury with panoramic city views, a king-sized bed,
+                            and premium amenities for the ultimate comfort experience.
+                        </div>
+                        <div class="lightbox-features" id="lightboxFeatures">
+                            <!-- Features will be added dynamically -->
+                        </div>
+                        <div class="lightbox-buttons">
+                            <button class="btn btn-outline" id="closeLightboxBtn">
+                                <i class="fas fa-times"></i> Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WhatsApp Redirect Modal -->
+        <div class="whatsapp-modal" id="whatsappModal">
+            <div class="whatsapp-modal-content">
+                <div class="whatsapp-modal-header">
+                    <div class="whatsapp-modal-title">
+                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    </div>
+                    <button class="lightbox-close" id="closeWhatsappModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="whatsapp-modal-body">
+                    <p>Your message will be sent to 7Days Motel Entebbe via WhatsApp. Make sure you have WhatsApp
+                        installed on your device.</p>
+                    <p>Click "Open WhatsApp" to proceed with sending your inquiry.</p>
+                    <div class="whatsapp-modal-buttons">
+                        <button class="btn-whatsapp-confirm" id="confirmWhatsapp">
+                            <i class="fab fa-whatsapp"></i> Open WhatsApp
+                        </button>
+                        <button class="btn btn-outline" id="cancelWhatsapp">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <section class="newsletter-section">
+                <div class="luxury-badge">EXCLUSIVE UPDATES</div>
+
+                <div class="newsletter-content">
+                    <h3 class="newsletter-title">Get First Updates</h3>
+                    <p class="newsletter-description">Be the first to know about special discounts, events, and more by
+                        subscribing to our newsletter.</p>
+
+                    <div class="subscription-stats">
+                        <span class="stats-icon"><i class="fas fa-crown"></i></span>
+                        <span>Join 2,500+ guests who receive exclusive offers</span>
+                    </div>
+                </div>
+
+                <div class="newsletter-form">
+                    <form id="newsletterForm">
+                        <div class="form-groups">
+                            <div class="form-container">
+                                <div class="form-controls">
+                                    <input type="email" id="emailInput" required>
+                                    <label>
+                                        <span style="--index: 0">Y</span>
+                                        <span style="--index: 1">o</span>
+                                        <span style="--index: 2">u</span>
+                                        <span style="--index: 3">r</span>
+                                        <span style="--index: 4">&nbsp;</span>
+                                        <span style="--index: 5">E</span>
+                                        <span style="--index: 6">m</span>
+                                        <span style="--index: 7">a</span>
+                                        <span style="--index: 8">i</span>
+                                        <span style="--index: 9">l</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="button-container">
+                                <button type="submit" class="btns btns-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle" style="color: var(--evergreen); margin-right: 10px;"></i>
+                        Thank you for subscribing to 7Days Motel Entebbe newsletter! You'll receive our exclusive
+                        updates soon.
+                    </div>
+                </div>
+            </section>
+
+    </div>
+
+    <footer class="luxury-footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-border"></div>
+        <div class="footer-watermark">
+            <h1>7 DAYS MOTEL</h1>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-section motel-description">
+                    <div class="logo-text">7Days<span> Motel</span></div>
+                    <p>Experience unparalleled luxury at 7Days Motel Entebbe, where world-class hospitality meets
+                        exceptional service. Your sanctuary of comfort awaits in the heart of Uganda.</p>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="animated-link">Home <i class="fas fa-chevron-right link-arrow"></i></a>
+                        </li>
+                        <li><a href="#" class="animated-link">Rooms & Suites <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="#" class="animated-link">Dining Experience <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="#" class="animated-link">Special Packages <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="#" class="animated-link">Contact Us <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Location -->
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="contact-infos">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Plot 40, Buku Road</strong><br>Opposite UN Base Office<br>Entebbe,
+                                Uganda</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Call Us:</strong><br>+256 709 093 939<br>+256 701 880 222</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong><br>7dayshotel2@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 4: Luxury Amenities -->
+                <div class="footer-section">
+                    <h3>Luxury Amenities</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <div class="amenity-text">Premium Suites</div>
+                            <div class="amenity-badge">Luxury</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="amenity-text">High-Speed WiFi</div>
+                            <div class="amenity-badge">Free</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="amenity-text">Fine Dining</div>
+                            <div class="amenity-badge">5-Star</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <div class="amenity-text">Spa Services</div>
+                            <div class="amenity-badge">Relax</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 7Days Motel Entebbe. All rights reserved. | Excellence in Hospitality
+                </div>
+
+                <div class="designer-credit">
+                    Crafted by <a href="https://vernoxdesigns.com" target="_blank">Vernox <i
+                            class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Luxury Payment Methods -->
+                <div class="payment-methods">
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-visa"></i>
+                        <div class="payment-tooltip">Visa</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                        <div class="payment-tooltip">Debit Card</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-mastercard"></i>
+                        <div class="payment-tooltip">Mastercard</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="payment-tooltip">Cash</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-sim-card"></i>
+                        <div class="payment-tooltip">Airtel Money</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <!-- Header  -->
+    <script>
+        // Language data with country flags
+        const languages = [
+            { code: 'en', name: 'English', flag: 'us' },
+            { code: 'es', name: 'Español', flag: 'es' },
+            { code: 'fr', name: 'Français', flag: 'fr' },
+            { code: 'de', name: 'Deutsch', flag: 'de' },
+            { code: 'it', name: 'Italiano', flag: 'it' },
+            { code: 'pt', name: 'Português', flag: 'pt' },
+            { code: 'ru', name: 'Русский', flag: 'ru' },
+            { code: 'zh-CN', name: '中文 (简体)', flag: 'cn' },
+            { code: 'zh-TW', name: '中文 (繁體)', flag: 'tw' },
+            { code: 'ja', name: '日本語', flag: 'jp' },
+            { code: 'ko', name: '한국어', flag: 'kr' },
+            { code: 'vi', name: 'Tiếng Việt', flag: 'vn' },
+            { code: 'nl', name: 'Nederlands', flag: 'nl' },
+            { code: 'pl', name: 'Polski', flag: 'pl' },
+            { code: 'tr', name: 'Türkçe', flag: 'tr' },
+            { code: 'sw', name: 'Kiswahili', flag: 'ke' },
+            { code: 'zu', name: 'isiZulu', flag: 'za' },
+            { code: 'af', name: 'Afrikaans', flag: 'za' }
+        ];
+
+        // Currency data
+        const currencies = [
+            { code: 'USD', name: 'US Dollar', symbol: '$' },
+            { code: 'EUR', name: 'Euro', symbol: '€' },
+            { code: 'GBP', name: 'British Pound', symbol: '£' },
+            { code: 'AED', name: 'UAE Dirham', symbol: 'د.إ' },
+
+            // Added East African currencies
+            { code: 'UGX', name: 'Ugandan Shilling', symbol: 'USh' },
+            { code: 'KES', name: 'Kenyan Shilling', symbol: 'KSh' },
+            { code: 'TZS', name: 'Tanzanian Shilling', symbol: 'TSh' },
+            { code: 'RWF', name: 'Rwandan Franc', symbol: 'RF' }
+        ]
+            ;
+
+        // Exchange rates (relative to USD)
+        const exchangeRates = {
+            USD: 1,
+            EUR: 0.92,
+            GBP: 0.79,
+            AED: 3.67,
+            // East African currencies
+            UGX: 3850,   // Ugandan Shilling
+            KES: 160,    // Kenyan Shilling
+            TZS: 2600,   // Tanzanian Shilling
+            RWF: 1320    // Rwandan Franc
+        };
+
+
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en', autoDisplay: false },
+                'google_translate_element'
+            );
+
+            // Hide Google Translate toolbar and banner
+            var style = document.createElement('style');
+            style.innerHTML = `
+                .goog-te-banner-frame, .goog-te-menu-frame { 
+                    display: none !important; 
+                }
+                body { 
+                    top: 0px !important; 
+                }
+                .goog-tooltip {
+                    display: none !important;
+                }
+                .goog-tooltip:hover {
+                    display: none !important;
+                }
+                .goog-text-highlight {
+                    background-color: transparent !important;
+                    border: none !important;
+                    box-shadow: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Load Google Translate script
+        window.addEventListener('load', function () {
+            const gtScript = document.createElement('script');
+            gtScript.type = 'text/javascript';
+            gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(gtScript);
+        });
+
+        // Populate language dropdowns
+        function populateLanguageDropdowns() {
+            // Desktop dropdown
+            const desktopDropdown = document.getElementById('languageDropdownMenu');
+            languages.forEach(lang => {
+                const option = document.createElement('button');
+                option.className = 'dropdown-item notranslate';
+                option.setAttribute('data-lang', lang.code);
+
+                // Create flag element using flag-icons CSS classes
+                const flagElement = document.createElement('span');
+                flagElement.className = `flag fi fi-${lang.flag}`;
+
+                // Create language name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = lang.name;
+
+                option.appendChild(flagElement);
+                option.appendChild(nameElement);
+                desktopDropdown.appendChild(option);
+            });
+
+            // Mobile dropdown
+            const mobileDropdown = document.getElementById('mobileLanguageDropdown').querySelector('.py-2');
+            languages.forEach(lang => {
+                const option = document.createElement('button');
+                option.className = 'mobile-language-option notranslate';
+                option.setAttribute('data-lang', lang.code);
+
+                // Create flag element using flag-icons CSS classes
+                const flagElement = document.createElement('span');
+                flagElement.className = `flag fi fi-${lang.flag}`;
+
+                // Create language name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = lang.name;
+
+                option.appendChild(flagElement);
+                option.appendChild(nameElement);
+                mobileDropdown.appendChild(option);
+            });
+        }
+
+        // Populate currency dropdowns
+        function populateCurrencyDropdowns() {
+            // Desktop dropdown
+            const desktopDropdown = document.getElementById('currency-dropdown-menu');
+            currencies.forEach(currency => {
+                const option = document.createElement('button');
+                option.className = 'dropdown-item notranslate';
+                option.setAttribute('data-currency', currency.code);
+
+                // Create icon element
+                const iconElement = document.createElement('i');
+                iconElement.className = `fas fa-${currency.code === 'EUR' ? 'euro-sign' :
+                    currency.code === 'GBP' ? 'pound-sign' :
+                        currency.code === 'JPY' || currency.code === 'CNY' ? 'yen-sign' :
+                            currency.code === 'INR' ? 'rupee-sign' :
+                                currency.code === 'RUB' ? 'ruble-sign' :
+                                    currency.code === 'THB' ? 'baht-sign' :
+                                        currency.code === 'KRW' ? 'won-sign' :
+                                            currency.code === 'TRY' ? 'lira-sign' :
+                                                currency.code === 'AED' || currency.code === 'SAR' ? 'hashtag' : 'dollar-sign'}`;
+
+                // Create currency name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = `${currency.code} - ${currency.name}`;
+
+                option.appendChild(iconElement);
+                option.appendChild(nameElement);
+                desktopDropdown.appendChild(option);
+            });
+
+            // Mobile dropdown
+            const mobileDropdown = document.querySelector('.mobile-currency-menu');
+            currencies.forEach(currency => {
+                const option = document.createElement('button');
+                option.className = 'mobile-currency-item notranslate';
+                option.setAttribute('data-currency', currency.code);
+
+                // Create icon element
+                const iconElement = document.createElement('i');
+                iconElement.className = `fas fa-${currency.code === 'EUR' ? 'euro-sign' :
+                    currency.code === 'GBP' ? 'pound-sign' :
+                        currency.code === 'JPY' || currency.code === 'CNY' ? 'yen-sign' :
+                            currency.code === 'INR' ? 'rupee-sign' :
+                                currency.code === 'RUB' ? 'ruble-sign' :
+                                    currency.code === 'THB' ? 'baht-sign' :
+                                        currency.code === 'KRW' ? 'won-sign' :
+                                            currency.code === 'TRY' ? 'lira-sign' :
+                                                currency.code === 'AED' || currency.code === 'SAR' ? 'hashtag' : 'dollar-sign'}`;
+
+                // Create currency name element
+                const nameElement = document.createElement('span');
+                nameElement.textContent = `${currency.code} - ${currency.name}`;
+
+                option.appendChild(iconElement);
+                option.appendChild(nameElement);
+                mobileDropdown.appendChild(option);
+            });
+        }
+
+        // Function to change language
+        function changeLanguage(lang) {
+            // Update desktop language display
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            if (currentLanguageElement) {
+                currentLanguageElement.textContent = lang.toUpperCase();
+            }
+
+            // Update mobile language display
+            const mobileCurrentLanguageElement = document.getElementById('mobileCurrentLanguage');
+            if (mobileCurrentLanguageElement) {
+                mobileCurrentLanguageElement.textContent = lang.toUpperCase();
+            }
+
+            // Update active states
+            document.querySelectorAll('.dropdown-item, .mobile-language-option').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-lang') === lang) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Update flag on desktop
+            const langData = languages.find(l => l.code === lang);
+            if (langData && document.getElementById('currentFlag')) {
+                // Remove all existing flag classes
+                const flagElement = document.getElementById('currentFlag');
+                flagElement.className = 'flag fi';
+                // Add the new flag class
+                flagElement.classList.add(`fi-${langData.flag}`);
+            }
+
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Trigger Google Translate if available
+            if (typeof google !== 'undefined' && google.translate) {
+                // Wait for the Google Translate element to be fully loaded
+                setTimeout(function () {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = lang;
+                        select.dispatchEvent(new Event('change'));
+                        console.log('Google Translate language changed to:', lang);
+                    } else {
+                        console.warn('Google Translate select element not found');
+                    }
+                }, 500);
+            } else {
+                console.warn('Google Translate not loaded yet');
+            }
+
+            console.log('Language changed to:', lang);
+        }
+
+        // Function to convert prices
+        function convertPrices(currency) {
+            const rate = exchangeRates[currency];
+            const currencyData = currencies.find(c => c.code === currency);
+            const symbol = currencyData ? currencyData.symbol : '$';
+
+            document.querySelectorAll('.price').forEach(priceElement => {
+                const basePrice = parseFloat(priceElement.getAttribute('data-base-price'));
+                const convertedPrice = (basePrice * rate).toFixed(2);
+                // Get text after the price (like "per night")
+                const originalText = priceElement.textContent;
+                const textParts = originalText.split(' ');
+                const textAfterPrice = textParts.slice(1).join(' ');
+                priceElement.textContent = `${symbol}${convertedPrice} ${textAfterPrice}`;
+            });
+
+            // Update currency displays
+            document.getElementById('currentCurrency').textContent = currency;
+            document.getElementById('mobileCurrentCurrency').textContent = currency;
+
+            // Update active states
+            document.querySelectorAll('.dropdown-item, .mobile-currency-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll(`[data-currency="${currency}"]`).forEach(item => {
+                item.classList.add('active');
+            });
+
+            localStorage.setItem('preferredCurrency', currency);
+
+            console.log('Currency changed to:', currency);
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Populate dropdowns
+            populateLanguageDropdowns();
+            populateCurrencyDropdowns();
+
+            // Desktop Language Dropdown
+            const languageButton = document.getElementById('languageButton');
+            const languageDropdown = document.getElementById('languageDropdown');
+
+            if (languageButton && languageDropdown) {
+                // Toggle dropdown
+                languageButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('active');
+
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        if (dropdown !== languageDropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+
+                // Close when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!languageButton.contains(e.target) && !languageDropdown.contains(e.target)) {
+                        languageDropdown.classList.remove('active');
+                    }
+                });
+
+                // Language selection
+                document.querySelectorAll('#languageDropdownMenu .dropdown-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        changeLanguage(lang);
+                        languageDropdown.classList.remove('active');
+                    });
+                });
+            }
+
+            // Mobile Language Dropdown
+            const mobileLanguageButton = document.getElementById('mobileLanguageButton');
+            const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+
+            if (mobileLanguageButton && mobileLanguageDropdown) {
+                mobileLanguageButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileLanguageDropdown.classList.toggle('active');
+
+                    // Rotate chevron
+                    const icon = this.querySelector('.fa-chevron-down');
+                    if (mobileLanguageDropdown.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0)';
+                    }
+
+                    // Close other dropdowns
+                    document.querySelectorAll('.mobile-currency-dropdown').forEach(dropdown => {
+                        if (dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                            const otherIcon = dropdown.querySelector('i');
+                            if (otherIcon) {
+                                otherIcon.style.transform = 'rotate(0)';
+                            }
+                        }
+                    });
+                });
+
+                // Mobile language selection
+                document.querySelectorAll('#mobileLanguageDropdown .mobile-language-option').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        changeLanguage(lang);
+                        mobileLanguageDropdown.classList.remove('active');
+                        mobileLanguageButton.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+                    });
+                });
+            }
+
+            // Desktop Currency Dropdown
+            const currencyButton = document.getElementById('currency-button');
+            const currencyDropdown = document.getElementById('currency-dropdown');
+
+            if (currencyButton && currencyDropdown) {
+                // Toggle dropdown
+                currencyButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    currencyDropdown.classList.toggle('active');
+
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        if (dropdown !== currencyDropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+
+                // Close when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!currencyButton.contains(e.target) && !currencyDropdown.contains(e.target)) {
+                        currencyDropdown.classList.remove('active');
+                    }
+                });
+
+                // Currency selection
+                document.querySelectorAll('#currency-dropdown-menu .dropdown-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currency = this.getAttribute('data-currency');
+                        convertPrices(currency);
+                        currencyDropdown.classList.remove('active');
+                    });
+                });
+            }
+
+            // Mobile Currency Dropdown
+            const mobileCurrencyButton = document.querySelector('#mobile-currency-dropdown .mobile-currency-toggle');
+            const mobileCurrencyDropdown = document.getElementById('mobile-currency-dropdown');
+
+            if (mobileCurrencyButton && mobileCurrencyDropdown) {
+                mobileCurrencyButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileCurrencyDropdown.classList.toggle('active');
+
+                    // Rotate chevron
+                    const icon = this.querySelector('i');
+                    if (mobileCurrencyDropdown.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0)';
+                    }
+
+                    // Close other dropdowns
+                    if (mobileLanguageDropdown && mobileLanguageDropdown.classList.contains('active')) {
+                        mobileLanguageDropdown.classList.remove('active');
+                        const langIcon = mobileLanguageButton.querySelector('.fa-chevron-down');
+                        if (langIcon) {
+                            langIcon.style.transform = 'rotate(0)';
+                        }
+                    }
+                });
+
+                // Mobile currency selection
+                document.querySelectorAll('.mobile-currency-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currency = this.getAttribute('data-currency');
+                        convertPrices(currency);
+                        mobileCurrencyDropdown.classList.remove('active');
+                        mobileCurrencyButton.querySelector('i').style.transform = 'rotate(0)';
+                    });
+                });
+            }
+
+            // Initialize with saved preferences
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+
+            const savedCurrency = localStorage.getItem('preferredCurrency') || 'USD';
+            convertPrices(savedCurrency);
+
+            // Mobile menu toggle
+            const hamburgerCheckbox = document.getElementById('hamburger-checkbox');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+            if (hamburgerCheckbox && mobileMenu && mobileMenuOverlay) {
+                hamburgerCheckbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        mobileMenu.classList.add('active');
+                        mobileMenuOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                // Close mobile menu when clicking on overlay
+                mobileMenuOverlay.addEventListener('click', function () {
+                    hamburgerCheckbox.checked = false;
+                    mobileMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+
+                // Close mobile menu when clicking on a link
+                document.querySelectorAll('.mobile-links a, .mobile-reserve-now').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerCheckbox.checked = false;
+                        mobileMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+            }
+
+            // Add active state to navigation links
+            document.querySelectorAll('.nav-links a, .mobile-links a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Remove active class from all links
+                    document.querySelectorAll('.nav-links a, .mobile-links a').forEach(l => {
+                        l.classList.remove('active');
+                    });
+
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                });
+            });
+
+            // Close mobile menu when window is resized to larger size
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    if (hamburgerCheckbox) {
+                        hamburgerCheckbox.checked = false;
+                    }
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                    }
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.classList.remove('active');
+                    }
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+    <!-- header -->
+    <script>
+        // Add this script to prevent horizontal scrolling on mobile
+        document.addEventListener('DOMContentLoaded', function () {
+            // Variables to track touch position
+            let startX = 0;
+            let startY = 0;
+
+            // Detect if on mobile device
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                // Prevent touch events that cause horizontal scroll
+                document.addEventListener('touchstart', function (e) {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                }, { passive: false });
+
+                document.addEventListener('touchmove', function (e) {
+                    const currentX = e.touches[0].clientX;
+                    const currentY = e.touches[0].clientY;
+
+                    // Calculate movement
+                    const diffX = Math.abs(currentX - startX);
+                    const diffY = Math.abs(currentY - startY);
+
+                    // If horizontal movement is greater than vertical, prevent it
+                    if (diffX > diffY) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+
+                // Add this CSS via JavaScript for iOS
+                const style = document.createElement('style');
+                style.textContent = `
+            @media (max-width: 768px) {
+                * {
+                    -webkit-user-drag: none;
+                    -khtml-user-drag: none;
+                    -moz-user-drag: none;
+                    -o-user-drag: none;
+                    user-drag: none;
+                }
+                
+                body, html {
+                    overscroll-behavior-x: none !important;
+                    overflow-x: hidden !important;
+                    width: 100vw !important;
+                    position: relative !important;
+                }
+                
+                /* Fix for iOS Safari */
+                @supports (-webkit-touch-callout: none) {
+                    body, html {
+                        height: -webkit-fill-available;
+                    }
+                }
+            }
+        `;
+                document.head.appendChild(style);
+            }
+        });
+    </script>
+
+    <script>
+
+        // Testimonial Carousel Functionality
+        const testimonialTrack = document.getElementById('testimonialTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselDots = document.getElementById('carouselDots');
+        const testimonialCards = document.querySelectorAll('.testimonial-large-card');
+
+        let currentSlide = 0;
+        const totalSlides = testimonialCards.length;
+        const slideWidth = 100; // Percentage
+
+        // Create dots for carousel
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselDots.appendChild(dot);
+        }
+
+        // Function to update carousel position
+        function updateCarousel() {
+            testimonialTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+
+            // Update active dot
+            document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Function to go to specific slide
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            updateCarousel();
+        }
+
+        // Next slide
+        function nextSlide() {
+            currentSlide++;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateCarousel();
+        }
+
+        // Previous slide
+        function prevSlide() {
+            currentSlide--;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            updateCarousel();
+        }
+
+        // Event listeners for buttons
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Auto-advance carousel every 5 seconds
+        let carouselInterval = setInterval(nextSlide, 5000);
+
+        // Pause auto-advance on hover
+        const carouselContainer = document.querySelector('.testimonial-carousel-container');
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(carouselInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Gallery Data - Updated with 8 items
+        const galleryItems = [
+            {
+                title: "Executive Suite",
+                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Our Executive Suite offers unparalleled luxury with panoramic city views, a king-sized bed, and premium amenities for the ultimate comfort experience. Perfect for business travelers and couples seeking an extraordinary stay.",
+                features: [
+                    { icon: "fa-bed", text: "King Size Bed" },
+                    { icon: "fa-tv", text: "Smart TV" },
+                    { icon: "fa-wifi", text: "High-Speed WiFi" },
+                    { icon: "fa-wine-glass-alt", text: "Mini Bar" },
+                    { icon: "fa-bath", text: "Jacuzzi" },
+                    { icon: "fa-city", text: "City View" }
+                ]
+            },
+            {
+                title: "Ethiopian Coffee Lounge",
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Experience authentic Ethiopian coffee in our cozy lounge. Our baristas prepare traditional coffee using freshly roasted beans, served with traditional Ethiopian snacks. A perfect place to relax and socialize.",
+                features: [
+                    { icon: "fa-coffee", text: "Authentic Ethiopian Coffee" },
+                    { icon: "fa-fire", text: "Traditional Roasting" },
+                    { icon: "fa-cookie-bite", text: "Local Snacks" },
+                    { icon: "fa-users", text: "Social Lounge" },
+                    { icon: "fa-wifi", text: "Free WiFi" },
+                    { icon: "fa-book", text: "Reading Materials" }
+                ]
+            },
+            {
+                title: "Premium Bar",
+                image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Our premium bar offers an extensive selection of spirits, wines, and signature cocktails. Enjoy expertly crafted drinks in an elegant atmosphere with live music on weekends.",
+                features: [
+                    { icon: "fa-wine-bottle", text: "Extensive Wine List" },
+                    { icon: "fa-cocktail", text: "Signature Cocktails" },
+                    { icon: "fa-beer", text: "Craft Beers" },
+                    { icon: "fa-music", text: "Live Music" },
+                    { icon: "fa-users", text: "Bartender Service" },
+                    { icon: "fa-utensils", text: "Bar Snacks" }
+                ]
+            },
+            {
+                title: "Serene Gardens",
+                image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Our beautifully landscaped gardens provide a peaceful oasis for relaxation and meditation. Enjoy morning walks, afternoon tea, or evening strolls in our meticulously maintained green spaces.",
+                features: [
+                    { icon: "fa-leaf", text: "Landscaped Gardens" },
+                    { icon: "fa-chair", text: "Seating Areas" },
+                    { icon: "fa-fountain", text: "Water Features" },
+                    { icon: "fa-sun", text: "Sun Decks" },
+                    { icon: "fa-utensils", text: "Garden Dining" },
+                    { icon: "fa-dove", text: "Peaceful Atmosphere" }
+                ]
+            },
+            {
+                title: "Spa & Massage",
+                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Indulge in our rejuvenating spa treatments and therapeutic massages. Our certified therapists use premium products and techniques to help you relax, rejuvenate, and restore balance.",
+                features: [
+                    { icon: "fa-spa", text: "Therapeutic Treatments" },
+                    { icon: "fa-hand-sparkles", text: "Massage Therapy" },
+                    { icon: "fa-bath", text: "Steam Room" },
+                    { icon: "fa-hot-tub", text: "Jacuzzi" },
+                    { icon: "fa-user-md", text: "Certified Therapists" },
+                    { icon: "fa-leaf", text: "Natural Products" }
+                ]
+            },
+            {
+                title: "Secure Parking",
+                image: "https://images.unsplash.com/photo-1551524165-6b6e5a6166f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Our 24/7 monitored parking facility ensures your vehicle's safety with CCTV surveillance, security personnel, and well-lit spaces. Valet parking service is also available for added convenience.",
+                features: [
+                    { icon: "fa-shield-alt", text: "24/7 Security" },
+                    { icon: "fa-video", text: "CCTV Surveillance" },
+                    { icon: "fa-lightbulb", text: "Well-Lit Area" },
+                    { icon: "fa-car", text: "Valet Service" },
+                    { icon: "fa-key", text: "Secure Access" },
+                    { icon: "fa-user-shield", text: "Security Personnel" }
+                ]
+            },
+            {
+                title: "Grand Lobby",
+                image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Our elegant lobby welcomes you with luxurious decor, comfortable seating areas, and exceptional service from our concierge team. Experience the perfect blend of modern comfort and classic elegance.",
+                features: [
+                    { icon: "fa-concierge-bell", text: "24/7 Concierge" },
+                    { icon: "fa-coffee", text: "Welcome Drinks" },
+                    { icon: "fa-wifi", text: "Free WiFi" },
+                    { icon: "fa-newspaper", text: "Newspapers" },
+                    { icon: "fa-music", text: "Live Piano Music" },
+                    { icon: "fa-parking", text: "Valet Parking" }
+                ]
+            },
+            {
+                title: "Fine Dining Restaurant",
+                image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                description: "Indulge in gourmet cuisine at our fine dining restaurant, featuring both local and international dishes prepared by our award-winning chefs. Enjoy an exquisite dining experience in an elegant setting.",
+                features: [
+                    { icon: "fa-utensils", text: "Gourmet Cuisine" },
+                    { icon: "fa-wine-bottle", text: "Wine Selection" },
+                    { icon: "fa-users", text: "Private Dining" },
+                    { icon: "fa-music", text: "Live Entertainment" },
+                    { icon: "fa-sun", text: "Outdoor Terrace" },
+                    { icon: "fa-leaf", text: "Vegetarian Options" }
+                ]
+            }
+        ];
+
+        // WhatsApp Integration
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const whatsappModal = document.getElementById('whatsappModal');
+        const closeWhatsappModal = document.getElementById('closeWhatsappModal');
+        const cancelWhatsapp = document.getElementById('cancelWhatsapp');
+        const confirmWhatsapp = document.getElementById('confirmWhatsapp');
+
+        // WhatsApp button click handler
+        whatsappBtn.addEventListener('click', function () {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const guests = document.getElementById('guests').value;
+            const checkin = document.getElementById('checkin').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Validate required fields
+            if (!name || !email || !phone || !subject || !message) {
+                alert("Please fill in all required fields (*) before sending via WhatsApp.");
+                return;
+            }
+
+            // Format date if provided
+            let checkinFormatted = "Not specified";
+            if (checkin) {
+                const dateObj = new Date(checkin);
+                checkinFormatted = dateObj.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+
+            // Format guests if provided
+            let guestsFormatted = "Not specified";
+            if (guests) {
+                guestsFormatted = guests === "5+" ? "5 or more guests" : `${guests} guest${guests > 1 ? 's' : ''}`;
+            }
+
+            // Create WhatsApp message
+            const whatsappMessage = `*New Inquiry for 7Days Motel Entebbe*
+
+*Name:* ${name}
+*Email:* ${email}
+*Phone:* ${phone}
+*Number of Guests:* ${guestsFormatted}
+*Check-in Date:* ${checkinFormatted}
+*Subject:* ${subject}
+
+*Message:*
+${message}
+
+---
+Sent via 7Days Motel Website`;
+
+            // Store the message for sending
+            window.whatsappMessageToSend = encodeURIComponent(whatsappMessage);
+
+            // Show the modal
+            whatsappModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close WhatsApp modal
+        const closeWhatsappModalFunc = () => {
+            whatsappModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeWhatsappModal.addEventListener('click', closeWhatsappModalFunc);
+        cancelWhatsapp.addEventListener('click', closeWhatsappModalFunc);
+
+        // Confirm and open WhatsApp
+        confirmWhatsapp.addEventListener('click', function () {
+            const phoneNumber = "256762017465";
+            const message = window.whatsappMessageToSend;
+
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+
+            // Close modal
+            closeWhatsappModalFunc();
+
+            // Show confirmation
+            alert("Opening WhatsApp... Please send the pre-filled message to complete your inquiry.");
+        });
+
+        // Close modal when clicking outside
+        whatsappModal.addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeWhatsappModalFunc();
+            }
+        });
+
+        // Form submission handler (for regular form)
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+
+            // Show success message
+            alert(`Thank you ${name}! Your message regarding "${subject}" has been received. We will respond to you at ${email} within 24 hours.`);
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+        });
+
+        // Gallery Lightbox Functionality
+        const galleryItemsElements = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('galleryLightbox');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxDescription = document.getElementById('lightboxDescription');
+        const lightboxFeatures = document.getElementById('lightboxFeatures');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+
+        // Open lightbox when gallery item is clicked
+        galleryItemsElements.forEach(item => {
+            item.addEventListener('click', function () {
+                const index = parseInt(this.getAttribute('data-index'));
+                const galleryItem = galleryItems[index];
+
+                // Update lightbox content
+                lightboxTitle.textContent = galleryItem.title;
+                lightboxImage.src = galleryItem.image;
+                lightboxDescription.textContent = galleryItem.description;
+
+                // Clear previous features
+                lightboxFeatures.innerHTML = '';
+
+                // Add features
+                galleryItem.features.forEach(feature => {
+                    const featureElement = document.createElement('div');
+                    featureElement.className = 'feature-tag';
+                    featureElement.innerHTML = `<i class="fas ${feature.icon}"></i> ${feature.text}`;
+                    lightboxFeatures.appendChild(featureElement);
+                });
+
+                // Show lightbox
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox
+        const closeLightboxFunc = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeLightbox.addEventListener('click', closeLightboxFunc);
+        closeLightboxBtn.addEventListener('click', closeLightboxFunc);
+
+        // Close lightbox when clicking outside content
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeLightboxFunc();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightboxFunc();
+            }
+            if (e.key === 'Escape' && whatsappModal.classList.contains('active')) {
+                closeWhatsappModalFunc();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation to elements on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const featureCards = document.querySelectorAll('.feature-card');
+            const testimonialCards = document.querySelectorAll('.testimonial-large-card');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+
+            if (testimonialCards.length > 0) {
+                testimonialCards[0].style.opacity = '1';
+                testimonialCards[0].style.transform = 'translateY(0)';
+            }
+
+            galleryItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.95)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+
+            // Initialize carousel
+            updateCarousel();
+        });
+    </script>
+
+
+    <!-- newsletter -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('newsletterForm');
+            const emailInput = document.getElementById('emailInput');
+            const successMessage = document.getElementById('successMessage');
+
+            // Add modern input interaction
+            emailInput.addEventListener('focus', function () {
+                this.parentElement.classList.add('focused');
+                this.style.borderColor = 'var(--gold)';
+                this.style.boxShadow = '0 8px 25px rgba(212, 175, 55, 0.25)';
+                this.style.backgroundColor = 'var(--white)';
+                this.style.color = 'var(--evergreen)';
+            });
+
+            emailInput.addEventListener('blur', function () {
+                this.parentElement.classList.remove('focused');
+                if (!this.value) {
+                    this.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.08)';
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    this.style.color = 'var(--charcoal)';
+                }
+            });
+
+            emailInput.addEventListener('input', function () {
+                if (this.value) {
+                    this.style.borderColor = 'var(--evergreen)';
+                    this.style.color = 'var(--evergreen)';
+                }
+            });
+
+            // Form submission
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Simple email validation
+                const email = emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailRegex.test(email)) {
+                    // Show error state
+                    emailInput.style.borderColor = 'var(--crimson)';
+                    emailInput.style.boxShadow = '0 8px 25px rgba(195, 32, 38, 0.25)';
+                    emailInput.style.backgroundColor = '#fff0f0';
+
+                    // Shake animation for error
+                    emailInput.style.animation = 'shake 0.5s ease-in-out';
+                    setTimeout(() => {
+                        emailInput.style.animation = '';
+                    }, 500);
+
+                    setTimeout(() => {
+                        if (emailInput.value) {
+                            emailInput.style.borderColor = 'var(--evergreen)';
+                            emailInput.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.08)';
+                            emailInput.style.backgroundColor = 'var(--white)';
+                        } else {
+                            emailInput.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                            emailInput.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.08)';
+                            emailInput.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                        }
+                    }, 2000);
+
+                    return;
+                }
+
+                // In a real implementation, you would send this to a server
+                // For demo purposes, we'll just show a success message
+
+                // Show success message
+                successMessage.style.display = 'block';
+
+                // Add animation to button
+                const submitBtns = form.querySelector('.btns-primary');
+                const originalHTML = submitBtns.innerHTML;
+                submitBtns.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+                submitBtns.style.background = 'linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%)';
+                submitBtns.style.pointerEvents = 'none';
+
+                // Change input to success state
+                emailInput.style.borderColor = 'var(--evergreen)';
+                emailInput.style.boxShadow = '0 5px 15px rgba(15, 58, 52, 0.25)';
+                emailInput.style.backgroundColor = 'rgba(244, 228, 166, 0.2)';
+                emailInput.disabled = true;
+
+                // Reset form after 4 seconds
+                setTimeout(() => {
+                    form.reset();
+                    submitBtns.innerHTML = originalHTML;
+                    submitBtns.style.background = '';
+                    submitBtns.style.pointerEvents = '';
+
+                    emailInput.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                    emailInput.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.08)';
+                    emailInput.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    emailInput.style.color = 'var(--charcoal)';
+                    emailInput.disabled = false;
+                }, 4000);
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+
+                console.log('Newsletter subscription for:', email);
+            });
+
+            // Initialize label position if browser autofills
+            setTimeout(() => {
+                if (emailInput.value) {
+                    emailInput.dispatchEvent(new Event('input'));
+                }
+            }, 100);
+        });
+
+        // Add shake animation for error state
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

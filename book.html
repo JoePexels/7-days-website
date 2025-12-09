@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Days Motel Entebbe | Luxury Accommodation Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --crimson: #C32026;
+            --crimson-dark: #8A1820;
+            --evergreen: #0F3A34;
+            --evergreen-dark: #0D2F2B;
+            --gold: #D4AF37;
+            --gold-light: #E8C55C;
+            --gold-dark: #B8941F;
+            --light-gray: #F8F8F8;
+            --gray: #E0E0E0;
+            --dark-gray: #888888;
+            --dark-bg: #0A1A17;
+            --white: #FFFFFF;
+            --cream: #F5F1EA;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-heavy: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .luxury-bg {
+            background: linear-gradient(rgba(15, 58, 52, 0.9), rgba(15, 58, 52, 0.95)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced Responsive Header */
+        header {
+            padding: 20px 0;
+            background-color: rgba(10, 26, 23, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 0;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--evergreen);
+        }
+
+        @media (max-width: 768px) {
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text h1 {
+                font-size: 22px;
+            }
+        }
+
+        .logo-text span {
+            color: var(--gold);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text span {
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .header-contact {
+                display: none;
+            }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .contact-item i {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        /* Enhanced Responsive Hero Section */
+        .hero-section {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        @media (max-width: 992px) {
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 0 30px;
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        @media (max-width: 992px) {
+            .hero-subtitle {
+                font-size: 18px;
+                margin-bottom: 30px;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 20px;
+                padding: 0 15px;
+            }
+        }
+
+        /* Booking Steps */
+        .booking-steps {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 60px;
+        }
+
+        @media (max-width: 768px) {
+            .booking-steps {
+                flex-wrap: wrap;
+                margin: 30px 0 40px;
+            }
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .step {
+                margin: 0 10px 20px;
+            }
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .step.active .step-number {
+            background-color: var(--crimson);
+            border-color: var(--crimson);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(195, 32, 38, 0.4);
+        }
+
+        .step.completed .step-number {
+            background-color: var(--gold);
+            color: var(--evergreen);
+            border-color: var(--gold);
+        }
+
+        .step-text {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .step-text {
+                font-size: 12px;
+            }
+        }
+
+        .step.active .step-text {
+            color: var(--white);
+        }
+
+        .step.completed .step-text {
+            color: var(--gold);
+        }
+
+        .step-line {
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            width: 80px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .step-line {
+                top: 20px;
+                left: 40px;
+                width: 60px;
+            }
+        }
+
+        .step-line.active {
+            background-color: var(--gold);
+        }
+
+        /* Main booking container with horizontal steps */
+        .booking-wizard {
+            display: flex;
+            min-height: 700px;
+            margin-bottom: 60px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-heavy);
+            background-color: var(--white);
+        }
+
+        @media (max-width: 992px) {
+            .booking-wizard {
+                min-height: auto;
+            }
+        }
+
+        .step-container {
+            flex: 0 0 100%;
+            transition: transform 0.5s ease;
+            padding: 40px;
+            display: none;
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        @media (max-width: 768px) {
+            .step-container {
+                padding: 25px 20px;
+            }
+        }
+
+        .step-container.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--evergreen);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 992px) {
+            .step-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .step-title {
+                font-size: 24px;
+            }
+        }
+
+        .step-subtitle {
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .step-subtitle {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Step 1: Room Selection */
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1200px) {
+            .rooms-grid {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .rooms-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .room-card {
+            border: 1px solid var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            height: 250px;
+            cursor: pointer;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .room-card {
+                height: auto;
+                flex-direction: column;
+            }
+        }
+
+        .room-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--gold);
+        }
+
+        .room-card.selected {
+            border-color: var(--crimson);
+            border-width: 2px;
+            box-shadow: 0 10px 25px rgba(195, 32, 38, 0.15);
+        }
+
+        .room-info {
+            flex: 1;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .room-info {
+                padding: 20px;
+            }
+        }
+
+        .room-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .room-type {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--evergreen);
+            font-family: 'Playfair Display', serif;
+        }
+
+        @media (max-width: 768px) {
+            .room-type {
+                font-size: 20px;
+            }
+        }
+
+        .room-price {
+            background: linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(15, 58, 52, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .room-price {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+        }
+
+        .room-amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .amenity {
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--evergreen);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .amenity i {
+            color: var(--gold);
+            font-size: 11px;
+        }
+
+        .room-capacity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+
+        .room-capacity i {
+            color: var(--gold);
+        }
+
+        .room-image {
+            width: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .room-image {
+                width: 100%;
+                height: 180px;
+            }
+        }
+
+        .room-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 100%);
+        }
+
+        /* Enhanced Responsive Buttons */
+        .btn {
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(195, 32, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--crimson-dark) 0%, var(--crimson) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(195, 32, 38, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .btn-primary:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--evergreen);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--evergreen);
+            border: 2px solid var(--evergreen);
+        }
+
+        .btn-outline:hover {
+            background: rgba(15, 58, 52, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .buttons-container {
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+        }
+
+        /* Step 2: Room Details with Hero Image */
+        .room-details-hero {
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 992px) {
+            .room-details-hero {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .room-details-hero {
+                height: 250px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .room-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .room-details-hero:hover .room-hero-image {
+            transform: scale(1.05);
+        }
+
+        .room-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(transparent, rgba(10, 26, 23, 0.9));
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .room-hero-overlay {
+                padding: 20px;
+            }
+        }
+
+        .room-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .room-hero-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .room-hero-title {
+                font-size: 26px;
+            }
+        }
+
+        .room-hero-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .room-hero-price {
+                font-size: 24px;
+            }
+        }
+
+        .room-description-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .room-description-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .room-description {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .room-description p {
+            margin-bottom: 20px;
+        }
+
+        /* Modern Amenities with Icon Backgrounds */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .amenity-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px;
+            background-color: var(--light-gray);
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .amenity-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .amenity-text {
+            font-weight: 500;
+            color: var(--evergreen);
+            font-size: 15px;
+        }
+
+        /* Step 3: Luxurious Custom Date Picker */
+        .dates-guests-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .dates-guests-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .date-selection-box {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .date-selection-box {
+                padding: 20px;
+            }
+        }
+
+        .date-selection-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--evergreen);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .date-selection-box h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .date-selection-box h3 i {
+            color: var(--crimson);
+        }
+
+        /* Luxurious Custom Date Input */
+        .luxury-date-picker {
+            margin-bottom: 25px;
+        }
+
+        .luxury-date-picker label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--evergreen);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .luxury-date-picker label i {
+            color: var(--gold);
+        }
+
+        .date-input-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .date-input-container i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        .luxury-date-input {
+            width: 100%;
+            padding: 18px 20px 18px 55px;
+            border: 2px solid var(--gray);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            background-color: var(--white);
+            color: var(--evergreen);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .luxury-date-input:hover {
+            border-color: var(--gold);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .luxury-date-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Custom Calendar Popup */
+        .custom-calendar {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-heavy);
+            z-index: 100;
+            padding: 25px;
+            display: none;
+            border: 1px solid var(--gray);
+        }
+
+        .custom-calendar.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header button {
+            background: none;
+            border: none;
+            color: var(--evergreen);
+            font-size: 18px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .calendar-header button:hover {
+            background-color: var(--light-gray);
+        }
+
+        .calendar-month {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--evergreen);
+            font-weight: 600;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .weekday {
+            text-align: center;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 14px;
+            padding: 10px 0;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .calendar-day {
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            color: var(--evergreen);
+        }
+
+        .calendar-day:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .calendar-day.other-month {
+            color: var(--gray);
+        }
+
+        .calendar-day.selected {
+            background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(195, 32, 38, 0.3);
+        }
+
+        .calendar-day.today {
+            background-color: var(--gold);
+            color: var(--evergreen);
+            font-weight: 700;
+        }
+
+        /* Guests Selection */
+        .guests-selection-box {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .guests-selection-box {
+                padding: 20px;
+            }
+        }
+
+        .guest-counter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .guest-counter:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .guest-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guest-info h4 {
+            font-size: 18px;
+            color: var(--evergreen);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .guest-info h4 {
+                font-size: 16px;
+            }
+        }
+
+        .guest-info p {
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+
+        .counter-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .counter-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--evergreen);
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .counter-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+
+        .counter-btn:hover {
+            background-color: var(--evergreen-dark);
+            transform: scale(1.1);
+        }
+
+        .counter-btn:disabled {
+            background-color: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .counter-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--evergreen);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .counter-value {
+                font-size: 20px;
+            }
+        }
+
+        /* Step 4: Guest Information */
+        .booking-form-container {
+            margin-top: 30px;
+        }
+
+        .selected-room-summary {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .selected-room-summary {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .summary-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--evergreen);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .summary-header {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .summary-header i {
+            color: var(--crimson);
+        }
+
+        .summary-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .summary-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .summary-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .summary-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .summary-label {
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+
+        .summary-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--evergreen);
+        }
+
+        .summary-total {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--crimson);
+            text-align: right;
+            padding-top: 20px;
+            border-top: 2px solid var(--gray);
+            margin-top: 20px;
+        }
+
+        .booking-form {
+            background-color: var(--light-gray);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .booking-form {
+                padding: 25px 20px;
+            }
+        }
+
+        .form-title {
+            font-size: 24px;
+            color: var(--evergreen);
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        @media (max-width: 768px) {
+            .form-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--evergreen);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group label i {
+            color: var(--crimson);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 14px 18px;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / span 2;
+        }
+
+        @media (max-width: 768px) {
+            .form-group.full-width {
+                grid-column: 1;
+            }
+        }
+
+        /* Step 5: Confirmation */
+        .confirmation {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .confirmation {
+                padding: 30px 15px;
+            }
+        }
+
+        .confirmation-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(15, 58, 52, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .confirmation-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .confirmation h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--evergreen);
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        @media (max-width: 768px) {
+            .confirmation h2 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .confirmation p {
+            color: var(--dark-gray);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .confirmation p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .booking-summary {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .booking-summary {
+                padding: 20px;
+                margin: 20px 0;
+            }
+        }
+
+        .summary-item-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--gray);
+        }
+
+        .summary-item-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .summary-label {
+            font-weight: 600;
+            color: var(--evergreen);
+        }
+
+        .summary-value {
+            font-weight: 500;
+            color: #555;
+        }
+
+        .summary-total-row {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--crimson);
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 50px 0 30px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 0 25px;
+                margin-top: 40px;
+            }
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .footer-column h3 {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-column ul li {
+                margin-bottom: 10px;
+            }
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .footer-column ul li a i {
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold);
+            color: var(--evergreen);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .copyright {
+                padding-top: 25px;
+            }
+        }
+
+        /* Mobile Navigation Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Mobile Contact Info */
+        .mobile-contact-info {
+            display: none;
+            background-color: var(--evergreen);
+            color: var(--white);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-contact-info {
+                display: block;
+            }
+        }
+
+        .mobile-contact-info p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .mobile-contact-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-contact-info i {
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <header class="luxury-bg">
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>7Days Motel Entebbe</h1>
+                    <span>LUXURY ACCOMMODATION</span>
+                </div>
+            </div>
+            <div class="header-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 762 017 465</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>bookings@7daysentebbe.com</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-contact-info">
+        <p><i class="fas fa-phone-alt"></i> +256 762 017 465</p>
+        <p><i class="fas fa-envelope"></i> bookings@7daysentebbe.com</p>
+    </div>
+
+    <section class="luxury-bg hero-section">
+        <div class="container">
+            <h1 class="hero-title">Experience Luxury in Entebbe</h1>
+            <p class="hero-subtitle">Book your stay at our premium motel featuring elegant rooms, modern amenities, and exceptional service in the heart of Entebbe.</p>
+            
+            <div class="booking-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">SELECT ROOM</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">ROOM DETAILS</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">DATES & GUESTS</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">GUEST DETAILS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="booking-wizard">
+            <!-- Step 1: Room Selection -->
+            <div id="step1" class="step-container active">
+                <h2 class="step-title">Select Your Luxury Room</h2>
+                <p class="step-subtitle">Choose from our exquisite collection of rooms, each designed for comfort and elegance.</p>
+                
+                <div class="rooms-grid" id="roomsGrid">
+                    <!-- Only 6 room cards will be generated by JavaScript -->
+                </div>
+                
+                <div class="buttons-container">
+                    <div></div> <!-- Empty div for spacing -->
+                    <button id="nextToDetails" class="btn btn-primary" style="display: none;">
+                        Next: View Room Details <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Room Details -->
+            <div id="step2" class="step-container">
+                <h2 class="step-title">Room Details & Amenities</h2>
+                <p class="step-subtitle">Explore all the features and amenities of your selected room.</p>
+                
+                <div class="room-details-container" id="roomDetails">
+                    <!-- Room details will be populated by JavaScript -->
+                </div>
+                
+                <div class="buttons-container">
+                    <button id="backToSelection" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Room Selection
+                    </button>
+                    <button id="nextToDates" class="btn btn-primary">
+                        Next: Select Dates & Guests <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Dates & Guests -->
+            <div id="step3" class="step-container">
+                <h2 class="step-title">Select Dates & Guests</h2>
+                <p class="step-subtitle">Choose your stay dates and number of guests.</p>
+                
+                <div class="selected-room-summary" id="selectedRoomSummary">
+                    <!-- Selected room summary will be populated by JavaScript -->
+                </div>
+                
+                <div class="dates-guests-container">
+                    <div class="date-selection-box">
+                        <h3><i class="fas fa-calendar-alt"></i> Select Dates</h3>
+                        
+                        <!-- Custom Date Picker for Check-in -->
+                        <div class="luxury-date-picker">
+                            <label for="customCheckIn"><i class="fas fa-calendar-check"></i> Check-in Date</label>
+                            <div class="date-input-container">
+                                <i class="fas fa-calendar-day"></i>
+                                <input type="text" class="luxury-date-input" id="customCheckIn" placeholder="Select check-in date" readonly>
+                                <div class="custom-calendar" id="checkInCalendar">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Custom Date Picker for Check-out -->
+                        <div class="luxury-date-picker">
+                            <label for="customCheckOut"><i class="fas fa-calendar-times"></i> Check-out Date</label>
+                            <div class="date-input-container">
+                                <i class="fas fa-calendar-day"></i>
+                                <input type="text" class="luxury-date-input" id="customCheckOut" placeholder="Select check-out date" readonly>
+                                <div class="custom-calendar" id="checkOutCalendar">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="dateSummary" style="margin-top: 20px; padding: 20px; background-color: rgba(212, 175, 55, 0.1); border-radius: 10px; display: none;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 14px; color: var(--dark-gray);">Stay Duration</div>
+                                    <div id="nightsCount" style="font-size: 20px; font-weight: 700; color: var(--evergreen);">0 nights</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-size: 14px; color: var(--dark-gray);">Total Price</div>
+                                    <div id="totalPrice" style="font-size: 24px; font-weight: 700; color: var(--crimson);">$0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="guests-selection-box">
+                        <h3><i class="fas fa-users"></i> Number of Guests</h3>
+                        
+                        <div class="guest-counter">
+                            <div class="guest-info">
+                                <h4>Adults</h4>
+                                <p>Age 18+</p>
+                            </div>
+                            <div class="counter-controls">
+                                <button class="counter-btn" id="decreaseAdults" disabled><i class="fas fa-minus"></i></button>
+                                <div class="counter-value" id="adultsCount">1</div>
+                                <button class="counter-btn" id="increaseAdults"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="guest-counter">
+                            <div class="guest-info">
+                                <h4>Children</h4>
+                                <p>Age 0-17</p>
+                            </div>
+                            <div class="counter-controls">
+                                <button class="counter-btn" id="decreaseChildren" disabled><i class="fas fa-minus"></i></button>
+                                <div class="counter-value" id="childrenCount">0</div>
+                                <button class="counter-btn" id="increaseChildren"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; padding: 18px; background-color: rgba(15, 58, 52, 0.1); border-radius: 10px;">
+                            <div style="font-size: 14px; color: var(--dark-gray); margin-bottom: 5px;">Room Capacity</div>
+                            <div id="capacityInfo" style="font-size: 16px; font-weight: 600; color: var(--evergreen);">Max: 2 guests</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button id="backToDetails" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Room Details
+                    </button>
+                    <button id="nextToBooking" class="btn btn-primary">
+                        Next: Guest Details <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Guest Information -->
+            <div id="step4" class="step-container">
+                <h2 class="step-title">Guest Information</h2>
+                <p class="step-subtitle">Please provide your details to complete the booking.</p>
+                
+                <div class="booking-form-container">
+                    <div class="selected-room-summary">
+                        <h3 class="summary-header"><i class="fas fa-clipboard-check"></i> Booking Summary</h3>
+                        
+                        <div class="summary-details" id="bookingSummaryDetails">
+                            <!-- Booking summary will be populated by JavaScript -->
+                        </div>
+                        
+                        <div class="summary-total" id="bookingTotal">Total: $0</div>
+                    </div>
+                    
+                    <div class="booking-form">
+                        <h3 class="form-title">Your Information</h3>
+                        <form id="bookingForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName"><i class="fas fa-user"></i> Full Name *</label>
+                                    <input type="text" id="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"><i class="fas fa-envelope"></i> Email Address *</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality"><i class="fas fa-globe"></i> Nationality</label>
+                                    <input type="text" id="nationality">
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment"><i class="fas fa-credit-card"></i> Payment Method</label>
+                                    <select id="payment">
+                                        <option value="Cash on Arrival">Cash on Arrival</option>
+                                        <option value="Mobile Money">Mobile Money</option>
+                                        <option value="Credit Card">Credit Card</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="specialRequests"><i class="fas fa-comment"></i> Special Requests</label>
+                                    <textarea id="specialRequests" rows="3" placeholder="Any special requirements or requests..."></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button id="backToDates" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Dates & Guests
+                    </button>
+                    <button id="submitBooking" class="btn btn-gold">
+                        <i class="fab fa-whatsapp"></i> Send Booking to WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 5: Confirmation -->
+            <div id="step5" class="step-container">
+                <div class="confirmation">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h2>Booking Request Sent!</h2>
+                    <p>Thank you for choosing 7Days Motel Entebbe. Your booking request has been sent to our reservations team via WhatsApp.</p>
+                    <p>We will contact you within 24 hours to confirm your booking and provide payment instructions.</p>
+                    
+                    <div class="booking-summary" id="finalBookingSummary">
+                        <!-- Final booking summary will be populated by JavaScript -->
+                    </div>
+                    
+                    <p>If you don't receive a response within 24 hours, please call us directly at <strong>+256 762 017 465</strong>.</p>
+                    <button id="newBooking" class="btn btn-primary">
+                        Make Another Booking <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>7Days Motel Entebbe</h3>
+                    <p>Experience luxury accommodation in the heart of Entebbe. We offer premium rooms with modern amenities and exceptional service for both business and leisure travelers.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Our Rooms</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Amenities</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plot 123, Entebbe Road, Entebbe, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256 762 017 465</p>
+                    <p><i class="fas fa-envelope"></i> bookings@7daysentebbe.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Reception</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Amenities</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-wifi"></i> Free High-Speed WiFi</a></li>
+                        <li><a href="#"><i class="fas fa-snowflake"></i> Air Conditioning</a></li>
+                        <li><a href="#"><i class="fas fa-tv"></i> Smart TVs</a></li>
+                        <li><a href="#"><i class="fas fa-parking"></i> Free Parking</a></li>
+                        <li><a href="#"><i class="fas fa-concierge-bell"></i> 24/7 Room Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 7Days Motel Entebbe. All rights reserved. | Designed for Luxury & Comfort</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Only 6 rooms as specified
+        const rooms = [
+            {
+                number: "SINGLE",
+                type: "Single Room",
+                beds: "Single bed",
+                capacity: 1,
+                price: 40,
+                amenities: [
+                    {name: "Air Conditioning", icon: "fas fa-snowflake"},
+                    {name: "High-Speed WiFi", icon: "fas fa-wifi"},
+                    {name: "Smart Television", icon: "fas fa-tv"},
+                    {name: "Guest Room Phone", icon: "fas fa-phone"},
+                    {name: "Working Table", icon: "fas fa-desktop"},
+                    {name: "Private Bathroom", icon: "fas fa-bath"}
+                ],
+                description: "A cozy and comfortable single room perfect for solo travelers. Features a comfortable single bed, working table, and all essential amenities for a pleasant stay.",
+                longDescription: "Our Single Room is meticulously designed for solo travelers seeking comfort and functionality. The room features a plush single bed with premium bedding, ensuring a restful night's sleep. A dedicated workspace with a comfortable chair and ample lighting makes it ideal for business travelers. The room is equipped with high-speed WiFi, a flat-screen TV with international channels, and air conditioning for your comfort. The en-suite bathroom includes a walk-in shower, modern fixtures, and complimentary toiletries. Enjoy the convenience of a guest room phone for internal calls and room service requests.",
+                image: "single-room.jpg"
+            },
+            {
+                number: "DOUBLE",
+                type: "Double Room",
+                beds: "Double bed",
+                capacity: 2,
+                price: 50,
+                amenities: [
+                    {name: "Air Conditioning", icon: "fas fa-snowflake"},
+                    {name: "High-Speed WiFi", icon: "fas fa-wifi"},
+                    {name: "Spacious Wardrobe", icon: "fas fa-archive"},
+                    {name: "Smart Television", icon: "fas fa-tv"},
+                    {name: "Guest Room Phone", icon: "fas fa-phone"},
+                    {name: "Working Table", icon: "fas fa-desktop"},
+                    {name: "Private Bathroom", icon: "fas fa-bath"}
+                ],
+                description: "Spacious double room ideal for couples or business travelers. Includes a comfortable double bed, ample storage, and a dedicated workspace. The room features elegant decor with warm tones and premium furnishings.",
+                longDescription: "Our Double Room offers a perfect blend of comfort and style for couples or business travelers. The room features a premium double bed with luxurious linens, ensuring a peaceful night's rest. A spacious wardrobe provides ample storage for your belongings, while the dedicated workspace includes a large desk and ergonomic chair. The room is equipped with modern amenities including high-speed WiFi, a 32-inch flat-screen TV, and individually controlled air conditioning. The en-suite bathroom features a walk-in shower with excellent water pressure, premium toiletries, and soft towels. Additional amenities include a safety deposit box, mini-fridge, and complimentary bottled water.",
+                image: "double-room.jpg"
+            },
+            {
+                number: "APARTMENT",
+                type: "Apartment Room",
+                beds: "Double bed",
+                capacity: 3,
+                price: 60,
+                amenities: [
+                    {name: "Air Conditioning", icon: "fas fa-snowflake"},
+                    {name: "High-Speed WiFi", icon: "fas fa-wifi"},
+                    {name: "Spacious Wardrobe", icon: "fas fa-archive"},
+                    {name: "Smart Television", icon: "fas fa-tv"},
+                    {name: "Guest Room Phone", icon: "fas fa-phone"},
+                    {name: "Working Table", icon: "fas fa-desktop"},
+                    {name: "Small Open Kitchen", icon: "fas fa-utensils"},
+                    {name: "Refrigerator", icon: "fas fa-refrigerator"},
+                    {name: "Private Balcony", icon: "fas fa-door-open"},
+                    {name: "Private Bathroom", icon: "fas fa-bath"}
+                ],
+                description: "Spacious apartment-style room with a small open kitchen and balcony. Perfect for longer stays or guests who prefer self-catering options.",
+                longDescription: "Our Apartment Room offers the perfect solution for guests seeking additional space and self-catering facilities. This spacious room features a comfortable double bed with premium bedding, a spacious wardrobe, and a dedicated workspace. The highlight is the small open kitchen equipped with basic cooking facilities, a fridge, and essential utensils, perfect for preparing simple meals. A small balcony provides outdoor space to enjoy the Entebbe breeze. The room includes high-speed WiFi, a 32-inch flat-screen TV with international channels, individually controlled air conditioning, and a guest room phone. The en-suite bathroom offers a walk-in shower with constant hot water and premium toiletries. Additional features include a safety deposit box and daily housekeeping service. Ideal for longer stays or guests who prefer the flexibility of self-catering.",
+                image: "apartment-room.jpg"
+            },
+            {
+                number: "DELUXE",
+                type: "Deluxe Room",
+                beds: "King size bed",
+                capacity: 2,
+                price: 160,
+                amenities: [
+                    {name: "Air Conditioning", icon: "fas fa-snowflake"},
+                    {name: "High-Speed WiFi", icon: "fas fa-wifi"},
+                    {name: "Spacious Wardrobe", icon: "fas fa-archive"},
+                    {name: "Smart Television", icon: "fas fa-tv"},
+                    {name: "Refrigerator", icon: "fas fa-refrigerator"},
+                    {name: "Guest Room Phone", icon: "fas fa-phone"},
+                    {name: "Private Balcony", icon: "fas fa-door-open"},
+                    {name: "Bathtub", icon: "fas fa-bath"},
+                    {name: "Mini Bar", icon: "fas fa-wine-glass-alt"},
+                    {name: "Room Service", icon: "fas fa-concierge-bell"}
+                ],
+                description: "Luxurious deluxe room with premium amenities and exceptional comfort. Features a king-size bed, private balcony, and bathtub for ultimate relaxation.",
+                longDescription: "Our Deluxe Room is the epitome of luxury and comfort. This expansive room features a premium king-size bed with the finest linens, ensuring a restful night's sleep. A spacious wardrobe provides ample storage for your belongings. The room includes a private balcony with seating, perfect for enjoying panoramic views. Amenities include high-speed WiFi, a 40-inch flat-screen TV with international channels, individually controlled air conditioning, and a guest room phone. The en-suite bathroom features a bathtub for relaxation, along with a separate walk-in shower, double vanity, and premium toiletries. Additional features include a mini bar, safety deposit box, and 24/7 room service. The room's luxurious design and comprehensive amenities ensure a memorable and comfortable stay.",
+                image: "deluxe-room.jpg"
+            },
+            {
+                number: "FAMILY",
+                type: "Family Room",
+                beds: "Four double beds",
+                capacity: 8,
+                price: 160,
+                amenities: [
+                    {name: "Air Conditioning", icon: "fas fa-snowflake"},
+                    {name: "High-Speed WiFi", icon: "fas fa-wifi"},
+                    {name: "Spacious Wardrobe", icon: "fas fa-archive"},
+                    {name: "Smart Television", icon: "fas fa-tv"},
+                    {name: "Refrigerator", icon: "fas fa-refrigerator"},
+                    {name: "Guest Room Phones", icon: "fas fa-phone"},
+                    {name: "Private Balcony", icon: "fas fa-door-open"},
+                    {name: "Bathtub", icon: "fas fa-bath"},
+                    {name: "Extra Beds Available", icon: "fas fa-bed"},
+                    {name: "Children Friendly", icon: "fas fa-child"}
+                ],
+                description: "Luxurious family room with four double beds, perfect for large families or groups. Features a balcony and bathtub for added comfort.",
+                longDescription: "Our Family Room is the ultimate accommodation for large families or groups visiting Entebbe. This expansive room features four comfortable double beds with premium bedding, ensuring restful sleep for up to eight guests. Multiple wardrobes provide ample storage for everyone's belongings. The room includes a spacious seating area, a 40-inch flat-screen TV with international channels, high-speed WiFi, and individually controlled air conditioning. The en-suite bathroom features a bathtub for relaxation, along with a separate walk-in shower, double vanity, and premium toiletries. A private balcony offers outdoor space with views of the surroundings. Additional amenities include a fridge, multiple guest room phones, safety deposit boxes, and daily housekeeping service. The room's family-friendly design and comprehensive amenities ensure a comfortable and memorable stay for large groups.",
+                image: "family-room.jpg"
+            },
+            {
+                number: "TWIN",
+                type: "Twin Room",
+                beds: "Two double beds",
+                capacity: 4,
+                price: 80,
+                amenities: [
+                    {name: "Air Conditioning", icon: "fas fa-snowflake"},
+                    {name: "High-Speed WiFi", icon: "fas fa-wifi"},
+                    {name: "Spacious Wardrobe", icon: "fas fa-archive"},
+                    {name: "Smart Television", icon: "fas fa-tv"},
+                    {name: "Guest Room Phone", icon: "fas fa-phone"},
+                    {name: "Private Balcony", icon: "fas fa-door-open"},
+                    {name: "Private Bathroom", icon: "fas fa-bath"},
+                    {name: "Extra Pillows", icon: "fas fa-couch"},
+                    {name: "Sitting Area", icon: "fas fa-chair"}
+                ],
+                description: "Spacious twin room with two double beds and a balcony. Ideal for small families or groups of friends traveling together.",
+                longDescription: "Our Twin Room offers flexible accommodation perfect for small families or groups of friends traveling together. The room features two comfortable double beds with premium bedding, allowing flexible sleeping arrangements for up to four guests. A spacious wardrobe provides ample storage for everyone's belongings. The room includes a private balcony with seating, perfect for enjoying the Entebbe weather. Amenities include high-speed WiFi, a 32-inch flat-screen TV with international channels, individually controlled air conditioning, and a guest room phone. The en-suite bathroom offers a walk-in shower with excellent water pressure and premium toiletries. Additional features include a safety deposit box, mini-fridge, complimentary bottled water, and daily housekeeping service. The room's spacious design and flexible sleeping arrangements make it ideal for families or groups seeking comfortable shared accommodation.",
+                image: "twin-room.jpg"
+            }
+        ];
+
+        // Room image mapping
+        const roomImages = {
+            "single-room.jpg": "https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "double-room.jpg": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "apartment-room.jpg": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "deluxe-room.jpg": "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "family-room.jpg": "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "twin-room.jpg": "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        };
+
+        // Current selected room
+        let selectedRoom = null;
+        let bookingData = {
+            room: null,
+            checkIn: null,
+            checkOut: null,
+            nights: 0,
+            adults: 1,
+            children: 0,
+            totalPrice: 0,
+            guestInfo: {}
+        };
+        
+        // Calendar variables
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let activeCalendar = null;
+        
+        // DOM elements
+        const roomsGrid = document.getElementById('roomsGrid');
+        const nextToDetailsBtn = document.getElementById('nextToDetails');
+        const nextToDatesBtn = document.getElementById('nextToDates');
+        const nextToBookingBtn = document.getElementById('nextToBooking');
+        const backToSelectionBtn = document.getElementById('backToSelection');
+        const backToDetailsBtn = document.getElementById('backToDetails');
+        const backToDatesBtn = document.getElementById('backToDates');
+        const submitBookingBtn = document.getElementById('submitBooking');
+        const newBookingBtn = document.getElementById('newBooking');
+        const stepContainers = document.querySelectorAll('.step-container');
+        const steps = document.querySelectorAll('.step');
+        const stepLines = document.querySelectorAll('.step-line');
+        const roomDetailsContainer = document.getElementById('roomDetails');
+        const selectedRoomSummary = document.getElementById('selectedRoomSummary');
+        const bookingSummaryDetails = document.getElementById('bookingSummaryDetails');
+        const finalBookingSummary = document.getElementById('finalBookingSummary');
+        const bookingForm = document.getElementById('bookingForm');
+        const customCheckInInput = document.getElementById('customCheckIn');
+        const customCheckOutInput = document.getElementById('customCheckOut');
+        const checkInCalendar = document.getElementById('checkInCalendar');
+        const checkOutCalendar = document.getElementById('checkOutCalendar');
+        const adultsCount = document.getElementById('adultsCount');
+        const childrenCount = document.getElementById('childrenCount');
+        const decreaseAdultsBtn = document.getElementById('decreaseAdults');
+        const increaseAdultsBtn = document.getElementById('increaseAdults');
+        const decreaseChildrenBtn = document.getElementById('decreaseChildren');
+        const increaseChildrenBtn = document.getElementById('increaseChildren');
+        const capacityInfo = document.getElementById('capacityInfo');
+        const dateSummary = document.getElementById('dateSummary');
+        const nightsCount = document.getElementById('nightsCount');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const bookingTotal = document.getElementById('bookingTotal');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default dates
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            // Format dates for display
+            bookingData.checkIn = formatDate(today);
+            bookingData.checkOut = formatDate(tomorrow);
+            
+            // Set input values
+            customCheckInInput.value = formatDateDisplay(today);
+            customCheckOutInput.value = formatDateDisplay(tomorrow);
+            
+            // Generate room cards
+            generateRoomCards();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Initialize step indicators
+            updateStepIndicator(1);
+            
+            // Initialize date summary
+            updateDateSummary();
+            
+            // Generate calendars
+            generateCalendar(checkInCalendar, currentMonth, currentYear, 'checkin');
+            generateCalendar(checkOutCalendar, currentMonth, currentYear, 'checkout');
+        });
+
+        // Format date as YYYY-MM-DD
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        // Format date for display
+        function formatDateDisplay(date) {
+            const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // Generate room cards for the selection step
+        function generateRoomCards() {
+            roomsGrid.innerHTML = '';
+            
+            rooms.forEach(room => {
+                const roomCard = document.createElement('div');
+                roomCard.className = 'room-card';
+                roomCard.dataset.roomNumber = room.number;
+                
+                // Generate amenities HTML with icons (show first 4 amenities)
+                const amenitiesHtml = room.amenities.slice(0, 4).map(amenity => 
+                    `<span class="amenity"><i class="${amenity.icon}"></i> ${amenity.name}</span>`
+                ).join('');
+                
+                // Room image
+                const roomImageUrl = roomImages[room.image] || "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
+                
+                roomCard.innerHTML = `
+                    <div class="room-info">
+                        <div>
+                            <div class="room-header">
+                                <div class="room-type">${room.type}</div>
+                                <div class="room-price">$${room.price}</div>
+                            </div>
+                            <div class="room-amenities">${amenitiesHtml}</div>
+                        </div>
+                        <div class="room-capacity">
+                            <i class="fas fa-user-friends"></i>
+                            <span>${room.capacity} Guest${room.capacity > 1 ? 's' : ''} • ${room.beds}</span>
+                        </div>
+                    </div>
+                    <div class="room-image" style="background-image: url('${roomImageUrl}');">
+                    </div>
+                `;
+                
+                roomCard.addEventListener('click', () => {
+                    selectRoom(room);
+                    // Auto-advance to step 2
+                    setTimeout(() => {
+                        showStep(2);
+                        updateStepIndicator(2);
+                    }, 300);
+                });
+                roomsGrid.appendChild(roomCard);
+            });
+        }
+
+        // Select a room
+        function selectRoom(room) {
+            // Remove selected class from all rooms
+            document.querySelectorAll('.room-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked room
+            const selectedCard = document.querySelector(`.room-card[data-room-number="${room.number}"]`);
+            selectedCard.classList.add('selected');
+            
+            // Set selected room
+            selectedRoom = room;
+            bookingData.room = room;
+            
+            // Reset guests to room capacity
+            bookingData.adults = Math.min(1, room.capacity);
+            bookingData.children = 0;
+            updateGuestCounters();
+            
+            // Enable next button
+            nextToDetailsBtn.disabled = false;
+            
+            // Update room details for step 2
+            updateRoomDetails(room);
+            
+            // Update room summary for step 3
+            updateRoomSummary(room);
+            
+            // Update capacity info
+            capacityInfo.textContent = `Max: ${room.capacity} guests`;
+            
+            // Update date summary with new price
+            updateDateSummary();
+        }
+
+        // Update room details for step 2
+        function updateRoomDetails(room) {
+            // Generate amenities list HTML with modern cards
+            const amenitiesHtml = room.amenities.map(amenity => {
+                return `
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="${amenity.icon}"></i>
+                        </div>
+                        <div class="amenity-text">${amenity.name}</div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Room image
+            const roomImageUrl = roomImages[room.image] || "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
+            
+            roomDetailsContainer.innerHTML = `
+                <div class="room-details-hero">
+                    <img src="${roomImageUrl}" alt="${room.type}" class="room-hero-image">
+                    <div class="room-hero-overlay">
+                        <h2 class="room-hero-title">${room.type}</h2>
+                        <div class="room-hero-price">$${room.price} / night</div>
+                    </div>
+                </div>
+                
+                <div class="room-description-container">
+                    <div class="room-description">
+                        <p>${room.longDescription || room.description}</p>
+                        
+                        <div style="margin-top: 30px; padding: 20px; background-color: rgba(212, 175, 55, 0.1); border-radius: 10px;">
+                            <h4 style="color: var(--evergreen); margin-bottom: 15px; font-size: 20px; font-family: 'Playfair Display', serif;">Room Features</h4>
+                            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-user-friends" style="color: var(--gold);"></i>
+                                    <span>Capacity: ${room.capacity} guest${room.capacity > 1 ? 's' : ''}</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-bed" style="color: var(--gold);"></i>
+                                    <span>${room.beds}</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-dollar-sign" style="color: var(--gold);"></i>
+                                    <span>$${room.price} / night</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 style="font-size: 20px; color: var(--evergreen); margin-bottom: 20px; font-family: 'Playfair Display', serif;">Room Amenities</h4>
+                        <div class="amenities-grid">
+                            ${amenitiesHtml}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            roomDetailsContainer.style.display = 'block';
+        }
+
+        // Update room summary for step 3
+        function updateRoomSummary(room) {
+            selectedRoomSummary.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 20px; padding: 20px; background-color: var(--light-gray); border-radius: 10px;">
+                    <div style="width: 100px; height: 80px; border-radius: 8px; overflow: hidden;">
+                        <img src="${roomImages[room.image] || 'https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'}" alt="${room.type}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <h5 style="color: var(--evergreen); margin-bottom: 5px; font-size: 18px;">${room.type}</h5>
+                                <div style="display: flex; gap: 15px; margin-top: 8px; flex-wrap: wrap;">
+                                    <span style="font-size: 14px; color: var(--dark-gray);"><i class="fas fa-user-friends"></i> ${room.capacity} guests</span>
+                                    <span style="font-size: 14px; color: var(--dark-gray);"><i class="fas fa-bed"></i> ${room.beds}</span>
+                                    <span style="font-size: 14px; color: var(--dark-gray);"><i class="fas fa-dollar-sign"></i> $${room.price} / night</span>
+                                </div>
+                            </div>
+                            <div style="color: var(--crimson); font-weight: 700; font-size: 22px;">$${room.price} / night</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Generate calendar
+        function generateCalendar(calendarElement, month, year, type) {
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            
+            const today = new Date();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const firstDayIndex = firstDay.getDay();
+            const lastDayIndex = lastDay.getDay();
+            const prevLastDay = new Date(year, month, 0).getDate();
+            
+            let calendarHTML = `
+                <div class="calendar-header">
+                    <button class="prev-month"><i class="fas fa-chevron-left"></i></button>
+                    <div class="calendar-month">${monthNames[month]} ${year}</div>
+                    <button class="next-month"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                </div>
+                <div class="calendar-days">
+            `;
+            
+            // Previous month days
+            for (let i = firstDayIndex; i > 0; i--) {
+                const day = prevLastDay - i + 1;
+                calendarHTML += `<div class="calendar-day other-month">${day}</div>`;
+            }
+            
+            // Current month days
+            for (let i = 1; i <= lastDay.getDate(); i++) {
+                const date = new Date(year, month, i);
+                const isToday = date.getDate() === today.getDate() && 
+                               date.getMonth() === today.getMonth() && 
+                               date.getFullYear() === today.getFullYear();
+                
+                let isSelected = false;
+                if (type === 'checkin' && bookingData.checkIn) {
+                    const checkInDate = new Date(bookingData.checkIn);
+                    isSelected = date.getDate() === checkInDate.getDate() && 
+                                date.getMonth() === checkInDate.getMonth() && 
+                                date.getFullYear() === checkInDate.getFullYear();
+                } else if (type === 'checkout' && bookingData.checkOut) {
+                    const checkOutDate = new Date(bookingData.checkOut);
+                    isSelected = date.getDate() === checkOutDate.getDate() && 
+                                date.getMonth() === checkOutDate.getMonth() && 
+                                date.getFullYear() === checkOutDate.getFullYear();
+                }
+                
+                const dayClass = `calendar-day ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}`;
+                calendarHTML += `<div class="${dayClass}" data-date="${formatDate(date)}">${i}</div>`;
+            }
+            
+            // Next month days
+            for (let i = lastDayIndex + 1, day = 1; i < 7; i++, day++) {
+                calendarHTML += `<div class="calendar-day other-month">${day}</div>`;
+            }
+            
+            calendarHTML += `</div>`;
+            calendarElement.innerHTML = calendarHTML;
+            
+            // Add event listeners to calendar buttons
+            const prevMonthBtn = calendarElement.querySelector('.prev-month');
+            const nextMonthBtn = calendarElement.querySelector('.next-month');
+            
+            prevMonthBtn.addEventListener('click', () => {
+                if (month === 0) {
+                    month = 11;
+                    year--;
+                } else {
+                    month--;
+                }
+                generateCalendar(calendarElement, month, year, type);
+            });
+            
+            nextMonthBtn.addEventListener('click', () => {
+                if (month === 11) {
+                    month = 0;
+                    year++;
+                } else {
+                    month++;
+                }
+                generateCalendar(calendarElement, month, year, type);
+            });
+            
+            // Add event listeners to calendar days
+            const dayElements = calendarElement.querySelectorAll('.calendar-day:not(.other-month)');
+            dayElements.forEach(dayElement => {
+                dayElement.addEventListener('click', () => {
+                    const date = dayElement.getAttribute('data-date');
+                    
+                    if (type === 'checkin') {
+                        bookingData.checkIn = date;
+                        customCheckInInput.value = formatDateDisplay(new Date(date));
+                        checkInCalendar.classList.remove('active');
+                        
+                        // Ensure check-out is after check-in
+                        if (bookingData.checkOut && new Date(bookingData.checkOut) <= new Date(date)) {
+                            const nextDay = new Date(date);
+                            nextDay.setDate(nextDay.getDate() + 1);
+                            bookingData.checkOut = formatDate(nextDay);
+                            customCheckOutInput.value = formatDateDisplay(nextDay);
+                        }
+                    } else if (type === 'checkout') {
+                        bookingData.checkOut = date;
+                        customCheckOutInput.value = formatDateDisplay(new Date(date));
+                        checkOutCalendar.classList.remove('active');
+                    }
+                    
+                    updateDateSummary();
+                    generateCalendar(checkInCalendar, currentMonth, currentYear, 'checkin');
+                    generateCalendar(checkOutCalendar, currentMonth, currentYear, 'checkout');
+                });
+            });
+        }
+
+        // Update guest counters
+        function updateGuestCounters() {
+            adultsCount.textContent = bookingData.adults;
+            childrenCount.textContent = bookingData.children;
+            
+            // Update button states
+            decreaseAdultsBtn.disabled = bookingData.adults <= 1;
+            increaseAdultsBtn.disabled = (bookingData.adults + bookingData.children) >= bookingData.room.capacity;
+            
+            decreaseChildrenBtn.disabled = bookingData.children <= 0;
+            increaseChildrenBtn.disabled = (bookingData.adults + bookingData.children) >= bookingData.room.capacity;
+            
+            // Update date summary with new guest count
+            updateDateSummary();
+        }
+
+        // Calculate nights between two dates
+        function calculateNights(checkIn, checkOut) {
+            const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+            const firstDate = new Date(checkIn);
+            const secondDate = new Date(checkOut);
+            
+            return Math.round(Math.abs((firstDate - secondDate) / oneDay));
+        }
+
+        // Update date summary
+        function updateDateSummary() {
+            const checkIn = bookingData.checkIn;
+            const checkOut = bookingData.checkOut;
+            
+            if (!checkIn || !checkOut || !selectedRoom) return;
+            
+            const nights = calculateNights(checkIn, checkOut);
+            const totalPrice = nights * selectedRoom.price;
+            
+            bookingData.nights = nights;
+            bookingData.totalPrice = totalPrice;
+            
+            // Format dates for display
+            const checkInDate = new Date(checkIn);
+            const checkOutDate = new Date(checkOut);
+            
+            // Show date summary if we have valid dates
+            if (nights > 0) {
+                dateSummary.style.display = 'block';
+                nightsCount.textContent = `${nights} night${nights > 1 ? 's' : ''}`;
+                totalPriceElement.textContent = `$${totalPrice}`;
+                
+                // Update booking summary for step 4
+                updateBookingSummary();
+            } else {
+                dateSummary.style.display = 'none';
+            }
+        }
+
+        // Update booking summary for step 4
+        function updateBookingSummary() {
+            if (!selectedRoom) return;
+            
+            const room = selectedRoom;
+            const checkInDate = new Date(bookingData.checkIn);
+            const checkOutDate = new Date(bookingData.checkOut);
+            const options = { weekday: 'short', month: 'short', day: 'numeric' };
+            
+            bookingSummaryDetails.innerHTML = `
+                <div class="summary-item">
+                    <div class="summary-label">Room Type</div>
+                    <div class="summary-value">${room.type}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Price per Night</div>
+                    <div class="summary-value">$${room.price}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Check-in Date</div>
+                    <div class="summary-value">${checkInDate.toLocaleDateString('en-US', options)}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Check-out Date</div>
+                    <div class="summary-value">${checkOutDate.toLocaleDateString('en-US', options)}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Number of Nights</div>
+                    <div class="summary-value">${bookingData.nights}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Guests</div>
+                    <div class="summary-value">${bookingData.adults} adult${bookingData.adults > 1 ? 's' : ''}${bookingData.children > 0 ? `, ${bookingData.children} child${bookingData.children > 1 ? 'ren' : ''}` : ''}</div>
+                </div>
+            `;
+            
+            bookingTotal.textContent = `Total: $${bookingData.totalPrice}`;
+        }
+
+        // Set up event listeners for navigation
+        function setupEventListeners() {
+            // Step 2 to Step 3
+            nextToDatesBtn.addEventListener('click', () => {
+                showStep(3);
+                updateStepIndicator(3);
+            });
+            
+            // Step 3 to Step 4
+            nextToBookingBtn.addEventListener('click', () => {
+                // Validate dates
+                const checkIn = bookingData.checkIn;
+                const checkOut = bookingData.checkOut;
+                
+                if (!checkIn || !checkOut) {
+                    alert('Please select both check-in and check-out dates.');
+                    return;
+                }
+                
+                if (new Date(checkOut) <= new Date(checkIn)) {
+                    alert('Check-out date must be after check-in date.');
+                    return;
+                }
+                
+                // Validate guests
+                const totalGuests = bookingData.adults + bookingData.children;
+                if (totalGuests > selectedRoom.capacity) {
+                    alert(`This room has a maximum capacity of ${selectedRoom.capacity} guests. Please adjust your guest count.`);
+                    return;
+                }
+                
+                if (totalGuests === 0) {
+                    alert('Please select at least one guest.');
+                    return;
+                }
+                
+                updateDateSummary();
+                showStep(4);
+                updateStepIndicator(4);
+            });
+            
+            // Step 2 back to Step 1
+            backToSelectionBtn.addEventListener('click', () => {
+                showStep(1);
+                updateStepIndicator(1);
+            });
+            
+            // Step 3 back to Step 2
+            backToDetailsBtn.addEventListener('click', () => {
+                showStep(2);
+                updateStepIndicator(2);
+            });
+            
+            // Step 4 back to Step 3
+            backToDatesBtn.addEventListener('click', () => {
+                showStep(3);
+                updateStepIndicator(3);
+            });
+            
+            // Step 4 to Step 5 (Submit booking to WhatsApp)
+            submitBookingBtn.addEventListener('click', () => {
+                // Form validation
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                
+                if (!fullName || !email || !phone) {
+                    alert('Please fill in all required fields (Name, Email, Phone).');
+                    return;
+                }
+                
+                // Save guest info
+                bookingData.guestInfo = {
+                    fullName,
+                    email,
+                    phone,
+                    nationality: document.getElementById('nationality').value,
+                    payment: document.getElementById('payment').value,
+                    specialRequests: document.getElementById('specialRequests').value
+                };
+                
+                // Generate WhatsApp message
+                const whatsappMessage = generateWhatsAppMessage();
+                
+                // Encode message for URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // Create WhatsApp URL
+                const whatsappNumber = "256762017465";
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                // Open WhatsApp in a new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // Update final booking summary
+                updateFinalBookingSummary();
+                
+                // Show confirmation step
+                showStep(5);
+                updateStepIndicator(5);
+            });
+            
+            // Step 5 back to Step 1 (New booking)
+            newBookingBtn.addEventListener('click', () => {
+                // Reset form
+                bookingForm.reset();
+                
+                // Reset dates to today and tomorrow
+                const today = new Date();
+                const tomorrow = new Date(today);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                
+                bookingData.checkIn = formatDate(today);
+                bookingData.checkOut = formatDate(tomorrow);
+                customCheckInInput.value = formatDateDisplay(today);
+                customCheckOutInput.value = formatDateDisplay(tomorrow);
+                
+                // Reset room selection
+                if (selectedRoom) {
+                    const selectedCard = document.querySelector(`.room-card[data-room-number="${selectedRoom.number}"]`);
+                    selectedCard.classList.remove('selected');
+                    selectedRoom = null;
+                }
+                
+                // Reset booking data
+                bookingData = {
+                    room: null,
+                    checkIn: formatDate(today),
+                    checkOut: formatDate(tomorrow),
+                    nights: 0,
+                    adults: 1,
+                    children: 0,
+                    totalPrice: 0,
+                    guestInfo: {}
+                };
+                
+                // Reset guest counters
+                adultsCount.textContent = '1';
+                childrenCount.textContent = '0';
+                
+                nextToDetailsBtn.disabled = true;
+                
+                showStep(1);
+                updateStepIndicator(1);
+            });
+            
+            // Custom date picker event listeners
+            customCheckInInput.addEventListener('click', (e) => {
+                e.stopPropagation();
+                checkInCalendar.classList.toggle('active');
+                checkOutCalendar.classList.remove('active');
+                activeCalendar = 'checkin';
+            });
+            
+            customCheckOutInput.addEventListener('click', (e) => {
+                e.stopPropagation();
+                checkOutCalendar.classList.toggle('active');
+                checkInCalendar.classList.remove('active');
+                activeCalendar = 'checkout';
+            });
+            
+            // Close calendar when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.date-input-container')) {
+                    checkInCalendar.classList.remove('active');
+                    checkOutCalendar.classList.remove('active');
+                }
+            });
+            
+            // Guest counter listeners
+            decreaseAdultsBtn.addEventListener('click', () => {
+                if (bookingData.adults > 1) {
+                    bookingData.adults--;
+                    updateGuestCounters();
+                }
+            });
+            
+            increaseAdultsBtn.addEventListener('click', () => {
+                if (selectedRoom && (bookingData.adults + bookingData.children) < selectedRoom.capacity) {
+                    bookingData.adults++;
+                    updateGuestCounters();
+                }
+            });
+            
+            decreaseChildrenBtn.addEventListener('click', () => {
+                if (bookingData.children > 0) {
+                    bookingData.children--;
+                    updateGuestCounters();
+                }
+            });
+            
+            increaseChildrenBtn.addEventListener('click', () => {
+                if (selectedRoom && (bookingData.adults + bookingData.children) < selectedRoom.capacity) {
+                    bookingData.children++;
+                    updateGuestCounters();
+                }
+            });
+        }
+
+        // Generate WhatsApp message
+        function generateWhatsAppMessage() {
+            const room = bookingData.room;
+            const guest = bookingData.guestInfo;
+            
+            // Format dates
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const checkInDate = new Date(bookingData.checkIn);
+            const checkOutDate = new Date(bookingData.checkOut);
+            
+            return `*NEW BOOKING REQUEST - 7Days Motel Entebbe*
+
+*Room Details:*
+- Room Type: ${room.type}
+- Capacity: ${room.capacity} guests
+- Beds: ${room.beds}
+- Price: $${room.price}/night
+
+*Booking Dates:*
+- Check-in: ${checkInDate.toLocaleDateString('en-US', options)}
+- Check-out: ${checkOutDate.toLocaleDateString('en-US', options)}
+- Nights: ${bookingData.nights}
+- Guests: ${bookingData.adults} adult${bookingData.adults > 1 ? 's' : ''}${bookingData.children > 0 ? `, ${bookingData.children} child${bookingData.children > 1 ? 'ren' : ''}` : ''}
+- Total: $${bookingData.totalPrice}
+
+*Guest Information:*
+- Name: ${guest.fullName}
+- Email: ${guest.email}
+- Phone: ${guest.phone}
+- Nationality: ${guest.nationality || 'Not specified'}
+- Payment Method: ${guest.payment}
+
+*Special Requests:*
+${guest.specialRequests || 'None'}
+
+---
+This booking request was submitted via the 7Days Motel website.`;
+        }
+
+        // Update final booking summary
+        function updateFinalBookingSummary() {
+            const room = bookingData.room;
+            const guest = bookingData.guestInfo;
+            
+            // Format dates
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const checkInDate = new Date(bookingData.checkIn);
+            const checkOutDate = new Date(bookingData.checkOut);
+            
+            finalBookingSummary.innerHTML = `
+                <div class="summary-item-row">
+                    <span class="summary-label">Room Type:</span>
+                    <span class="summary-value">${room.type}</span>
+                </div>
+                <div class="summary-item-row">
+                    <span class="summary-label">Check-in Date:</span>
+                    <span class="summary-value">${checkInDate.toLocaleDateString('en-US', options)}</span>
+                </div>
+                <div class="summary-item-row">
+                    <span class="summary-label">Check-out Date:</span>
+                    <span class="summary-value">${checkOutDate.toLocaleDateString('en-US', options)}</span>
+                </div>
+                <div class="summary-item-row">
+                    <span class="summary-label">Number of Nights:</span>
+                    <span class="summary-value">${bookingData.nights}</span>
+                </div>
+                <div class="summary-item-row">
+                    <span class="summary-label">Guests:</span>
+                    <span class="summary-value">${bookingData.adults} adult${bookingData.adults > 1 ? 's' : ''}${bookingData.children > 0 ? `, ${bookingData.children} child${bookingData.children > 1 ? 'ren' : ''}` : ''}</span>
+                </div>
+                <div class="summary-item-row">
+                    <span class="summary-label">Price per Night:</span>
+                    <span class="summary-value">$${room.price}</span>
+                </div>
+                <div class="summary-item-row">
+                    <span class="summary-label">Guest Name:</span>
+                    <span class="summary-value">${guest.fullName}</span>
+                </div>
+                <div class="summary-item-row">
+                    <span class="summary-label">Guest Contact:</span>
+                    <span class="summary-value">${guest.phone} | ${guest.email}</span>
+                </div>
+                <div class="summary-item-row summary-total-row">
+                    <span class="summary-label">Total Amount:</span>
+                    <span class="summary-value">$${bookingData.totalPrice}</span>
+                </div>
+            `;
+        }
+
+        // Show specific step
+        function showStep(stepNumber) {
+            stepContainers.forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            document.getElementById(`step${stepNumber}`).classList.add('active');
+        }
+
+        // Update step indicator
+        function updateStepIndicator(activeStep) {
+            steps.forEach((step, index) => {
+                const stepNum = index + 1;
+                
+                step.classList.remove('active', 'completed');
+                
+                if (stepNum < activeStep) {
+                    step.classList.add('completed');
+                } else if (stepNum === activeStep) {
+                    step.classList.add('active');
+                }
+            });
+            
+            stepLines.forEach((line, index) => {
+                const stepNum = index + 1;
+                
+                line.classList.remove('active');
+                
+                if (stepNum < activeStep) {
+                    line.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
