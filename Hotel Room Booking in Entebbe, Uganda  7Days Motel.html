@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Days Motel Entebbe | Luxury Accommodation Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/book.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+</head>
+
+<body>
+
+    <!-- Luxury Loading Animation -->
+    <div class="luxury-loader" id="luxuryLoader">
+        <div class="rings-container">
+            <div class="base-circle"></div>
+
+            <!-- Four rings rotating in opposite directions -->
+            <div class="ring-1"></div>
+            <div class="ring-2"></div>
+            <div class="ring-3"></div>
+            <div class="ring-4"></div>
+
+            <!-- Crimson accents -->
+            <div class="crimson-accent accent-1"></div>
+            <div class="crimson-accent accent-2"></div>
+            <div class="crimson-accent accent-3"></div>
+            <div class="crimson-accent accent-4"></div>
+
+            <!-- Enlarged logo centerpiece -->
+            <div class="logo-center">
+                <img src="assets/images/7 days motel.png" alt="7Days Motel Logo" class="logo-img">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element"></div>
+  <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-info">
+            <div class="top-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:256762017465">+256 709 093 939</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:7dayshotel2@gmail.com">7dayshotel2@gmail.com</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <!-- Language Selector -->
+            <div class="dropdown language-dropdown" id="languageDropdown">
+                <button class="dropdown-toggle" id="languageButton">
+                    <span class="flag fi fi-us" id="currentFlag"></span>
+                    <span id="currentLanguage">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="languageDropdownMenu">
+                    <!-- Language options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Currency Converter -->
+            <div class="dropdown" id="currency-dropdown">
+                <button class="dropdown-toggle" id="currency-button">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span id="currentCurrency">USD</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="currency-dropdown-menu">
+                    <!-- Currency options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="reserve-now">RESERVE NOW</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="assets/images/7 days motel.png" alt="logo" class="logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Hotel Rooms & Suites in Entebbe, Uganda  7Days Motel.html">Rooms & Suites</a></li>
+                <li><a href="Contact Us  7Days Motel Entebbe.html">Contact Us</a></li>
+                <li><a href="Affordable Hotel Dining in Entebbe  7Days Motel.html">Dining</a></li>
+                <li><a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="active">Reserve Now</a>
+                </li>
+            </ul>
+
+            <!-- Advanced Hamburger Menu -->
+            <label class="hamburger" id="hamburger-menu">
+                <input type="checkbox" id="hamburger-checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-header-controls">
+                    <!-- Language Selector for Mobile -->
+                    <div class="relative">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center justify-between w-full px-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-globe text-xl text-gray-600"></i>
+                                <span class="font-medium text-gray-800">Language</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span id="mobileCurrentLanguage" class="font-medium text-gray-700">EN</span>
+                                <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                            </div>
+                        </button>
+
+                        <div id="mobileLanguageDropdown"
+                            class="language-dropdown-mobile absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-10">
+                            <div class="py-2">
+                                <!-- Language options will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Currency Converter for Mobile -->
+                    <div class="mobile-currency-dropdown" id="mobile-currency-dropdown">
+                        <button class="mobile-currency-toggle">
+                            <span>Currency: <span id="mobileCurrentCurrency">USD</span></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="mobile-currency-menu">
+                            <!-- Currency options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="mobile-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Hotel Rooms & Suites in Entebbe, Uganda  7Days Motel.html">Rooms & Suites</a></li>
+                    <li><a href="Contact Us  7Days Motel Entebbe.html">Contact Us</a></li>
+                    <li><a href="Affordable Hotel Dining in Entebbe  7Days Motel.html">Dining</a></li>
+                    <li><a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="active">Reserve Now</a>
+                    </li>
+                </ul>
+
+                <!-- Full Width Reserve Button -->
+                <a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="mobile-reserve-now">RESERVE
+                    NOW</a>
+
+                <div class="mobile-contact-info">
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 709 093 939</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>7dayshotel2@gmail.com</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="luxury-bg hero-section">
+        <div class="container">
+            <h1 class="hero-title">Experience Luxury in Entebbe</h1>
+            <p class="hero-subtitle">Book your stay at our premium motel featuring elegant rooms, modern amenities, and
+                exceptional service in the heart of Entebbe.</p>
+
+            <div class="booking-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">SELECT ROOM</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">ROOM DETAILS</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">DATES & GUESTS</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">GUEST DETAILS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="booking-wizard">
+            <!-- Step 1: Room Selection -->
+            <div id="step1" class="step-container active">
+                <h2 class="step-title">Select Your Luxury Room</h2>
+                <p class="step-subtitle">Choose from our exquisite collection of rooms, each designed for comfort and
+                    elegance.</p>
+
+                <div class="rooms-grid" id="roomsGrid">
+                    <!-- Only 6 room cards will be generated by JavaScript -->
+                </div>
+
+                <div class="buttons-container">
+                    <div></div> <!-- Empty div for spacing -->
+                    <button id="nextToDetails" class="btn btn-primary" style="display: none;">
+                        Next: View Room Details <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Room Details -->
+            <div id="step2" class="step-container">
+                <h2 class="step-title">Room Details & Amenities</h2>
+                <p class="step-subtitle">Explore all the features and amenities of your selected room.</p>
+
+                <div class="room-details-container" id="roomDetails">
+                    <!-- Room details will be populated by JavaScript -->
+                </div>
+
+                <div class="buttons-container">
+                    <button id="backToSelection" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Room Selection
+                    </button>
+                    <button id="nextToDates" class="btn btn-primary">
+                        Next: Select Dates & Guests <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Dates & Guests -->
+            <div id="step3" class="step-container">
+                <h2 class="step-title">Select Dates & Guests</h2>
+                <p class="step-subtitle">Choose your stay dates and number of guests.</p>
+
+                <div class="selected-room-summary" id="selectedRoomSummary">
+                    <!-- Selected room summary will be populated by JavaScript -->
+                </div>
+
+                <div class="dates-guests-container">
+                    <div class="date-selection-box">
+                        <h3><i class="fas fa-calendar-alt"></i> Select Dates</h3>
+
+                        <!-- Custom Date Picker for Check-in -->
+                        <div class="luxury-date-picker">
+                            <label for="customCheckIn"><i class="fas fa-calendar-check"></i> Check-in Date</label>
+                            <div class="date-input-container">
+                                <i class="fas fa-calendar-day"></i>
+                                <input type="text" class="luxury-date-input" id="customCheckIn"
+                                    placeholder="Select check-in date" readonly>
+                                <div class="custom-calendar" id="checkInCalendar">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Custom Date Picker for Check-out -->
+                        <div class="luxury-date-picker">
+                            <label for="customCheckOut"><i class="fas fa-calendar-times"></i> Check-out Date</label>
+                            <div class="date-input-container">
+                                <i class="fas fa-calendar-day"></i>
+                                <input type="text" class="luxury-date-input" id="customCheckOut"
+                                    placeholder="Select check-out date" readonly>
+                                <div class="custom-calendar" id="checkOutCalendar">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="dateSummary"
+                            style="margin-top: 20px; padding: 20px; background-color: rgba(212, 175, 55, 0.1); border-radius: 10px; display: none;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 14px; color: var(--dark-gray);">Stay Duration</div>
+                                    <div id="nightsCount"
+                                        style="font-size: 20px; font-weight: 700; color: var(--evergreen);">0 nights
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-size: 14px; color: var(--dark-gray);">Total Price</div>
+                                    <div id="totalPrice"
+                                        style="font-size: 24px; font-weight: 700; color: var(--crimson);">$0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guests-selection-box">
+                        <h3><i class="fas fa-users"></i> Number of Guests</h3>
+
+                        <div class="guest-counter">
+                            <div class="guest-info">
+                                <h4>Adults</h4>
+                                <p>Age 18+</p>
+                            </div>
+                            <div class="counter-controls">
+                                <button class="counter-btn" id="decreaseAdults" disabled><i
+                                        class="fas fa-minus"></i></button>
+                                <div class="counter-value" id="adultsCount">1</div>
+                                <button class="counter-btn" id="increaseAdults"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="guest-counter">
+                            <div class="guest-info">
+                                <h4>Children</h4>
+                                <p>Age 0-17</p>
+                            </div>
+                            <div class="counter-controls">
+                                <button class="counter-btn" id="decreaseChildren" disabled><i
+                                        class="fas fa-minus"></i></button>
+                                <div class="counter-value" id="childrenCount">0</div>
+                                <button class="counter-btn" id="increaseChildren"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                        <div
+                            style="margin-top: 20px; padding: 18px; background-color: rgba(15, 58, 52, 0.1); border-radius: 10px;">
+                            <div style="font-size: 14px; color: var(--dark-gray); margin-bottom: 5px;">Room Capacity
+                            </div>
+                            <div id="capacityInfo" style="font-size: 16px; font-weight: 600; color: var(--evergreen);">
+                                Max: 2 guests</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons-container">
+                    <button id="backToDetails" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Room Details
+                    </button>
+                    <button id="nextToBooking" class="btn btn-primary">
+                        Next: Guest Details <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Guest Information -->
+            <div id="step4" class="step-container">
+                <h2 class="step-title">Guest Information</h2>
+                <p class="step-subtitle">Please provide your details to complete the booking.</p>
+
+                <div class="booking-form-container">
+                    <div class="selected-room-summary">
+                        <h3 class="summary-header"><i class="fas fa-clipboard-check"></i> Booking Summary</h3>
+
+                        <div class="summary-details" id="bookingSummaryDetails">
+                            <!-- Booking summary will be populated by JavaScript -->
+                        </div>
+
+                        <div class="summary-total" id="bookingTotal">Total: $0</div>
+                    </div>
+
+                    <div class="booking-form">
+                        <h3 class="form-title">Your Information</h3>
+                        <form id="bookingForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName"><i class="fas fa-user"></i> Full Name *</label>
+                                    <input type="text" id="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"><i class="fas fa-envelope"></i> Email Address *</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality"><i class="fas fa-globe"></i> Nationality</label>
+                                    <input type="text" id="nationality">
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment"><i class="fas fa-credit-card"></i> Payment Method</label>
+                                    <select id="payment">
+                                        <option value="Cash on Arrival">Cash on Arrival</option>
+                                        <option value="Mobile Money">Mobile Money</option>
+                                        <option value="Credit Card">Credit Card</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="specialRequests"><i class="fas fa-comment"></i> Special Requests</label>
+                                    <textarea id="specialRequests" rows="3"
+                                        placeholder="Any special requirements or requests..."></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="buttons-container">
+                    <button id="backToDates" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Dates & Guests
+                    </button>
+                    <button id="submitBooking" class="btn btn-gold">
+                        <i class="fab fa-whatsapp"></i> Send Booking to WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 5: Confirmation -->
+            <div id="step5" class="step-container">
+                <div class="confirmation">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h2>Booking Request Sent!</h2>
+                    <p>Thank you for choosing 7Days Motel Entebbe. Your booking request has been sent to our
+                        reservations team via WhatsApp.</p>
+                    <p>We will contact you within 24 hours to confirm your booking and provide payment instructions.</p>
+
+                    <div class="booking-summary" id="finalBookingSummary">
+                        <!-- Final booking summary will be populated by JavaScript -->
+                    </div>
+
+                    <p>If you don't receive a response within 24 hours, please call us directly at <strong>+256 762 017
+                            465</strong>.</p>
+                    <button id="newBooking" class="btn btn-primary">
+                        Make Another Booking <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="luxury-footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-border"></div>
+        <div class="footer-watermark">
+            <h1>7 DAYS MOTEL</h1>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-section motel-description">
+                    <div class="logo-text">7Days<span> Motel</span></div>
+                    <p>Experience unparalleled luxury at 7Days Motel Entebbe, where world-class hospitality meets
+                        exceptional service. Your sanctuary of comfort awaits in the heart of Uganda.</p>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="animated-link">Home <i class="fas fa-chevron-right link-arrow"></i></a>
+                        </li>
+                        <li><a href="Hotel Rooms & Suites in Entebbe, Uganda  7Days Motel.html" class="animated-link">Rooms & Suites <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="Affordable Hotel Dining in Entebbe  7Days Motel.html" class="animated-link">Dining Experience <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="animated-link">Reserve Now <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="Contact Us  7Days Motel Entebbe.html" class="animated-link">Contact Us <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Location -->
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="contact-infos">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Plot 40, Buku Road</strong><br>Opposite UN Base Office<br>Entebbe,
+                                Uganda</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Call Us:</strong><br>+256 709 093 939<br>+256 701 880 222</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong><br>7dayshotel2@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 4: Luxury Amenities -->
+                <div class="footer-section">
+                    <h3>Luxury Amenities</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <div class="amenity-text">Premium Suites</div>
+                            <div class="amenity-badge">Luxury</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="amenity-text">High-Speed WiFi</div>
+                            <div class="amenity-badge">Free</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="amenity-text">Fine Dining</div>
+                            <div class="amenity-badge">5-Star</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <div class="amenity-text">Spa Services</div>
+                            <div class="amenity-badge">Relax</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 7Days Motel Entebbe. All rights reserved. | Excellence in Hospitality
+                </div>
+
+                <div class="designer-credit">
+                    Crafted by <a href="https://vernoxdesigns.com" target="_blank">Vernox <i
+                            class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Luxury Payment Methods -->
+                <div class="payment-methods">
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-visa"></i>
+                        <div class="payment-tooltip">Visa</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                        <div class="payment-tooltip">Debit Card</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-mastercard"></i>
+                        <div class="payment-tooltip">Mastercard</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="payment-tooltip">Cash</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-sim-card"></i>
+                        <div class="payment-tooltip">Airtel Money</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language data with country flags
+        const languages = [
+            { code: 'en', name: 'English', flag: 'us' },
+            { code: 'es', name: 'Español', flag: 'es' },
+            { code: 'fr', name: 'Français', flag: 'fr' },
+            { code: 'de', name: 'Deutsch', flag: 'de' },
+            { code: 'it', name: 'Italiano', flag: 'it' },
+            { code: 'pt', name: 'Português', flag: 'pt' },
+            { code: 'ru', name: 'Русский', flag: 'ru' },
+            { code: 'zh-CN', name: '中文 (简体)', flag: 'cn' },
+            { code: 'zh-TW', name: '中文 (繁體)', flag: 'tw' },
+            { code: 'ja', name: '日本語', flag: 'jp' },
+            { code: 'ko', name: '한국어', flag: 'kr' },
+            { code: 'vi', name: 'Tiếng Việt', flag: 'vn' },
+            { code: 'nl', name: 'Nederlands', flag: 'nl' },
+            { code: 'pl', name: 'Polski', flag: 'pl' },
+            { code: 'tr', name: 'Türkçe', flag: 'tr' },
+            { code: 'sw', name: 'Kiswahili', flag: 'ke' },
+            { code: 'zu', name: 'isiZulu', flag: 'za' },
+            { code: 'af', name: 'Afrikaans', flag: 'za' }
+        ];
+
+        // Currency data
+        const currencies = [
+            { code: 'USD', name: 'US Dollar', symbol: '$' },
+            { code: 'EUR', name: 'Euro', symbol: '€' },
+            { code: 'GBP', name: 'British Pound', symbol: '£' },
+            { code: 'AED', name: 'UAE Dirham', symbol: 'د.إ' },
+            { code: 'UGX', name: 'Ugandan Shilling', symbol: 'USh' },
+            { code: 'KES', name: 'Kenyan Shilling', symbol: 'KSh' },
+            { code: 'TZS', name: 'Tanzanian Shilling', symbol: 'TSh' },
+            { code: 'RWF', name: 'Rwandan Franc', symbol: 'RF' }
+        ];
+
+        // Exchange rates (relative to USD)
+        const exchangeRates = {
+            USD: 1,
+            EUR: 0.92,
+            GBP: 0.79,
+            AED: 3.67,
+            UGX: 3850,
+            KES: 160,
+            TZS: 2600,
+            RWF: 1320
+        };
+
+        // Fix Google Translate to prevent layout shifting
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    autoDisplay: false,
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                },
+                'google_translate_element'
+            );
+
+            // Add CSS to prevent layout shifting
+            var style = document.createElement('style');
+            style.innerHTML = `
+            /* Completely hide Google Translate banner and frame */
+            .goog-te-banner-frame, .skiptranslate {
+                display: none !important;
+                height: 0 !important;
+                width: 0 !important;
+                overflow: hidden !important;
+                visibility: hidden !important;
+                position: absolute !important;
+                top: -9999px !important;
+                left: -9999px !important;
+            }
+            
+            /* Reset body positioning */
+            body {
+                top: 0 !important;
+                position: static !important;
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            /* Fix for translate element */
+            #google_translate_element {
+                position: relative;
+                z-index: 1000;
+                height: 0;
+                overflow: hidden;
+            }
+            
+            /* Hide Google Translate toolbar */
+            .goog-te-menu-frame {
+                display: none !important;
+            }
+            
+            /* Prevent any Google Translate layout shifts */
+            .goog-te-gadget {
+                font-size: 0 !important;
+            }
+            
+            /* Ensure no extra space is created */
+            .goog-te-banner {
+                display: none !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                visibility: hidden !important;
+            }
+            
+            /* Footer fix */
+            footer {
+                margin-bottom: 0 !important;
+                position: relative !important;
+            }
+            
+            /* Additional safety styles */
+            .goog-tooltip {
+                display: none !important;
+            }
+            .goog-text-highlight {
+                background-color: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+        `;
+            document.head.appendChild(style);
+
+            // Additional cleanup after Google Translate loads
+            setTimeout(function () {
+                // Remove any inline styles Google adds to body
+                document.body.style.top = '0';
+                document.body.style.position = 'static';
+                document.body.style.marginTop = '0';
+                document.body.style.paddingTop = '0';
+
+                // Force hide any remaining Google Translate elements
+                const translateElements = document.querySelectorAll('.goog-te-banner-frame, .skiptranslate, .goog-te-banner');
+                translateElements.forEach(function (element) {
+                    element.style.display = 'none';
+                    element.style.height = '0';
+                    element.style.width = '0';
+                    element.style.overflow = 'hidden';
+                    element.style.visibility = 'hidden';
+                    element.style.position = 'absolute';
+                    element.style.top = '-9999px';
+                    element.style.left = '-9999px';
+                });
+            }, 1000); // Increased timeout to ensure Google Translate is loaded
+        }
+
+        // Load Google Translate script with proper timing
+        function loadGoogleTranslate() {
+            // First, check if script is already loaded
+            if (window.google && google.translate) {
+                googleTranslateElementInit();
+                return;
+            }
+
+            const gtScript = document.createElement('script');
+            gtScript.type = 'text/javascript';
+            gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            gtScript.async = true;
+            gtScript.defer = true;
+
+            // Add error handling
+            gtScript.onerror = function () {
+                console.log('Failed to load Google Translate script');
+            };
+
+            document.body.appendChild(gtScript);
+        }
+
+        // Populate language dropdowns
+        function populateLanguageDropdowns() {
+            // Desktop dropdown
+            const desktopDropdown = document.getElementById('languageDropdownMenu');
+            if (desktopDropdown) {
+                languages.forEach(lang => {
+                    const option = document.createElement('button');
+                    option.className = 'dropdown-item notranslate';
+                    option.setAttribute('data-lang', lang.code);
+
+                    const flagElement = document.createElement('span');
+                    flagElement.className = `flag fi fi-${lang.flag}`;
+
+                    const nameElement = document.createElement('span');
+                    nameElement.textContent = lang.name;
+
+                    option.appendChild(flagElement);
+                    option.appendChild(nameElement);
+                    desktopDropdown.appendChild(option);
+                });
+            }
+
+            // Mobile dropdown
+            const mobileDropdown = document.getElementById('mobileLanguageDropdown');
+            if (mobileDropdown) {
+                const mobileDropdownContent = mobileDropdown.querySelector('.py-2');
+                if (mobileDropdownContent) {
+                    languages.forEach(lang => {
+                        const option = document.createElement('button');
+                        option.className = 'mobile-language-option notranslate';
+                        option.setAttribute('data-lang', lang.code);
+
+                        const flagElement = document.createElement('span');
+                        flagElement.className = `flag fi fi-${lang.flag}`;
+
+                        const nameElement = document.createElement('span');
+                        nameElement.textContent = lang.name;
+
+                        option.appendChild(flagElement);
+                        option.appendChild(nameElement);
+                        mobileDropdownContent.appendChild(option);
+                    });
+                }
+            }
+        }
+
+        // Populate currency dropdowns
+        function populateCurrencyDropdowns() {
+            // Desktop dropdown
+            const desktopDropdown = document.getElementById('currency-dropdown-menu');
+            if (desktopDropdown) {
+                currencies.forEach(currency => {
+                    const option = document.createElement('button');
+                    option.className = 'dropdown-item notranslate';
+                    option.setAttribute('data-currency', currency.code);
+
+                    const iconElement = document.createElement('i');
+                    iconElement.className = `fas fa-${currency.code === 'EUR' ? 'euro-sign' :
+                        currency.code === 'GBP' ? 'pound-sign' :
+                            currency.code === 'JPY' || currency.code === 'CNY' ? 'yen-sign' :
+                                currency.code === 'INR' ? 'rupee-sign' :
+                                    currency.code === 'RUB' ? 'ruble-sign' :
+                                        currency.code === 'THB' ? 'baht-sign' :
+                                            currency.code === 'KRW' ? 'won-sign' :
+                                                currency.code === 'TRY' ? 'lira-sign' :
+                                                    currency.code === 'AED' || currency.code === 'SAR' ? 'hashtag' : 'dollar-sign'}`;
+
+                    const nameElement = document.createElement('span');
+                    nameElement.textContent = `${currency.code} - ${currency.name}`;
+
+                    option.appendChild(iconElement);
+                    option.appendChild(nameElement);
+                    desktopDropdown.appendChild(option);
+                });
+            }
+
+            // Mobile dropdown
+            const mobileDropdown = document.querySelector('.mobile-currency-menu');
+            if (mobileDropdown) {
+                currencies.forEach(currency => {
+                    const option = document.createElement('button');
+                    option.className = 'mobile-currency-item notranslate';
+                    option.setAttribute('data-currency', currency.code);
+
+                    const iconElement = document.createElement('i');
+                    iconElement.className = `fas fa-${currency.code === 'EUR' ? 'euro-sign' :
+                        currency.code === 'GBP' ? 'pound-sign' :
+                            currency.code === 'JPY' || currency.code === 'CNY' ? 'yen-sign' :
+                                currency.code === 'INR' ? 'rupee-sign' :
+                                    currency.code === 'RUB' ? 'ruble-sign' :
+                                        currency.code === 'THB' ? 'baht-sign' :
+                                            currency.code === 'KRW' ? 'won-sign' :
+                                                currency.code === 'TRY' ? 'lira-sign' :
+                                                    currency.code === 'AED' || currency.code === 'SAR' ? 'hashtag' : 'dollar-sign'}`;
+
+                    const nameElement = document.createElement('span');
+                    nameElement.textContent = `${currency.code} - ${currency.name}`;
+
+                    option.appendChild(iconElement);
+                    option.appendChild(nameElement);
+                    mobileDropdown.appendChild(option);
+                });
+            }
+        }
+
+        // Function to change language
+        function changeLanguage(lang) {
+            // Update desktop language display
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            if (currentLanguageElement) {
+                currentLanguageElement.textContent = lang.toUpperCase();
+            }
+
+            // Update mobile language display
+            const mobileCurrentLanguageElement = document.getElementById('mobileCurrentLanguage');
+            if (mobileCurrentLanguageElement) {
+                mobileCurrentLanguageElement.textContent = lang.toUpperCase();
+            }
+
+            // Update active states
+            document.querySelectorAll('.dropdown-item, .mobile-language-option').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-lang') === lang) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Update flag on desktop
+            const langData = languages.find(l => l.code === lang);
+            if (langData && document.getElementById('currentFlag')) {
+                const flagElement = document.getElementById('currentFlag');
+                flagElement.className = 'flag fi';
+                flagElement.classList.add(`fi-${langData.flag}`);
+            }
+
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Trigger Google Translate if available
+            if (typeof google !== 'undefined' && google.translate) {
+                setTimeout(function () {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = lang;
+                        select.dispatchEvent(new Event('change'));
+                        console.log('Google Translate language changed to:', lang);
+                    } else {
+                        console.warn('Google Translate select element not found');
+                    }
+                }, 500);
+            } else {
+                console.warn('Google Translate not loaded yet');
+            }
+
+            console.log('Language changed to:', lang);
+        }
+
+        // Function to convert prices
+        function convertPrices(currency) {
+            const rate = exchangeRates[currency];
+            const currencyData = currencies.find(c => c.code === currency);
+            const symbol = currencyData ? currencyData.symbol : '$';
+
+            document.querySelectorAll('.price').forEach(priceElement => {
+                const basePrice = parseFloat(priceElement.getAttribute('data-base-price'));
+                const convertedPrice = (basePrice * rate).toFixed(2);
+                const originalText = priceElement.textContent;
+                const textParts = originalText.split(' ');
+                const textAfterPrice = textParts.slice(1).join(' ');
+                priceElement.textContent = `${symbol}${convertedPrice} ${textAfterPrice}`;
+            });
+
+            // Update currency displays
+            document.getElementById('currentCurrency').textContent = currency;
+            document.getElementById('mobileCurrentCurrency').textContent = currency;
+
+            // Update active states
+            document.querySelectorAll('.dropdown-item, .mobile-currency-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll(`[data-currency="${currency}"]`).forEach(item => {
+                item.classList.add('active');
+            });
+
+            localStorage.setItem('preferredCurrency', currency);
+
+            console.log('Currency changed to:', currency);
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Populate dropdowns
+            populateLanguageDropdowns();
+            populateCurrencyDropdowns();
+
+            // Desktop Language Dropdown
+            const languageButton = document.getElementById('languageButton');
+            const languageDropdown = document.getElementById('languageDropdown');
+
+            if (languageButton && languageDropdown) {
+                languageButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('active');
+
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        if (dropdown !== languageDropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!languageButton.contains(e.target) && !languageDropdown.contains(e.target)) {
+                        languageDropdown.classList.remove('active');
+                    }
+                });
+
+                document.querySelectorAll('#languageDropdownMenu .dropdown-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        changeLanguage(lang);
+                        languageDropdown.classList.remove('active');
+                    });
+                });
+            }
+
+            // Mobile Language Dropdown
+            const mobileLanguageButton = document.getElementById('mobileLanguageButton');
+            const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+
+            if (mobileLanguageButton && mobileLanguageDropdown) {
+                mobileLanguageButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileLanguageDropdown.classList.toggle('active');
+
+                    const icon = this.querySelector('.fa-chevron-down');
+                    if (mobileLanguageDropdown.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0)';
+                    }
+
+                    document.querySelectorAll('.mobile-currency-dropdown').forEach(dropdown => {
+                        if (dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                            const otherIcon = dropdown.querySelector('i');
+                            if (otherIcon) {
+                                otherIcon.style.transform = 'rotate(0)';
+                            }
+                        }
+                    });
+                });
+
+                document.querySelectorAll('#mobileLanguageDropdown .mobile-language-option').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        changeLanguage(lang);
+                        mobileLanguageDropdown.classList.remove('active');
+                        mobileLanguageButton.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+                    });
+                });
+            }
+
+            // Desktop Currency Dropdown
+            const currencyButton = document.getElementById('currency-button');
+            const currencyDropdown = document.getElementById('currency-dropdown');
+
+            if (currencyButton && currencyDropdown) {
+                currencyButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    currencyDropdown.classList.toggle('active');
+
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        if (dropdown !== currencyDropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!currencyButton.contains(e.target) && !currencyDropdown.contains(e.target)) {
+                        currencyDropdown.classList.remove('active');
+                    }
+                });
+
+                document.querySelectorAll('#currency-dropdown-menu .dropdown-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currency = this.getAttribute('data-currency');
+                        convertPrices(currency);
+                        currencyDropdown.classList.remove('active');
+                    });
+                });
+            }
+
+            // Mobile Currency Dropdown
+            const mobileCurrencyButton = document.querySelector('#mobile-currency-dropdown .mobile-currency-toggle');
+            const mobileCurrencyDropdown = document.getElementById('mobile-currency-dropdown');
+
+            if (mobileCurrencyButton && mobileCurrencyDropdown) {
+                mobileCurrencyButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileCurrencyDropdown.classList.toggle('active');
+
+                    const icon = this.querySelector('i');
+                    if (mobileCurrencyDropdown.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0)';
+                    }
+
+                    if (mobileLanguageDropdown && mobileLanguageDropdown.classList.contains('active')) {
+                        mobileLanguageDropdown.classList.remove('active');
+                        const langIcon = mobileLanguageButton.querySelector('.fa-chevron-down');
+                        if (langIcon) {
+                            langIcon.style.transform = 'rotate(0)';
+                        }
+                    }
+                });
+
+                document.querySelectorAll('.mobile-currency-item').forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currency = this.getAttribute('data-currency');
+                        convertPrices(currency);
+                        mobileCurrencyDropdown.classList.remove('active');
+                        mobileCurrencyButton.querySelector('i').style.transform = 'rotate(0)';
+                    });
+                });
+            }
+
+            // Initialize with saved preferences
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+
+            const savedCurrency = localStorage.getItem('preferredCurrency') || 'USD';
+            convertPrices(savedCurrency);
+
+            // Mobile menu toggle
+            const hamburgerCheckbox = document.getElementById('hamburger-checkbox');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+            if (hamburgerCheckbox && mobileMenu && mobileMenuOverlay) {
+                hamburgerCheckbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        mobileMenu.classList.add('active');
+                        mobileMenuOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                mobileMenuOverlay.addEventListener('click', function () {
+                    hamburgerCheckbox.checked = false;
+                    mobileMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+
+                document.querySelectorAll('.mobile-links a, .mobile-reserve-now').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerCheckbox.checked = false;
+                        mobileMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+            }
+
+
+
+            // Close mobile menu when window is resized to larger size
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    if (hamburgerCheckbox) {
+                        hamburgerCheckbox.checked = false;
+                    }
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                    }
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.classList.remove('active');
+                    }
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Load Google Translate after a delay to ensure DOM is ready
+            setTimeout(function () {
+                loadGoogleTranslate();
+
+                // Additional cleanup after Google Translate loads
+                setTimeout(function () {
+                    // Remove any Google Translate elements that might push content down
+                    const unwantedElements = document.querySelectorAll(
+                        '.goog-te-banner-frame, .skiptranslate, .goog-te-banner'
+                    );
+
+                    unwantedElements.forEach(function (element) {
+                        if (element && element.parentNode) {
+                            element.style.display = 'none';
+                            element.style.height = '0';
+                            element.style.width = '0';
+                            element.style.overflow = 'hidden';
+                            element.style.visibility = 'hidden';
+                            element.style.position = 'absolute';
+                            element.style.top = '-9999px';
+                            element.style.left = '-9999px';
+                        }
+                    });
+
+                    // Ensure body stays in place
+                    document.body.style.top = '0';
+                    document.body.style.position = 'static';
+                    document.body.style.marginTop = '0';
+                    document.body.style.paddingTop = '0';
+                }, 1500); // Additional delay for Google Translate to fully initialize
+            }, 1000); // Initial delay to load Google Translate
+        });
+    </script>
+
+    <script src="assets/js/book.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/loader.js"></script>
+</body>
+
+</html>

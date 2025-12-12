@@ -7,12 +7,14 @@
 
 .carousels {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); /* Reduced from 0.5s to 0.3s and changed easing */
+    will-change: transform; /* Add this for better performance */
 }
 
 .carousels-wrapper {
     overflow: hidden;
     padding: 20px 10px;
+    position: relative; /* Add this */
 }
 
 .room-card {
@@ -325,10 +327,13 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
+    transition: transform 0.2s ease; /* Faster transition for button */
     pointer-events: all;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    will-change: transform; /* Add this */
 }
+
+
 
 .nav-button:hover:not(.disabled) {
     background: var(--crimson);
@@ -1291,7 +1296,7 @@ input[type="date"]::-webkit-clear-button {
     .modal-glassmorphism-info {
         top: 900px;
         padding: 10px 15px;
-        max-width: 80%;
+        max-width: 70%;
     }
 
     .modal-room-badge {
@@ -1308,11 +1313,11 @@ input[type="date"]::-webkit-clear-button {
     }
 
     .modal-room-title {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
     .modal-room-price {
-        font-size: 1.5rem;
+        font-size: 0.9rem;
     }
 
     .modal-image-section {
@@ -1523,6 +1528,10 @@ input[type="date"]::-webkit-clear-button {
 }
 
 @media (max-width: 768px) {
+        .carousels {
+        transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1); /* Even faster on mobile */
+    }
+
     .carousels-containers {
         max-width: 100%;
         padding: 0 5px;

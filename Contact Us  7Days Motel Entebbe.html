@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Days Motel Entebbe - Premium Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Inter:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="assets/css/contact.css">
+<link rel="stylesheet" href="assets/css/loader.css">
+</head>
+
+<body>
+
+            <!-- Luxury Loading Animation -->
+    <div class="luxury-loader" id="luxuryLoader">
+        <div class="rings-container">
+            <div class="base-circle"></div>
+
+            <!-- Four rings rotating in opposite directions -->
+            <div class="ring-1"></div>
+            <div class="ring-2"></div>
+            <div class="ring-3"></div>
+            <div class="ring-4"></div>
+
+            <!-- Crimson accents -->
+            <div class="crimson-accent accent-1"></div>
+            <div class="crimson-accent accent-2"></div>
+            <div class="crimson-accent accent-3"></div>
+            <div class="crimson-accent accent-4"></div>
+
+            <!-- Enlarged logo centerpiece -->
+            <div class="logo-center">
+                <img src="assets/images/7 days motel.png" alt="7Days Motel Logo" class="logo-img">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element"></div>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-info">
+            <div class="top-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:256762017465">+256 709 093 939</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:7dayshotel2@gmail.com">7dayshotel2@gmail.com</a>
+            </div>
+            <div class="top-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <!-- Language Selector -->
+            <div class="dropdown language-dropdown" id="languageDropdown">
+                <button class="dropdown-toggle" id="languageButton">
+                    <span class="flag fi fi-us" id="currentFlag"></span>
+                    <span id="currentLanguage">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="languageDropdownMenu">
+                    <!-- Language options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Currency Converter -->
+            <div class="dropdown" id="currency-dropdown">
+                <button class="dropdown-toggle" id="currency-button">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span id="currentCurrency">USD</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="currency-dropdown-menu">
+                    <!-- Currency options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="reserve-now">RESERVE NOW</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="assets/images/7 days motel.png" alt="logo" class="logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Hotel Rooms & Suites in Entebbe, Uganda  7Days Motel.html">Rooms & Suites</a></li>
+                <li><a href="Contact Us  7Days Motel Entebbe.html"  class="active">Contact Us</a></li>
+                <li><a href="Affordable Hotel Dining in Entebbe  7Days Motel.html">Dining</a></li>
+                <li><a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html">Reserve Now</a></li>
+            </ul>
+
+            <!-- Advanced Hamburger Menu -->
+            <label class="hamburger" id="hamburger-menu">
+                <input type="checkbox" id="hamburger-checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-header-controls">
+                    <!-- Language Selector for Mobile -->
+                    <div class="relative">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center justify-between w-full px-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-globe text-xl text-gray-600"></i>
+                                <span class="font-medium text-gray-800">Language</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span id="mobileCurrentLanguage" class="font-medium text-gray-700">EN</span>
+                                <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                            </div>
+                        </button>
+
+                        <div id="mobileLanguageDropdown"
+                            class="language-dropdown-mobile absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-10">
+                            <div class="py-2">
+                                <!-- Language options will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Currency Converter for Mobile -->
+                    <div class="mobile-currency-dropdown" id="mobile-currency-dropdown">
+                        <button class="mobile-currency-toggle">
+                            <span>Currency: <span id="mobileCurrentCurrency">USD</span></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="mobile-currency-menu">
+                            <!-- Currency options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="mobile-links">
+                      <li><a href="index.html">Home</a></li>
+                <li><a href="Hotel Rooms & Suites in Entebbe, Uganda  7Days Motel.html">Rooms & Suites</a></li>
+                <li><a href="Contact Us  7Days Motel Entebbe.html"  class="active">Contact Us</a></li>
+                <li><a href="Affordable Hotel Dining in Entebbe  7Days Motel.html">Dining</a></li>
+                <li><a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html">Reserve Now</a></li>
+                </ul>
+
+                <!-- Full Width Reserve Button -->
+                <a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="mobile-reserve-now">RESERVE NOW</a>
+
+                <div class="mobile-contact-info">
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 709 093 939</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>7dayshotel2@gmail.com</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Plot 40, Buku road, Opp UN Base, Entebbe - Uganda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- UPDATED HERO SECTION - CENTERED CONTENT -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="motel-tag">7DAYS MOTEL ENTEBBE</div>
+                <h1>Luxury Experience <span>Exceptional Service</span></h1>
+                <div class="heading-progress-container">
+                    <div class="heading-progress-bar"></div>
+                    <div class="heading-progress-static"></div>
+                </div>
+                <p>Experience luxury accommodation at 7Days Motel in Entebbe. Our premium rooms, exceptional service,
+                    and prime location near the airport make us the perfect choice for discerning travelers.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-concierge-bell"></i>
+                        Book Your Stay
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-phone-alt"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">SCROLL</div>
+            <div class="scroll-line-container">
+                <div class="scroll-line-moving"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Contact Section - CENTERED HEADER -->
+        <div class="section-header">
+            <div class="luxury-header">
+                <div class="luxury-header-3-container">
+                    <div class="luxury-border-side"></div>
+                    <div class="luxury-header-content">
+                        <div class="ribbon">Contact Us</div>
+                        <h2>Get in Touch</h2>
+                        <p>Our dedicated team is ready to assist you with reservations, inquiries, and planning your
+                            perfect luxurious stay in Entebbe.</p>
+                    </div>
+                    <div class="luxury-border-side"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2 class="section-title">Our Information</h2>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Our Location</h3>
+                        <p>Plot 40, Buku Road<br>Opposite UN Base, Entebbe, Uganda</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone Number</h3>
+                        <p>+256 762 017 465<br>+256 41 712 3456<br>+256 70 123 4567</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email Address</h3>
+                        <p>reservations@7daysmotel.co.ug<br>7dayshotel2@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Operating Hours</h3>
+                        <p>24/7 Reception<br>Check-in: 2:00 PM | Check-out: 11:00 AM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form" id="contact">
+                <h2 class="section-title">Send a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email address"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" class="form-control">
+                            <option value="">Select number of guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5+">5+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date</label>
+                        <input type="date" id="checkin" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" class="form-control" placeholder="What is this regarding?"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" class="form-control" placeholder="Please type your message here..."
+                            required></textarea>
+                    </div>
+<button type="button" class="whatsapp-btn" id="whatsappBtn">
+    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+</button>
+
+<!-- Styled Reason for WhatsApp Preference -->
+<div class="whatsapp-reason">
+    <div class="reason-icon">
+        <i class="fas fa-bolt"></i>
+    </div>
+    <div class="reason-content">
+        <h4>Why We Prefer WhatsApp</h4>
+        <ul class="reason-list">
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <span><strong>Instant Response:</strong> Receive immediate confirmation and faster replies</span>
+            </li>
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <span><strong>24/7 Availability:</strong> Our team responds round-the-clock via WhatsApp</span>
+            </li>
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <span><strong>Direct Communication:</strong> Chat directly with our reservations team</span>
+            </li>
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <span><strong>File Sharing:</strong> Easily send photos or documents if needed</span>
+            </li>
+        </ul>
+    </div>
+</div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section with Google Maps - CENTERED HEADER -->
+        <div class="map-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Location</div>
+                            <h2>Find Us in Entebbe</h2>
+                            <p>Our premium motel is conveniently located in the heart of Entebbe, with easy access to
+                                local attractions and the international airport.</p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.9082828893952!2d32.4566381015772!3d0.05373357520054011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177d87007324a94d%3A0xbda7c1f0e627e14b!2s7%20days%20motel!5e0!3m2!1sen!2sug!4v1764681450025!5m2!1sen!2sug"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Features Section - CENTERED HEADER -->
+        <div class="features-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Amenities</div>
+                            <h2>Premium Services</h2>
+                            <p>Enjoy our exclusive amenities designed to provide you with the ultimate luxury experience
+                                during your stay.</p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>24/7 Concierge</h3>
+                    <p>Our dedicated staff is available round the clock to assist with all your needs and ensure a
+                        seamless stay.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Premium Security</h3>
+                    <p>Your safety is our priority with state-of-the-art security systems and 24/7 surveillance
+                        throughout the property.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>High-Speed Internet</h3>
+                    <p>Stay connected with our complimentary high-speed WiFi available in all rooms and common areas.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Carousel Section - Large Card Design - CENTERED HEADER -->
+        <div class="testimonial-carousel-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Guest Experiences</div>
+                            <h2>What Our Guests Say</h2>
+                            <p>Hear from our valued guests about their luxurious experiences at 7Days Motel Entebbe.</p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-carousel-container">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial Card 1 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>James Davidson</h3>
+                                    <p>Business Executive • New York</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "My stay at 7Days Motel was nothing short of exceptional. The attention to detail,
+                                    from the luxurious bedding to the impeccable service, exceeded all my expectations.
+                                    This is truly a haven of comfort in Entebbe."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Executive Suite</strong> for 5 nights in October 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 2 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616c113a1c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>Sarah Anderson</h3>
+                                    <p>Marketing Director • London</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "The Ethiopian coffee lounge was absolutely delightful! Waking up to that authentic
+                                    coffee aroma every morning made our vacation unforgettable. The staff's attention to
+                                    detail made us feel like royalty throughout our stay."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Deluxe Room</strong> for 7 nights in August 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 3 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>Michael Roberts</h3>
+                                    <p>Entrepreneur • Dubai</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "As a frequent business traveler, I've stayed in many hotels, but 7Days Motel stands
+                                    out for its perfect blend of luxury and functionality. The high-speed WiFi, premium
+                                    bar, and secure parking made my stay perfect."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Business Suite</strong> for 3 nights in September 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 4 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>Jessica Williams</h3>
+                                    <p>Travel Blogger • Cape Town</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "The spa and massage services were absolutely rejuvenating! After a long flight, the
+                                    therapeutic massage was exactly what I needed. The beautiful gardens provided the
+                                    perfect setting for morning meditation."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Premium Suite</strong> for 4 nights in July 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 5 -->
+                    <div class="testimonial-large-card">
+                        <div class="testimonial-client-side">
+                            <div class="client-image-bg"
+                                style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80')">
+                            </div>
+                            <div class="client-image-overlay"></div>
+                            <div class="client-info">
+                                <div class="client-name-glass">
+                                    <h3>David Chen</h3>
+                                    <p>Photographer • Singapore</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content-side">
+                            <div class="testimonial-quote">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="testimonial-text">
+                                    "The architecture and interior design of 7Days Motel are absolutely stunning. Every
+                                    corner is Instagram-worthy! The combination of modern luxury with local Ugandan
+                                    elements creates a truly unique experience."
+                                </div>
+                                <div class="quote-icon end"><i class="fas fa-quote-left"></i></div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-meta">
+                                <p>Stayed in our <strong>Panoramic Suite</strong> for 6 nights in November 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-dots" id="carouselDots">
+                        <!-- Dots will be added dynamically -->
+                    </div>
+                    <button class="carousel-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expanded Gallery Section with 8 items - CENTERED HEADER -->
+        <div class="gallery-section">
+            <div class="section-header">
+                <div class="luxury-header">
+                    <div class="luxury-header-3-container">
+                        <div class="luxury-border-side"></div>
+                        <div class="luxury-header-content">
+                            <div class="ribbon">Our Luxury Spaces</div>
+                            <h2>Explore Our Premium Amenities</h2>
+                            <p>Take a visual journey through our exquisite accommodations and world-class facilities.
+                            </p>
+                        </div>
+                        <div class="luxury-border-side"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 - Executive Suite -->
+                <div class="gallery-item" data-index="0">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Luxury Suite" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Executive Suite</h4>
+                            <p>Spacious suite with panoramic city views</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 - Ethiopian Coffee Lounge -->
+                <div class="gallery-item" data-index="1">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Ethiopian Coffee Lounge" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Ethiopian Coffee Lounge</h4>
+                            <p>Authentic coffee experience in a cozy setting</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 - Premium Bar -->
+                <div class="gallery-item" data-index="2">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Premium Bar" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Premium Bar</h4>
+                            <p>Extensive selection of spirits and cocktails</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 - Gardens -->
+                <div class="gallery-item" data-index="3">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Beautiful Gardens" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Serene Gardens</h4>
+                            <p>Beautifully landscaped gardens for relaxation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 - Spa & Massage -->
+                <div class="gallery-item" data-index="4">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Spa and Massage" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Spa & Massage</h4>
+                            <p>Relaxing therapeutic treatments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 - Secure Parking -->
+                <div class="gallery-item" data-index="5">
+                    <img src="https://images.unsplash.com/photo-1551524165-6b6e5a6166f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Secure Parking" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Secure Parking</h4>
+                            <p>24/7 monitored parking facilities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 - Grand Lobby -->
+                <div class="gallery-item" data-index="6">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Grand Lobby" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Grand Lobby</h4>
+                            <p>Elegant reception with luxurious decor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 - Fine Dining Restaurant -->
+                <div class="gallery-item" data-index="7">
+                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Fine Dining Restaurant" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Fine Dining Restaurant</h4>
+                            <p>Gourmet cuisine in an elegant setting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox for Gallery -->
+        <div class="lightbox" id="galleryLightbox">
+            <div class="lightbox-content">
+                <div class="lightbox-header">
+                    <div class="lightbox-title" id="lightboxTitle">Executive Suite</div>
+                    <button class="lightbox-close" id="closeLightbox">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="lightbox-body">
+                    <div class="lightbox-image-container">
+                        <img src="" alt="" class="lightbox-image" id="lightboxImage">
+                    </div>
+                    <div class="lightbox-info">
+                        <div class="lightbox-description" id="lightboxDescription">
+                            Our Executive Suite offers unparalleled luxury with panoramic city views, a king-sized bed,
+                            and premium amenities for the ultimate comfort experience.
+                        </div>
+                        <div class="lightbox-features" id="lightboxFeatures">
+                            <!-- Features will be added dynamically -->
+                        </div>
+                        <div class="lightbox-buttons">
+                            <button class="btn btn-outline" id="closeLightboxBtn">
+                                <i class="fas fa-times"></i> Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WhatsApp Redirect Modal -->
+        <div class="whatsapp-modal" id="whatsappModal">
+            <div class="whatsapp-modal-content">
+                <div class="whatsapp-modal-header">
+                    <div class="whatsapp-modal-title">
+                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    </div>
+                    <button class="lightbox-close" id="closeWhatsappModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="whatsapp-modal-body">
+                    <p>Your message will be sent to 7Days Motel Entebbe via WhatsApp. Make sure you have WhatsApp
+                        installed on your device.</p>
+                    <p>Click "Open WhatsApp" to proceed with sending your inquiry.</p>
+                    <div class="whatsapp-modal-buttons">
+                        <button class="btn-whatsapp-confirm" id="confirmWhatsapp">
+                            <i class="fab fa-whatsapp"></i> Open WhatsApp
+                        </button>
+                        <button class="btn btn-outline" id="cancelWhatsapp">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <section class="newsletter-section">
+                <div class="luxury-badge">EXCLUSIVE UPDATES</div>
+
+                <div class="newsletter-content">
+                    <h3 class="newsletter-title">Get First Updates</h3>
+                    <p class="newsletter-description">Be the first to know about special discounts, events, and more by
+                        subscribing to our newsletter.</p>
+
+                    <div class="subscription-stats">
+                        <span class="stats-icon"><i class="fas fa-crown"></i></span>
+                        <span>Join 2,500+ guests who receive exclusive offers</span>
+                    </div>
+                </div>
+
+                <div class="newsletter-form">
+                    <form id="newsletterForm">
+                        <div class="form-groups">
+                            <div class="form-container">
+                                <div class="form-controls">
+                                    <input type="email" id="emailInput" required>
+                                    <label>
+                                        <span style="--index: 0">Y</span>
+                                        <span style="--index: 1">o</span>
+                                        <span style="--index: 2">u</span>
+                                        <span style="--index: 3">r</span>
+                                        <span style="--index: 4">&nbsp;</span>
+                                        <span style="--index: 5">E</span>
+                                        <span style="--index: 6">m</span>
+                                        <span style="--index: 7">a</span>
+                                        <span style="--index: 8">i</span>
+                                        <span style="--index: 9">l</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="button-container">
+                                <button type="submit" class="btns btns-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle" style="color: var(--evergreen); margin-right: 10px;"></i>
+                        Thank you for subscribing to 7Days Motel Entebbe newsletter! You'll receive our exclusive
+                        updates soon.
+                    </div>
+                </div>
+            </section>
+
+    </div>
+
+    <footer class="luxury-footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-border"></div>
+        <div class="footer-watermark">
+            <h1>7 DAYS MOTEL</h1>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-section motel-description">
+                    <div class="logo-text">7Days<span> Motel</span></div>
+                    <p>Experience unparalleled luxury at 7Days Motel Entebbe, where world-class hospitality meets
+                        exceptional service. Your sanctuary of comfort awaits in the heart of Uganda.</p>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="animated-link">Home <i class="fas fa-chevron-right link-arrow"></i></a>
+                        </li>
+                        <li><a href="Hotel Rooms & Suites in Entebbe, Uganda  7Days Motel.html" class="animated-link">Rooms & Suites <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="Affordable Hotel Dining in Entebbe  7Days Motel.html" class="animated-link">Dining Experience <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="Hotel Room Booking in Entebbe, Uganda  7Days Motel.html" class="animated-link">Reserve Now <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                        <li><a href="Contact Us  7Days Motel Entebbe.html" class="animated-link">Contact Us <i
+                                    class="fas fa-chevron-right link-arrow"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Location -->
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="contact-infos">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Plot 40, Buku Road</strong><br>Opposite UN Base Office<br>Entebbe,
+                                Uganda</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Call Us:</strong><br>+256 709 093 939<br>+256 701 880 222</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong><br>7dayshotel2@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 4: Luxury Amenities -->
+                <div class="footer-section">
+                    <h3>Luxury Amenities</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <div class="amenity-text">Premium Suites</div>
+                            <div class="amenity-badge">Luxury</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="amenity-text">High-Speed WiFi</div>
+                            <div class="amenity-badge">Free</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="amenity-text">Fine Dining</div>
+                            <div class="amenity-badge">5-Star</div>
+                        </div>
+                        <div class="amenity-item">
+                            <div class="ammenity-icons">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <div class="amenity-text">Spa Services</div>
+                            <div class="amenity-badge">Relax</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 7Days Motel Entebbe. All rights reserved. | Excellence in Hospitality
+                </div>
+
+                <div class="designer-credit">
+                    Crafted by <a href="https://vernoxdesigns.com" target="_blank">Vernox <i
+                            class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Luxury Payment Methods -->
+                <div class="payment-methods">
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-visa"></i>
+                        <div class="payment-tooltip">Visa</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                        <div class="payment-tooltip">Debit Card</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-mastercard"></i>
+                        <div class="payment-tooltip">Mastercard</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="payment-tooltip">Cash</div>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-sim-card"></i>
+                        <div class="payment-tooltip">Airtel Money</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="assets/js/loader.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+
+</html>
