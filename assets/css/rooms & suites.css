@@ -1578,7 +1578,7 @@ body {
     line-height: 1.5;
 }
 
-/* Enhanced Accordion */
+/* Enhanced Accordion - Fixed with dynamic height */
 .accordion {
     margin-bottom: 15px;
     border: 1px solid var(--mist);
@@ -1600,6 +1600,9 @@ body {
     padding: 15px 20px;
     background-color: rgba(15, 58, 52, 0.03);
     transition: var(--transition);
+    border: none;
+    width: 100%;
+    text-align: left;
 }
 
 .accordion-header:hover {
@@ -1641,10 +1644,11 @@ body {
 }
 
 .accordion.active .accordion-content {
-    max-height: 300px;
     padding: 20px;
     background-color: rgba(247, 244, 236, 0.5);
 }
+
+/* Note: The actual height will be set dynamically via JavaScript based on scrollHeight */
 
 .amenities-section {
     margin-bottom: 15px;
@@ -2345,7 +2349,7 @@ select:hover {
     
     /* Fix accordion content */
     .accordion-content {
-        max-height: 200px;
+        max-height: 250px;
         overflow-y: auto;
     }
     
@@ -2479,6 +2483,25 @@ select:hover {
     .mobile-menu {
         width: 300px;
         right: -300px;
+    }
+    
+    /* Mobile fixes for accordion */
+    .accordion-header {
+        padding: 12px 15px;
+    }
+    
+    .accordion-content {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        padding: 0 15px;
+    }
+    
+    .accordion.active .accordion-content {
+        padding: 15px;
+    }
+    
+    .accordion-title {
+        font-size: 0.95rem;
     }
 }
 
@@ -2634,18 +2657,6 @@ select:hover {
     
     .booking-summary h4 {
         font-size: 1.3rem;
-    }
-}
-
-/* Fix accordion behavior on mobile */
-@media (max-width: 768px) {
-    .accordion-header {
-        padding: 12px 15px;
-    }
-    
-    .accordion-content {
-        font-size: 0.9rem;
-        line-height: 1.6;
     }
 }
 
