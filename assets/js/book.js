@@ -66,30 +66,6 @@ const rooms = [
     image: "apartment-room.jpg",
   },
   {
-    number: "DELUXE",
-    type: "Deluxe Room",
-    beds: "King size bed",
-    capacity: 2,
-    price: 160,
-    amenities: [
-      { name: "Air Conditioning", icon: "fas fa-snowflake" },
-      { name: "High-Speed WiFi", icon: "fas fa-wifi" },
-      { name: "Spacious Wardrobe", icon: "fas fa-archive" },
-      { name: "Smart Television", icon: "fas fa-tv" },
-      { name: "Refrigerator", icon: "fas fa-snowflake" },
-      { name: "Guest Room Phone", icon: "fas fa-phone" },
-      { name: "Private Balcony", icon: "fas fa-door-open" },
-      { name: "Bathtub", icon: "fas fa-bath" },
-      { name: "Mini Bar", icon: "fas fa-wine-glass-alt" },
-      { name: "Room Service", icon: "fas fa-concierge-bell" },
-    ],
-    description:
-      "Luxurious deluxe room with premium amenities and exceptional comfort. Features a king-size bed, private balcony, and bathtub for ultimate relaxation.",
-    longDescription:
-      "Our Deluxe Room is the epitome of luxury and comfort. This expansive room features a premium king-size bed with the finest linens, ensuring a restful night's sleep. A spacious wardrobe provides ample storage for your belongings. The room includes a private balcony with seating, perfect for enjoying panoramic views. Amenities include high-speed WiFi, a 40-inch flat-screen TV with international channels, individually controlled air conditioning, and a guest room phone. The en-suite bathroom features a bathtub for relaxation, along with a separate walk-in shower, double vanity, and premium toiletries. Additional features include a mini bar, safety deposit box, and 24/7 room service. The room's luxurious design and comprehensive amenities ensure a memorable and comfortable stay.",
-    image: "deluxe-room.jpg",
-  },
-  {
     number: "FAMILY",
     type: "Family Room",
     beds: "Four double beds",
@@ -141,17 +117,15 @@ const rooms = [
 // Room image mapping
 const roomImages = {
   "single-room.jpg":
-    "https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images2.imgbox.com/86/f0/k9VQagZH_o.jpg",
   "double-room.jpg":
-    "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images2.imgbox.com/ec/6f/zNm9SZge_o.jpg",
   "apartment-room.jpg":
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-  "deluxe-room.jpg":
-    "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images2.imgbox.com/a8/31/rBuDiUtO_o.jpg",
   "family-room.jpg":
-    "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images2.imgbox.com/e1/a4/1NWy1esT_o.jpg",
   "twin-room.jpg":
-    "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "https://images2.imgbox.com/ae/03/CXBoiao1_o.jpg",
 };
 
 // Current selected room
@@ -278,7 +252,7 @@ function generateRoomCards() {
     // Room image
     const roomImageUrl =
       roomImages[room.image] ||
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
+      "https://images2.imgbox.com/29/7d/3DZwEFdu_o.jpg";
 
     roomCard.innerHTML = `
                     <div class="room-info">
@@ -369,7 +343,7 @@ function updateRoomDetails(room) {
   // Room image
   const roomImageUrl =
     roomImages[room.image] ||
-    "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
+    "https://images2.imgbox.com/88/27/4VVwrpaV_o.jpg";
 
   roomDetailsContainer.innerHTML = `
                 <div class="room-details-hero">
@@ -428,7 +402,7 @@ function updateRoomSummary(room) {
                     <div style="width: 100px; height: 80px; border-radius: 8px; overflow: hidden;">
                         <img src="${
                           roomImages[room.image] ||
-                          "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                          "https://images2.imgbox.com/a8/5d/JUlkNJLq_o.jpg"
                         }" alt="${
     room.type
   }" style="width: 100%; height: 100%; object-fit: cover;">
