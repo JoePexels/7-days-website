@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
             price: "$40/night",
             basePrice: 40,
             ribbons: "Budget Friendly",
-            image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+            image: "https://images2.imgbox.com/ba/03/f1GM4QbZ_o.jpg",
             rating: 4.1,
             reviews: 58,
             guests: 1,
@@ -140,37 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
             bedType: "Single Bed",
             view: "Courtyard View",
             galleryImages: [
-                "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+                "https://images2.imgbox.com/86/f0/k9VQagZH_o.jpg",
                 "https://images.unsplash.com/photo-1560067174-89456ad09d9c"
-            ]
-        },
-
-        {
-            id: "deluxe",
-            name: "Deluxe Room",
-            price: "$160/night",
-            basePrice: 160,
-            ribbons: "Best Value",
-            image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
-            rating: 4.4,
-            reviews: 96,
-            guests: 2,
-            description: "A spacious Deluxe Room offering comfort and convenience. Features AC, WiFi, wardrobe, television, fridge, and a standard bathroom with water heater. Ideal for couples or travelers needing extra space.",
-            features: [
-                { icon: "fas fa-wifi", text: "Unlimited WiFi" },
-                { icon: "fas fa-snowflake", text: "Air Conditioning" },
-                { icon: "fas fa-tv", text: "Flat-Screen TV" },
-                { icon: "fas fa-ice-cream", text: "Mini Fridge" },
-                { icon: "fas fa-phone", text: "Guest Phone" },
-                { icon: "fas fa-bath", text: "Standard Bathroom" }
-            ],
-            roomSize: "28 m²",
-            maxGuests: "2 Adults",
-            bedType: "Queen Bed",
-            view: "Garden View",
-            galleryImages: [
-                "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
-                "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
             ]
         },
 
@@ -180,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
             price: "$50/night",
             basePrice: 50,
             ribbons: "Popular Choice",
-            image: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0",
+            image: "https://images2.imgbox.com/ec/6f/zNm9SZge_o.jpg",
             rating: 4.6,
             reviews: 82,
             guests: 2,
@@ -198,8 +169,8 @@ document.addEventListener('DOMContentLoaded', function () {
             bedType: "2 Double Beds",
             view: "City View",
             galleryImages: [
-                "https://images.unsplash.com/photo-1616594039964-ae9021a400a0",
-                "https://images.unsplash.com/photo-1564078516393-cf04bd966897"
+                "https://images2.imgbox.com/53/29/JJxH2f7M_o.jpg",
+                "https://images2.imgbox.com/a8/5d/JUlkNJLq_o.jpg"
             ]
         },
 
@@ -209,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
             price: "$160/night",
             basePrice: 160,
             ribbons: "Family Friendly",
-            image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+            image: "https://images2.imgbox.com/8c/85/9GunGNH9_o.jpg",
             rating: 4.8,
             reviews: 89,
             guests: 5,
@@ -227,8 +198,8 @@ document.addEventListener('DOMContentLoaded', function () {
             bedType: "4 Double Beds",
             view: "Balcony View",
             galleryImages: [
-                "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
-                "https://images.unsplash.com/photo-1592229505720-cf0eab629ab4"
+                "https://images2.imgbox.com/15/12/YJjOTuSF_o.jpg",
+                "https://images2.imgbox.com/3d/bf/Vfetjdcn_o.jpg"
             ]
         },
 
@@ -238,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
             price: "$80/night",
             basePrice: 80,
             ribbons: "Great for Friends",
-            image: "https://images.unsplash.com/photo-1590490360182-c33d57733427",
+            image: "https://images2.imgbox.com/ae/03/CXBoiao1_o.jpg",
             rating: 4.3,
             reviews: 73,
             guests: 2,
@@ -256,8 +227,8 @@ document.addEventListener('DOMContentLoaded', function () {
             bedType: "2 Double Beds",
             view: "Balcony View",
             galleryImages: [
-                "https://images.unsplash.com/photo-1590490360182-c33d57733427",
-                "https://images.unsplash.com/photo-1584132967334-10e028bd69f7"
+                "https://images2.imgbox.com/1e/04/zhsCT5S0_o.jpg",
+                "https://images2.imgbox.com/90/73/ZSgzfgl4_o.jpg"
             ]
         },
 
@@ -267,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
             price: "$60/night",
             basePrice: 60,
             ribbons: "Long Stay",
-            image: "https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f",
+            image: "https://images2.imgbox.com/a8/31/rBuDiUtO_o.jpg",
             rating: 4.9,
             reviews: 54,
             guests: 6,
@@ -285,8 +256,8 @@ document.addEventListener('DOMContentLoaded', function () {
             bedType: "Multiple Beds",
             view: "Panoramic Balcony View",
             galleryImages: [
-                "https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f",
-                "https://images.unsplash.com/photo-1616594039964-ae9021a400a0"
+                "https://images2.imgbox.com/88/27/4VVwrpaV_o.jpg",
+                "https://images2.imgbox.com/29/7d/3DZwEFdu_o.jpg"
             ]
         }
     ];
@@ -1562,7 +1533,7 @@ document.addEventListener('DOMContentLoaded', function () {
             icons: ['fas fa-wifi', 'fa-solid fa-house-signal', 'fas fa-signal']
         },
         {
-            image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1373&q=80',
+            image: 'https://images2.imgbox.com/ef/67/HYReeCoV_o.jpg',
             title: 'Secure Parking',
             description: 'Park with peace of mind in our secure, well-lit parking facility with 24/7 surveillance.',
             brief: 'Secure, well-lit parking with 24/7 surveillance.',
@@ -1570,7 +1541,7 @@ document.addEventListener('DOMContentLoaded', function () {
             icons: ['fas fa-parking', 'fas fa-shield-alt', 'fas fa-key']
         },
         {
-            image: 'https://tqplc.com/wp-content/uploads/2025/01/tq-hotel-f1.jpg',
+            image: 'https://tqplc.com/wp-content/uploads/2023/01/tq-hotel-f1.jpg',
             title: 'Air Conditioning',
             description: 'Our state-of-the-art climate control systems ensure your comfort in every season with individual room controls.',
             brief: 'State-of-the-art climate control for all-season comfort.',
@@ -1578,7 +1549,7 @@ document.addEventListener('DOMContentLoaded', function () {
             icons: ['fas fa-snowflake', 'fas fa-thermometer-half', 'fas fa-wind']
         },
         {
-            image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+            image: 'https://www.hospitalitynet.org/picture/xxl_153115979.jpg?t=1594034983',
             title: 'Room Service',
             description: 'Enjoy delicious meals and snacks delivered directly to your room with our 24/7 room service.',
             brief: '24/7 room service with an extensive menu.',

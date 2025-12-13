@@ -2,7 +2,7 @@
 (function() {
   // Configuration
   const MAX_DISPLAY_TIME = 8000; // 5 seconds maximum
-  const FADE_OUT_DURATION = 1000; // 1 second fade-out
+  const FADE_OUT_DURATION = 4000; // 1 second fade-out
   
   // State tracking
   let isLoaderHidden = false;
