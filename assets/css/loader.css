@@ -23,8 +23,8 @@
 /* Main container */
 .rings-container {
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: 220px;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
