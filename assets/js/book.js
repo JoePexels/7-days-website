@@ -141,10 +141,13 @@ let bookingData = {
   guestInfo: {},
 };
 
-// Calendar variables
-let currentMonth = new Date().getMonth();
-let currentYear = new Date().getFullYear();
-let activeCalendar = null;
+// Function to scroll to top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
 
 // DOM elements
 const roomsGrid = document.getElementById("roomsGrid");
@@ -164,10 +167,8 @@ const selectedRoomSummary = document.getElementById("selectedRoomSummary");
 const bookingSummaryDetails = document.getElementById("bookingSummaryDetails");
 const finalBookingSummary = document.getElementById("finalBookingSummary");
 const bookingForm = document.getElementById("bookingForm");
-const customCheckInInput = document.getElementById("customCheckIn");
-const customCheckOutInput = document.getElementById("customCheckOut");
-const checkInCalendar = document.getElementById("checkInCalendar");
-const checkOutCalendar = document.getElementById("checkOutCalendar");
+const checkInInput = document.getElementById("checkInDate");
+const checkOutInput = document.getElementById("checkOutDate");
 const adultsCount = document.getElementById("adultsCount");
 const childrenCount = document.getElementById("childrenCount");
 const decreaseAdultsBtn = document.getElementById("decreaseAdults");
@@ -182,18 +183,49 @@ const bookingTotal = document.getElementById("bookingTotal");
 
 // Initialize the page
 document.addEventListener("DOMContentLoaded", function () {
-  // Set default dates
+  // Set default dates using default HTML date pickers
   const today = new Date();
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
 
-  // Format dates for display
-  bookingData.checkIn = formatDate(today);
-  bookingData.checkOut = formatDate(tomorrow);
+  // Format dates for HTML date input (YYYY-MM-DD)
+  const todayFormatted = formatDate(today);
+  const tomorrowFormatted = formatDate(tomorrow);
 
-  // Set input values
-  customCheckInInput.value = formatDateDisplay(today);
-  customCheckOutInput.value = formatDateDisplay(tomorrow);
+  // Store in booking data
+  bookingData.checkIn = todayFormatted;
+  bookingData.checkOut = tomorrowFormatted;
+
+  // Set input values for default date pickers
+  if (checkInInput && checkOutInput) {
+    checkInInput.min = todayFormatted;
+    checkInInput.value = todayFormatted;
+    
+    checkOutInput.min = tomorrowFormatted;
+    checkOutInput.value = tomorrowFormatted;
+
+    // Add event listeners for date changes
+    checkInInput.addEventListener("change", function() {
+        const selectedDate = new Date(this.value);
+        const nextDay = new Date(selectedDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+        const nextDayFormatted = formatDate(nextDay);
+        
+        checkOutInput.min = nextDayFormatted;
+        
+        if (new Date(checkOutInput.value) < nextDay) {
+            checkOutInput.value = nextDayFormatted;
+        }
+        
+        bookingData.checkIn = this.value;
+        updateDateSummary();
+    });
+    
+    checkOutInput.addEventListener("change", function() {
+        bookingData.checkOut = this.value;
+        updateDateSummary();
+    });
+  }
 
   // Generate room cards
   generateRoomCards();
@@ -206,10 +238,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize date summary
   updateDateSummary();
-
-  // Generate calendars
-  generateCalendar(checkInCalendar, currentMonth, currentYear, "checkin");
-  generateCalendar(checkOutCalendar, currentMonth, currentYear, "checkout");
 });
 
 // Format date as YYYY-MM-DD
@@ -280,6 +308,7 @@ function generateRoomCards() {
       setTimeout(() => {
         showStep(2);
         updateStepIndicator(2);
+        scrollToTop();
       }, 300);
     });
     roomsGrid.appendChild(roomCard);
@@ -434,153 +463,6 @@ function updateRoomSummary(room) {
             `;
 }
 
-// Generate calendar
-function generateCalendar(calendarElement, month, year, type) {
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const today = new Date();
-  const firstDay = new Date(year, month, 1);
-  const lastDay = new Date(year, month + 1, 0);
-  const firstDayIndex = firstDay.getDay();
-  const lastDayIndex = lastDay.getDay();
-  const prevLastDay = new Date(year, month, 0).getDate();
-
-  let calendarHTML = `
-                <div class="calendar-header">
-                    <button class="prev-month"><i class="fas fa-chevron-left"></i></button>
-                    <div class="calendar-month">${monthNames[month]} ${year}</div>
-                    <button class="next-month"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="calendar-weekdays">
-                    <div class="weekday">Sun</div>
-                    <div class="weekday">Mon</div>
-                    <div class="weekday">Tue</div>
-                    <div class="weekday">Wed</div>
-                    <div class="weekday">Thu</div>
-                    <div class="weekday">Fri</div>
-                    <div class="weekday">Sat</div>
-                </div>
-                <div class="calendar-days">
-            `;
-
-  // Previous month days
-  for (let i = firstDayIndex; i > 0; i--) {
-    const day = prevLastDay - i + 1;
-    calendarHTML += `<div class="calendar-day other-month">${day}</div>`;
-  }
-
-  // Current month days
-  for (let i = 1; i <= lastDay.getDate(); i++) {
-    const date = new Date(year, month, i);
-    const isToday =
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear();
-
-    let isSelected = false;
-    if (type === "checkin" && bookingData.checkIn) {
-      const checkInDate = new Date(bookingData.checkIn);
-      isSelected =
-        date.getDate() === checkInDate.getDate() &&
-        date.getMonth() === checkInDate.getMonth() &&
-        date.getFullYear() === checkInDate.getFullYear();
-    } else if (type === "checkout" && bookingData.checkOut) {
-      const checkOutDate = new Date(bookingData.checkOut);
-      isSelected =
-        date.getDate() === checkOutDate.getDate() &&
-        date.getMonth() === checkOutDate.getMonth() &&
-        date.getFullYear() === checkOutDate.getFullYear();
-    }
-
-    const dayClass = `calendar-day ${isToday ? "today" : ""} ${
-      isSelected ? "selected" : ""
-    }`;
-    calendarHTML += `<div class="${dayClass}" data-date="${formatDate(
-      date
-    )}">${i}</div>`;
-  }
-
-  // Next month days
-  for (let i = lastDayIndex + 1, day = 1; i < 7; i++, day++) {
-    calendarHTML += `<div class="calendar-day other-month">${day}</div>`;
-  }
-
-  calendarHTML += `</div>`;
-  calendarElement.innerHTML = calendarHTML;
-
-  // Add event listeners to calendar buttons
-  const prevMonthBtn = calendarElement.querySelector(".prev-month");
-  const nextMonthBtn = calendarElement.querySelector(".next-month");
-
-  prevMonthBtn.addEventListener("click", () => {
-    if (month === 0) {
-      month = 11;
-      year--;
-    } else {
-      month--;
-    }
-    generateCalendar(calendarElement, month, year, type);
-  });
-
-  nextMonthBtn.addEventListener("click", () => {
-    if (month === 11) {
-      month = 0;
-      year++;
-    } else {
-      month++;
-    }
-    generateCalendar(calendarElement, month, year, type);
-  });
-
-  // Add event listeners to calendar days
-  const dayElements = calendarElement.querySelectorAll(
-    ".calendar-day:not(.other-month)"
-  );
-  dayElements.forEach((dayElement) => {
-    dayElement.addEventListener("click", () => {
-      const date = dayElement.getAttribute("data-date");
-
-      if (type === "checkin") {
-        bookingData.checkIn = date;
-        customCheckInInput.value = formatDateDisplay(new Date(date));
-        checkInCalendar.classList.remove("active");
-
-        // Ensure check-out is after check-in
-        if (
-          bookingData.checkOut &&
-          new Date(bookingData.checkOut) <= new Date(date)
-        ) {
-          const nextDay = new Date(date);
-          nextDay.setDate(nextDay.getDate() + 1);
-          bookingData.checkOut = formatDate(nextDay);
-          customCheckOutInput.value = formatDateDisplay(nextDay);
-        }
-      } else if (type === "checkout") {
-        bookingData.checkOut = date;
-        customCheckOutInput.value = formatDateDisplay(new Date(date));
-        checkOutCalendar.classList.remove("active");
-      }
-
-      updateDateSummary();
-      generateCalendar(checkInCalendar, currentMonth, currentYear, "checkin");
-      generateCalendar(checkOutCalendar, currentMonth, currentYear, "checkout");
-    });
-  });
-}
-
 // Update guest counters
 function updateGuestCounters() {
   adultsCount.textContent = bookingData.adults;
@@ -589,11 +471,11 @@ function updateGuestCounters() {
   // Update button states
   decreaseAdultsBtn.disabled = bookingData.adults <= 1;
   increaseAdultsBtn.disabled =
-    bookingData.adults + bookingData.children >= bookingData.room.capacity;
+    bookingData.adults + bookingData.children >= (selectedRoom ? selectedRoom.capacity : 2);
 
   decreaseChildrenBtn.disabled = bookingData.children <= 0;
   increaseChildrenBtn.disabled =
-    bookingData.adults + bookingData.children >= bookingData.room.capacity;
+    bookingData.adults + bookingData.children >= (selectedRoom ? selectedRoom.capacity : 2);
 
   // Update date summary with new guest count
   updateDateSummary();
@@ -697,11 +579,12 @@ function setupEventListeners() {
   nextToDatesBtn.addEventListener("click", () => {
     showStep(3);
     updateStepIndicator(3);
+    scrollToTop();
   });
 
   // Step 3 to Step 4
   nextToBookingBtn.addEventListener("click", () => {
-    // Validate dates
+    // Validate dates using default date pickers
     const checkIn = bookingData.checkIn;
     const checkOut = bookingData.checkOut;
 
@@ -717,7 +600,7 @@ function setupEventListeners() {
 
     // Validate guests
     const totalGuests = bookingData.adults + bookingData.children;
-    if (totalGuests > selectedRoom.capacity) {
+    if (selectedRoom && totalGuests > selectedRoom.capacity) {
       alert(
         `This room has a maximum capacity of ${selectedRoom.capacity} guests. Please adjust your guest count.`
       );
@@ -732,24 +615,28 @@ function setupEventListeners() {
     updateDateSummary();
     showStep(4);
     updateStepIndicator(4);
+    scrollToTop();
   });
 
   // Step 2 back to Step 1
   backToSelectionBtn.addEventListener("click", () => {
     showStep(1);
     updateStepIndicator(1);
+    scrollToTop();
   });
 
   // Step 3 back to Step 2
   backToDetailsBtn.addEventListener("click", () => {
     showStep(2);
     updateStepIndicator(2);
+    scrollToTop();
   });
 
   // Step 4 back to Step 3
   backToDatesBtn.addEventListener("click", () => {
     showStep(3);
     updateStepIndicator(3);
+    scrollToTop();
   });
 
   // Step 4 to Step 5 (Submit booking to WhatsApp)
@@ -793,6 +680,7 @@ function setupEventListeners() {
     // Show confirmation step
     showStep(5);
     updateStepIndicator(5);
+    scrollToTop();
   });
 
   // Step 5 back to Step 1 (New booking)
@@ -800,15 +688,21 @@ function setupEventListeners() {
     // Reset form
     bookingForm.reset();
 
-    // Reset dates to today and tomorrow
+    // Reset dates to today and tomorrow using default date pickers
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    bookingData.checkIn = formatDate(today);
-    bookingData.checkOut = formatDate(tomorrow);
-    customCheckInInput.value = formatDateDisplay(today);
-    customCheckOutInput.value = formatDateDisplay(tomorrow);
+    const todayFormatted = formatDate(today);
+    const tomorrowFormatted = formatDate(tomorrow);
+
+    if (checkInInput && checkOutInput) {
+      checkInInput.value = todayFormatted;
+      checkOutInput.value = tomorrowFormatted;
+    }
+
+    bookingData.checkIn = todayFormatted;
+    bookingData.checkOut = tomorrowFormatted;
 
     // Reset room selection
     if (selectedRoom) {
@@ -822,8 +716,8 @@ function setupEventListeners() {
     // Reset booking data
     bookingData = {
       room: null,
-      checkIn: formatDate(today),
-      checkOut: formatDate(tomorrow),
+      checkIn: todayFormatted,
+      checkOut: tomorrowFormatted,
       nights: 0,
       adults: 1,
       children: 0,
@@ -839,29 +733,7 @@ function setupEventListeners() {
 
     showStep(1);
     updateStepIndicator(1);
-  });
-
-  // Custom date picker event listeners
-  customCheckInInput.addEventListener("click", (e) => {
-    e.stopPropagation();
-    checkInCalendar.classList.toggle("active");
-    checkOutCalendar.classList.remove("active");
-    activeCalendar = "checkin";
-  });
-
-  customCheckOutInput.addEventListener("click", (e) => {
-    e.stopPropagation();
-    checkOutCalendar.classList.toggle("active");
-    checkInCalendar.classList.remove("active");
-    activeCalendar = "checkout";
-  });
-
-  // Close calendar when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".date-input-container")) {
-      checkInCalendar.classList.remove("active");
-      checkOutCalendar.classList.remove("active");
-    }
+    scrollToTop();
   });
 
   // Guest counter listeners
