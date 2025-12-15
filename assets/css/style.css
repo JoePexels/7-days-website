@@ -3176,6 +3176,10 @@ h5 {
     .coffee-carousel-controls {
         padding: 0 10px;
     }
+
+    coffee-text{
+        padding: 40px;
+    }
 }
 
 @media (max-width: 480px) {
