@@ -342,21 +342,21 @@ function initializeTestimonialCarousel() {
 
 const galleryItems = [
     {
-        title: "Executive Suite",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        description: "Our Executive Suite offers unparalleled luxury with panoramic city views, a king-sized bed, and premium amenities for the ultimate comfort experience. Perfect for business travelers and couples seeking an extraordinary stay.",
+        title: "Family Suite",
+        image: "https://images2.imgbox.com/8c/85/9GunGNH9_o.jpg",
+        description: "Our Family Suite offers unparalleled luxury with panoramic city views, a king-sized bed, and premium amenities for the ultimate comfort experience. Perfect for business travelers and couples seeking an extraordinary stay.",
         features: [
             { icon: "fa-bed", text: "King Size Bed" },
             { icon: "fa-tv", text: "Smart TV" },
             { icon: "fa-wifi", text: "High-Speed WiFi" },
             { icon: "fa-wine-glass-alt", text: "Mini Bar" },
-            { icon: "fa-bath", text: "Jacuzzi" },
+            { icon: "fa-bath", text: "Bath Tab" },
             { icon: "fa-city", text: "City View" }
         ]
     },
     {
         title: "Ethiopian Coffee Lounge",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://images2.imgbox.com/41/95/snuFNCVa_o.jpg",
         description: "Experience authentic Ethiopian coffee in our cozy lounge. Our baristas prepare traditional coffee using freshly roasted beans, served with traditional Ethiopian snacks. A perfect place to relax and socialize.",
         features: [
             { icon: "fa-coffee", text: "Authentic Ethiopian Coffee" },
@@ -369,7 +369,7 @@ const galleryItems = [
     },
     {
         title: "Premium Bar",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://images2.imgbox.com/e9/c0/fvOs5pD1_o.jpg",
         description: "Our premium bar offers an extensive selection of spirits, wines, and signature cocktails. Enjoy expertly crafted drinks in an elegant atmosphere with live music on weekends.",
         features: [
             { icon: "fa-wine-bottle", text: "Extensive Wine List" },
@@ -382,7 +382,7 @@ const galleryItems = [
     },
     {
         title: "Serene Gardens",
-        image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://images2.imgbox.com/a3/e2/FjJVMmbG_o.jpg",
         description: "Our beautifully landscaped gardens provide a peaceful oasis for relaxation and meditation. Enjoy morning walks, afternoon tea, or evening strolls in our meticulously maintained green spaces.",
         features: [
             { icon: "fa-leaf", text: "Landscaped Gardens" },
@@ -395,7 +395,7 @@ const galleryItems = [
     },
     {
         title: "Spa & Massage",
-        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://images2.imgbox.com/29/f8/FKkt9428_o.jpg",
         description: "Indulge in our rejuvenating spa treatments and therapeutic massages. Our certified therapists use premium products and techniques to help you relax, rejuvenate, and restore balance.",
         features: [
             { icon: "fa-spa", text: "Therapeutic Treatments" },
@@ -408,7 +408,7 @@ const galleryItems = [
     },
     {
         title: "Secure Parking",
-        image: "https://images.unsplash.com/photo-1551524165-6b6e5a6166f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://images2.imgbox.com/ef/67/HYReeCoV_o.jpg",
         description: "Our 24/7 monitored parking facility ensures your vehicle's safety with CCTV surveillance, security personnel, and well-lit spaces. Valet parking service is also available for added convenience.",
         features: [
             { icon: "fa-shield-alt", text: "24/7 Security" },
@@ -421,26 +421,24 @@ const galleryItems = [
     },
     {
         title: "Grand Lobby",
-        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://images2.imgbox.com/45/8d/CnYOpqA4_o.jpg",
         description: "Our elegant lobby welcomes you with luxurious decor, comfortable seating areas, and exceptional service from our concierge team. Experience the perfect blend of modern comfort and classic elegance.",
         features: [
             { icon: "fa-concierge-bell", text: "24/7 Concierge" },
             { icon: "fa-coffee", text: "Welcome Drinks" },
             { icon: "fa-wifi", text: "Free WiFi" },
             { icon: "fa-newspaper", text: "Newspapers" },
-            { icon: "fa-music", text: "Live Piano Music" },
-            { icon: "fa-parking", text: "Valet Parking" }
+            { icon: "fa-parking", text: "Secure Parking" }
         ]
     },
     {
         title: "Fine Dining Restaurant",
-        image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://www.ugabox.com/images/business/directory/fine-dining/fine-dining-kampala-uganda-ugabox-uganda-business-directory-online-services.jpg",
         description: "Indulge in gourmet cuisine at our fine dining restaurant, featuring both local and international dishes prepared by our award-winning chefs. Enjoy an exquisite dining experience in an elegant setting.",
         features: [
             { icon: "fa-utensils", text: "Gourmet Cuisine" },
             { icon: "fa-wine-bottle", text: "Wine Selection" },
             { icon: "fa-users", text: "Private Dining" },
-            { icon: "fa-music", text: "Live Entertainment" },
             { icon: "fa-sun", text: "Outdoor Terrace" },
             { icon: "fa-leaf", text: "Vegetarian Options" }
         ]
