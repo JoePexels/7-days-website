@@ -35,7 +35,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: var(--white);
     color: var(--charcoal);
     line-height: 1.6;
@@ -48,7 +48,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -141,7 +141,7 @@ h5 {
 }
 
 .luxury-header-content h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     color: var(--evergreen-dark);
     margin-bottom: 1.5rem;
@@ -861,7 +861,7 @@ h5 {
 }
 
 .goog-te-gadget {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .goog-te-gadget-simple {
@@ -1157,7 +1157,7 @@ h5 {
     color: var(--white);
     font-weight: 600;
     border-radius: 2px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .hero-content h1 {
@@ -1204,7 +1204,7 @@ h5 {
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
     max-width: 800px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 300;
 }
 
@@ -1220,14 +1220,14 @@ h5 {
     padding: 15px 30px;
     border-radius: 5px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     transition: var(--transition);
-    letter-spacing: 1px;
-    font-family: 'Inter', sans-serif;
+    
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn-primary {
@@ -1272,14 +1272,14 @@ h5 {
     font-weight: 700;
     margin-bottom: 5px;
     color: var(--gold);
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .stat-text {
     font-size: 12px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.8);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 /* Progress Bar Navigation */
@@ -1358,7 +1358,7 @@ h5 {
     font-size: 12px;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
     animation: scrollText 0.8s infinite alternate;
 }
 
@@ -1803,7 +1803,7 @@ h5 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .amenity-feature-card {
@@ -2529,7 +2529,7 @@ h5 {
 }
 
 .location-highlight h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     font-weight: 500;
@@ -2688,7 +2688,7 @@ h5 {
 }
 
 .lake-content h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -2783,7 +2783,7 @@ h5 {
 }
 
 .client-name-glass h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 28px;
     margin-bottom: 5px;
     font-weight: 600;
@@ -2824,7 +2824,7 @@ h5 {
 }
 
 .testimonial-text {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 26px;
     line-height: 1.5;
     color: var(--evergreen);
@@ -3177,7 +3177,7 @@ h5 {
         padding: 0 10px;
     }
 
-    coffee-text{
+    coffee-text {
         padding: 40px;
     }
 }
@@ -3304,7 +3304,7 @@ h5 {
 }
 
 .accordion-item {
-    border-bottom: 1px solid var(--mist);
+    border-bottom: 2px solid var(--mist);
     padding: 25px 0;
 }
 
@@ -3489,7 +3489,7 @@ h5 {
     font-weight: 500;
     line-height: 1.4;
     margin-top: 15px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -3542,7 +3542,7 @@ h5 {
     border-radius: 10px;
     transition: var(--transition);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 500;
     outline: none;
     height: 60px;
@@ -3622,7 +3622,7 @@ h5 {
     gap: 12px;
     transition: var(--transition);
     letter-spacing: 1.2px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     border: none;
     white-space: nowrap;
@@ -4008,7 +4008,7 @@ h5 {
     right: 40px;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.05;
+    opacity: 0.2;
     font-family: 'Playfair Display', serif;
 }
 

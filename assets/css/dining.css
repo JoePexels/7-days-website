@@ -35,7 +35,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: var(--white);
     color: var(--charcoal);
     line-height: 1.6;
@@ -48,7 +48,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -130,7 +130,7 @@ h5 {
 }
 
 .luxury-header-content h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     color: var(--evergreen-dark);
     margin-bottom: 1.5rem;
@@ -1018,8 +1018,8 @@ h5 {
 
 /* Hero Section */
 .hero-section {
-    height: 85vh;
-    background: linear-gradient(rgba(13, 47, 43, 0.85), rgba(13, 47, 43, 0.7)), url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    height: 75vh;
+    background: linear-gradient(135deg, rgba(13, 47, 43, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%), url('https://images2.imgbox.com/bb/d4/Y6j5TwoE_o.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1053,7 +1053,7 @@ h5 {
 }
 
 .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 26px;
     font-weight: 300;
     color: var(--gold-light);
@@ -1063,7 +1063,7 @@ h5 {
 }
 
 .hero-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 72px;
     font-weight: 700;
     margin-bottom: 25px;
@@ -1105,7 +1105,7 @@ h5 {
     gap: 10px;
     transition: var(--transition);
     letter-spacing: 1px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
 }
 
@@ -1258,7 +1258,7 @@ h5 {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    height: 400px;
+    height: 300px;
     background: linear-gradient(135deg, var(--evergreen), var(--evergreen-dark));
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1288,11 +1288,7 @@ h5 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom,
-            rgba(13, 47, 43, 0.9) 0%,
-            rgba(13, 47, 43, 0.7) 30%,
-            rgba(13, 47, 43, 0.2) 60%,
-            transparent 100%);
+    background: linear-gradient(135deg, rgba(13, 47, 43, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1346,13 +1342,12 @@ h5 {
 /* Experience Description */
 .experience-description {
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 1.4;
     margin-bottom: 0;
     color: white;
     font-weight: 300;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    font-family: 'Playfair Display', serif;
 }
 
 /* Experience Badge */
@@ -1457,7 +1452,7 @@ h5 {
     padding: 18px 20px;
     border: 2px solid rgba(212, 175, 55, 0.15);
     border-radius: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     transition: var(--transition);
     background-color: rgba(255, 255, 255, 0.95);
@@ -1581,7 +1576,7 @@ h5 {
     padding: 18px 20px;
     border: 2px solid rgba(212, 175, 55, 0.15);
     border-radius: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     transition: var(--transition);
     background-color: rgba(255, 255, 255, 0.95);
@@ -1890,7 +1885,7 @@ h5 {
     color: var(--white);
     margin-bottom: 15px;
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     line-height: 1.1;
 }
@@ -1937,6 +1932,7 @@ h5 {
 .main-gallery-item {
     grid-column: span 2;
     grid-row: span 2;
+    min-height: 400px;
 }
 
 .gallery-item {
@@ -1945,6 +1941,7 @@ h5 {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease;
+    max-height: 180px;
 }
 
 .gallery-item:hover {
@@ -1955,11 +1952,11 @@ h5 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    min-height: 200px;
+    min-height: 100px;
 }
 
 .main-gallery-item img {
-    min-height: 320px;
+    min-height: 220px;
 }
 
 .gallery-caption {
@@ -1986,30 +1983,34 @@ h5 {
     margin-bottom: 40px;
 }
 
-.modal-section .section-title {
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: var(--evergreen);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
+.luxury-header-content .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--evergreen-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
     position: relative;
-    display: inline-block;
 }
 
-.section-divider {
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(to right, var(--gold), var(--crimson));
-    margin: 0 auto 15px;
-    border-radius: 2px;
+.luxury-header-content .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--crimson), transparent);
 }
 
-.section-subtitle {
-    color: #666;
-    font-size: 18px;
-    font-weight: 300;
-    max-width: 600px;
+.luxury-header-content .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--evergreen);
+    line-height: 1.7;
+    max-width: 500px;
     margin: 0 auto;
+    opacity: 0.85;
 }
 
 /* Philosophy Section */
@@ -2144,7 +2145,7 @@ h5 {
     font-size: 22px;
     color: var(--evergreen);
     margin: 0;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
 }
 
@@ -2223,7 +2224,7 @@ h5 {
     font-size: 20px;
     color: var(--evergreen);
     margin-bottom: 15px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
 }
 
@@ -2247,15 +2248,15 @@ h5 {
 
 /* Guest Recognition Section */
 .highlights-section {
-    background: linear-gradient(135deg, var(--evergreen), var(--evergreen-dark));
+    background: linear-gradient(135deg, var(--off-white), var(--white));
     border-radius: 20px;
     padding: 50px;
     margin-bottom: 60px;
-    color: var(--white);
+    color: var(--evergreen);
 }
 
 .highlights-section .section-title {
-    color: var(--white);
+    color: var(--evergreen-dark);
 }
 
 .highlights-section .section-divider {
@@ -2274,7 +2275,7 @@ h5 {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.5);
     transition: transform 0.3s ease;
 }
 
@@ -2288,7 +2289,7 @@ h5 {
     font-weight: 700;
     color: var(--gold);
     margin-bottom: 10px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .stat-label {
@@ -2316,7 +2317,7 @@ h5 {
     font-size: 32px;
     color: var(--evergreen);
     margin-bottom: 15px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .cta-content p {
@@ -2346,7 +2347,7 @@ h5 {
     transition: var(--transition);
     cursor: pointer;
     border: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .primary-cta {
@@ -3075,7 +3076,7 @@ h5 {
     }
 
     .experience-description {
-        font-size: 16px;
+        font-size: 19px;
     }
 
     /* Booking Form Adjustments */
@@ -3240,7 +3241,7 @@ h5 {
     }
 
     .experience-description {
-        font-size: 14px;
+        font-size: 17px;
     }
 
     .footer-watermark h1 {

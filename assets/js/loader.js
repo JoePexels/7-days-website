@@ -1,8 +1,9 @@
-// Luxury loader control with 5-second maximum timeout
+// Luxury loader control with 8-second maximum timeout
 (function() {
   // Configuration
-  const MAX_DISPLAY_TIME = 8000; // 5 seconds maximum
-  const FADE_OUT_DURATION = 4000; // 1 second fade-out
+  const MAX_DISPLAY_TIME = 8000; // 8 seconds maximum (as per your requirement)
+  const FADE_OUT_DURATION = 1000; // 1 second fade-out (was 4000ms, changed to 1000ms for faster fade)
+  const MIN_DISPLAY_TIME = 1000; // Minimum 1 second to showcase animation
   
   // State tracking
   let isLoaderHidden = false;
@@ -20,6 +21,8 @@
     
     // Calculate how long the loader was visible
     const displayDuration = Date.now() - pageLoadStartTime;
+    
+    console.log(`Loader displayed for ${displayDuration}ms before hiding`);
     
     // Start fade-out animation
     loader.classList.add('hidden');
@@ -45,59 +48,97 @@
     }, FADE_OUT_DURATION);
   }
   
-  // Set maximum display timeout (5 seconds)
+  // Set maximum display timeout (8 seconds)
   const maxTimeout = setTimeout(hideLoader, MAX_DISPLAY_TIME);
   
-  // Function to check if page is already loaded
-  function checkPageLoaded() {
-    if (document.readyState === 'complete') {
-      // Page already loaded, hide immediately but with minimal delay
-      // to ensure the animation is seen briefly
-      clearTimeout(maxTimeout);
-      const minDisplayTime = 800; // Minimum 0.8s to see the animation
-      const elapsed = Date.now() - pageLoadStartTime;
-      
-      if (elapsed < minDisplayTime) {
-        setTimeout(hideLoader, minDisplayTime - elapsed);
-      } else {
-        hideLoader();
+  // Function to check if ALL page resources are loaded
+  function checkAllResourcesLoaded() {
+    // Check if all images are loaded
+    const images = Array.from(document.images);
+    const allImagesLoaded = images.every(img => img.complete);
+    
+    // Check if all stylesheets are loaded
+    const stylesheets = Array.from(document.styleSheets);
+    const allStylesLoaded = stylesheets.every(sheet => {
+      try {
+        return sheet.cssRules || sheet.rules;
+      } catch(e) {
+        // Cross-origin stylesheet might throw error
+        // If we can access sheet.cssRules, it's loaded
+        return true;
       }
-      return true;
-    }
-    return false;
+    });
+    
+    // Check if all scripts are loaded
+    const scripts = Array.from(document.scripts);
+    const allScriptsLoaded = scripts.every(script => {
+      // For scripts with src attribute, check if they're loaded
+      if (script.src) {
+        return script.readyState === 'complete' || script.readyState === 'loaded';
+      }
+      return true; // Inline scripts are loaded by default
+    });
+    
+    return allImagesLoaded && allStylesLoaded && allScriptsLoaded;
   }
   
-  // Initial check - if page is already loaded
-  if (!checkPageLoaded()) {
-    // Wait for full page load (images, stylesheets, etc.)
-    window.addEventListener('load', () => {
-      clearTimeout(maxTimeout);
-      
-      // Hide loader immediately on full load
-      // (Could add a slight delay here if you want to showcase animation)
-      hideLoader();
-    }, { once: true });
-  }
-  
-  // Additional safety net: If load event doesn't fire properly
-  // Check periodically if page appears to be loaded
-  const domCheckInterval = setInterval(() => {
-    if (document.readyState === 'complete' && !isLoaderHidden) {
-      clearInterval(domCheckInterval);
-      clearTimeout(maxTimeout);
+  // Function to ensure minimum display time
+  function hideWithMinimumTime() {
+    clearTimeout(maxTimeout);
+    
+    const elapsed = Date.now() - pageLoadStartTime;
+    
+    if (elapsed < MIN_DISPLAY_TIME) {
+      // Wait for minimum display time
+      setTimeout(hideLoader, MIN_DISPLAY_TIME - elapsed);
+    } else {
+      // Hide immediately
       hideLoader();
     }
-  }, 500);
+  }
   
-  // Clean up interval when loader is hidden
-  window.addEventListener('luxuryLoaderHidden', () => {
-    clearInterval(domCheckInterval);
-  });
+  // Main load event listener for when ENTIRE page is loaded
+  window.addEventListener('load', () => {
+    console.log('Window load event fired - all resources loaded');
+    hideWithMinimumTime();
+  }, { once: true });
   
-  // Optional: Also hide on DOMContentLoaded as a fallback
+  // Fallback: Check periodically for complete loading
+  const resourceCheckInterval = setInterval(() => {
+    // If loader is already hidden, stop checking
+    if (isLoaderHidden) {
+      clearInterval(resourceCheckInterval);
+      return;
+    }
+    
+    // Check if all resources are loaded AND window load hasn't fired yet
+    if (checkAllResourcesLoaded() && document.readyState === 'complete') {
+      console.log('All resources detected as loaded via interval check');
+      clearInterval(resourceCheckInterval);
+      hideWithMinimumTime();
+    }
+  }, 100); // Check every 100ms
+  
+  // DOMContentLoaded as early indicator (for debugging)
   document.addEventListener('DOMContentLoaded', () => {
-    // DOM is ready, but we'll wait for full load or timeout
-    // This is just a backup in case load event doesn't fire
-    console.log('DOM loaded - luxury loader active');
+    console.log('DOMContentLoaded - structure ready, waiting for resources');
   });
+  
+  // Image-specific loading check
+  window.addEventListener('imagesLoaded', () => {
+    console.log('All images loaded event fired');
+  });
+  
+  // Clean up everything when loader is hidden
+  window.addEventListener('luxuryLoaderHidden', () => {
+    clearInterval(resourceCheckInterval);
+    console.log('Luxury loader hidden event dispatched');
+  });
+  
+  // Safety cleanup - ensure max timeout is cleared if we're hiding earlier
+  window.addEventListener('beforeunload', () => {
+    clearTimeout(maxTimeout);
+    clearInterval(resourceCheckInterval);
+  });
+  
 })();

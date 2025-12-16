@@ -1537,7 +1537,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'Secure Parking',
             description: 'Park with peace of mind in our secure, well-lit parking facility with 24/7 surveillance.',
             brief: 'Secure, well-lit parking with 24/7 surveillance.',
-            features: ['24/7 Surveillance', 'Covered Parking', 'Easy Access', 'Valet Service'],
+            features: ['24/7 Surveillance', 'Covered Parking', 'Easy Access', 'On-site parking Service'],
             icons: ['fas fa-parking', 'fas fa-shield-alt', 'fas fa-key']
         },
         {
