@@ -3461,6 +3461,10 @@
         }
 
         @media (max-width: 768px) {
+            .hero{
+                height: 70vh;
+            }
+
             .luxury-header-content h2 {
                 font-size: 2.5rem;
             }
