@@ -1321,7 +1321,7 @@ input[type="date"]::-webkit-clear-button {
     }
 
     .modal-image-section {
-        height: 30vh;
+        height: 40vh;
         min-height: 250px;
     }
 
@@ -1367,7 +1367,7 @@ input[type="date"]::-webkit-clear-button {
 
 @media (max-width: 480px) {
     .modal-image-section {
-        height: 45vh;
+        height: 35vh;
         min-height: 200px;
     }
 
