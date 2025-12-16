@@ -1849,7 +1849,7 @@ h5 {
 /* Modern Hero Section */
 .modal-hero {
     height: 380px;
-    background: linear-gradient(rgba(13, 47, 43, 0.9), rgba(15, 58, 52, 0.85)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background: linear-gradient(rgba(13, 47, 43, 0.6), rgba(15, 58, 52, 0.45)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3011,6 +3011,10 @@ h5 {
         margin-bottom: 30px;
     }
 
+    .hero-cta{
+        display: none;
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
@@ -3111,12 +3115,16 @@ h5 {
     }
 
     .modal-hero {
-        height: 200px;
+        height: 300px;
         padding: 20px;
     }
 
+    .modal-hero-content{
+        margin-top: 60px;
+    }
+
     .modal-main-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .modal-subtitle {
@@ -3307,4 +3315,38 @@ body {
 /* Smooth transitions */
 * {
     scroll-behavior: smooth;
+}
+
+/* Hide scrollbar in modal */
+.modal-content {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* Also hide scrollbar in mobile menu if needed */
+.mobile-menu {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.mobile-menu::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* Hide scrollbar in language and currency dropdowns */
+.language-dropdown-mobile,
+.mobile-currency-menu,
+.dropdown-menu {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.language-dropdown-mobile::-webkit-scrollbar,
+.mobile-currency-menu::-webkit-scrollbar,
+.dropdown-menu::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
