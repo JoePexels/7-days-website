@@ -363,21 +363,19 @@ const galleryItems = [
             { icon: "fa-fire", text: "Traditional Roasting" },
             { icon: "fa-cookie-bite", text: "Local Snacks" },
             { icon: "fa-users", text: "Social Lounge" },
-            { icon: "fa-wifi", text: "Free WiFi" },
-            { icon: "fa-book", text: "Reading Materials" }
+            { icon: "fa-wifi", text: "Free WiFi" }
         ]
     },
     {
         title: "Premium Bar",
         image: "https://images2.imgbox.com/e9/c0/fvOs5pD1_o.jpg",
-        description: "Our premium bar offers an extensive selection of spirits, wines, and signature cocktails. Enjoy expertly crafted drinks in an elegant atmosphere with live music on weekends.",
+        description: "Our premium bar offers an extensive selection of spirits, wines, and Beverage Highlights. Enjoy expertly crafted drinks in an elegant atmosphere with live music on weekends.",
         features: [
             { icon: "fa-wine-bottle", text: "Extensive Wine List" },
-            { icon: "fa-cocktail", text: "Signature Cocktails" },
+            { icon: "fa-cocktail", text: "Beverage Highlights" },
             { icon: "fa-beer", text: "Craft Beers" },
-            { icon: "fa-music", text: "Live Music" },
-            { icon: "fa-users", text: "Bartender Service" },
-            { icon: "fa-utensils", text: "Bar Snacks" }
+            { icon: "fa-music", text: "Music & Ambiance" },
+            { icon: "fa-users", text: "Bartender Service" }
         ]
     },
     {
@@ -387,8 +385,6 @@ const galleryItems = [
         features: [
             { icon: "fa-leaf", text: "Landscaped Gardens" },
             { icon: "fa-chair", text: "Seating Areas" },
-            { icon: "fa-fountain", text: "Water Features" },
-            { icon: "fa-sun", text: "Sun Decks" },
             { icon: "fa-utensils", text: "Garden Dining" },
             { icon: "fa-dove", text: "Peaceful Atmosphere" }
         ]
@@ -424,9 +420,9 @@ const galleryItems = [
         description: "Our elegant lobby welcomes you with luxurious decor, comfortable seating areas, and exceptional service from our concierge team. Experience the perfect blend of modern comfort and classic elegance.",
         features: [
             { icon: "fa-concierge-bell", text: "24/7 Concierge" },
-            { icon: "fa-coffee", text: "Welcome Drinks" },
+            { icon: "fa-coffee", text: "Refreshments Available" },
             { icon: "fa-wifi", text: "Free WiFi" },
-            { icon: "fa-newspaper", text: "Newspapers" },
+            { icon: "fa-newspaper", text: "News & Updates" },
             { icon: "fa-parking", text: "Secure Parking" }
         ]
     },
