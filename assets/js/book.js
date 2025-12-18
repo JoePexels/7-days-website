@@ -928,3 +928,65 @@ function updateStepIndicator(activeStep) {
     }
   });
 }
+
+
+// Header - prevent horizontal scrolling on mobile
+document.addEventListener('DOMContentLoaded', function () {
+    // Variables to track touch position
+    let startX = 0;
+    let startY = 0;
+
+    // Detect if on mobile device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Prevent touch events that cause horizontal scroll
+        document.addEventListener('touchstart', function (e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        }, { passive: false });
+
+        document.addEventListener('touchmove', function (e) {
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+
+            // Calculate movement
+            const diffX = Math.abs(currentX - startX);
+            const diffY = Math.abs(currentY - startY);
+
+            // If horizontal movement is greater than vertical, prevent it
+            if (diffX > diffY) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Add this CSS via JavaScript for iOS
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                * {
+                    -webkit-user-drag: none;
+                    -khtml-user-drag: none;
+                    -moz-user-drag: none;
+                    -o-user-drag: none;
+                    user-drag: none;
+                }
+                
+                body, html {
+                    overscroll-behavior-x: none !important;
+                    overflow-x: hidden !important;
+                    width: 100vw !important;
+                    position: relative !important;
+                }
+                
+                /* Fix for iOS Safari */
+                @supports (-webkit-touch-callout: none) {
+                    body, html {
+                        height: -webkit-fill-available;
+                    }
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+});
