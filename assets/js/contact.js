@@ -400,8 +400,7 @@ const galleryItems = [
         features: [
             { icon: "fa-spa", text: "Therapeutic Treatments" },
             { icon: "fa-hand-sparkles", text: "Massage Therapy" },
-            { icon: "fa-bath", text: "Steam Room" },
-            { icon: "fa-hot-tub", text: "Jacuzzi" },
+            { icon: "fa-bath", text: "Spa" },
             { icon: "fa-user-md", text: "Certified Therapists" },
             { icon: "fa-leaf", text: "Natural Products" }
         ]
@@ -414,7 +413,7 @@ const galleryItems = [
             { icon: "fa-shield-alt", text: "24/7 Security" },
             { icon: "fa-video", text: "CCTV Surveillance" },
             { icon: "fa-lightbulb", text: "Well-Lit Area" },
-            { icon: "fa-car", text: "Valet Service" },
+            { icon: "fa-car", text: "Parking Service" },
             { icon: "fa-key", text: "Secure Access" },
             { icon: "fa-user-shield", text: "Security Personnel" }
         ]
