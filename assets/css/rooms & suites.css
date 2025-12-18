@@ -40,7 +40,7 @@ body {
     color: var(--charcoal);
     line-height: 1.6;
     min-height: 100vh;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -752,7 +752,7 @@ body {
 }
 
 .goog-te-gadget {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .goog-te-gadget-simple {
@@ -822,7 +822,7 @@ body {
     width: 90%;
     height: 100%;
     background: linear-gradient(135deg, rgba(13, 47, 43, 0.5) 0%, rgba(26, 26, 26, 0.7) 100%),
-        url('https://www.novum-hospitality.com/wp-content/uploads/select-hotels-header.webp');
+        url('https://images2.imgbox.com/ae/03/CXBoiao1_o.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -862,7 +862,7 @@ body {
     color: var(--white);
     font-weight: 600;
     border-radius: 2px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .hero-content h1 {
@@ -872,6 +872,7 @@ body {
     letter-spacing: 1px;
     line-height: 1.2;
     color: var(--white);
+    font-family: 'Playfair Display', serif;
 }
 
 .hero-content h1 span {
@@ -912,7 +913,7 @@ body {
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
     max-width: 800px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     margin-left: auto;
     margin-right: auto;
@@ -937,7 +938,7 @@ body {
     gap: 10px;
     transition: var(--transition);
     letter-spacing: 1px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     border: none;
 }
@@ -985,7 +986,7 @@ body {
     font-size: 12px;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     animation: scrollText 0.8s infinite alternate;
 }
 
@@ -1034,7 +1035,7 @@ body {
     margin: 0 auto;
     flex: 1;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .progress-sidebar {
@@ -1043,7 +1044,7 @@ body {
     padding: 20px 25px;
     position: fixed;
     top: 0;
-    left: 20px;
+    left: 10px;
     height: 100vh;
     margin-bottom: 40px;
     border-bottom-left-radius: 10px;
@@ -1051,7 +1052,7 @@ body {
     border-right: 1px solid var(--gold);
     z-index: 50;
     transition: transform 0.3s ease;
-    width: 300px;
+    width: 310px;
 }
 
 .progress-sidebar.hide-for-footer {
@@ -1167,6 +1168,7 @@ body {
     margin-bottom: 5px;
     font-weight: 600;
     color: var(--white);
+    font-family: 'Playfair Display', serif;
 }
 
 .step-info p {
@@ -1202,7 +1204,7 @@ body {
 }
 
 .step-header h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     color: var(--evergreen);
     margin-bottom: 10px;
@@ -1246,7 +1248,7 @@ body {
 }
 
 .room-hero-title {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     color: var(--white);
     margin-bottom: 10px;
@@ -1333,7 +1335,7 @@ body {
 }
 
 .room-description-title {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     color: var(--evergreen);
     margin-bottom: 20px;
@@ -1363,7 +1365,7 @@ body {
 }
 
 .amenity-category-title {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: var(--evergreen);
     margin-bottom: 15px;
@@ -1523,7 +1525,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.5px;
     font-size: 1rem;
     z-index: 3;
@@ -1550,7 +1552,7 @@ body {
 }
 
 .room-title {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     color: var(--evergreen);
     font-weight: 600;
@@ -1648,14 +1650,14 @@ body {
     background-color: rgba(247, 244, 236, 0.5);
 }
 
-/* Note: The actual height will be set dynamically via JavaScript based on scrollHeight */
+
 
 .amenities-section {
     margin-bottom: 15px;
 }
 
 .amenities-title {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--evergreen);
@@ -1751,7 +1753,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.5px;
     font-size: 1rem;
 }
@@ -1778,7 +1780,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.95rem;
 }
 
@@ -1856,7 +1858,7 @@ textarea {
     border-radius: 0;
     transition: var(--transition);
     color: var(--charcoal);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 input:focus,
@@ -1875,7 +1877,7 @@ input[type="date"] {
     border: 2px solid var(--mist);
     border-radius: 8px;
     padding: 14px 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     color: var(--charcoal);
     transition: var(--transition);
@@ -1941,7 +1943,7 @@ select {
     border: 2px solid var(--mist);
     border-radius: 8px;
     padding: 14px 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     color: var(--charcoal);
     transition: var(--transition);
@@ -1973,7 +1975,7 @@ select:hover {
 }
 
 .booking-summary h4 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: var(--evergreen);
     margin-bottom: 20px;
@@ -2049,7 +2051,7 @@ select:hover {
 }
 
 .success-content h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     color: var(--evergreen);
     margin-bottom: 15px;
 }
@@ -2129,7 +2131,7 @@ select:hover {
 }
 
 .whatsapp-info-header h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     color: var(--evergreen);
     font-size: 1.8rem;
 }
@@ -2349,7 +2351,7 @@ select:hover {
     
     /* Fix accordion content */
     .accordion-content {
-        max-height: 250px;
+        max-height: 0;
         overflow-y: auto;
     }
     

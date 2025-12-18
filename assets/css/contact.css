@@ -35,7 +35,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: var(--white);
             color: var(--charcoal);
             line-height: 1.6;
@@ -48,7 +48,7 @@
         h3,
         h4,
         h5 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
@@ -140,7 +140,7 @@
         }
 
         .luxury-header-content h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             color: var(--evergreen-dark);
             margin-bottom: 1.5rem;
@@ -1079,7 +1079,7 @@
             color: var(--white);
             font-weight: 600;
             border-radius: 2px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .hero-content h1 {
@@ -1129,7 +1129,7 @@
             margin-bottom: 40px;
             color: rgba(255, 255, 255, 0.9);
             max-width: 800px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 300;
             margin-left: auto;
             margin-right: auto;
@@ -1154,7 +1154,7 @@
             gap: 10px;
             transition: var(--transition);
             letter-spacing: 1px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             cursor: pointer;
             border: none;
         }
@@ -1202,7 +1202,7 @@
             font-size: 12px;
             letter-spacing: 2px;
             margin-bottom: 15px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             animation: scrollText 0.8s infinite alternate;
         }
 
@@ -1357,7 +1357,7 @@
             color: var(--evergreen);
             font-size: 18px;
             margin-bottom: 15px;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -1564,7 +1564,7 @@
         }
 
         .luxury-header-content h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             color: var(--evergreen-dark);
             margin-bottom: 1.5rem;
@@ -1616,7 +1616,7 @@
         }
 
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             color: var(--evergreen);
             margin-bottom: 30px;
@@ -1768,7 +1768,7 @@
         }
 
         .feature-card h3 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             color: var(--evergreen);
             margin-bottom: 15px;
             font-size: 22px;
@@ -1856,7 +1856,7 @@
         }
 
         .client-name-glass h3 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 28px;
             margin-bottom: 5px;
             font-weight: 600;
@@ -1897,7 +1897,7 @@
         }
 
         .testimonial-text {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 26px;
             line-height: 1.5;
             color: var(--evergreen);
@@ -2032,7 +2032,7 @@
         }
 
         .gallery-caption h4 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 22px;
             margin-bottom: 8px;
         }
@@ -2150,7 +2150,7 @@
         }
 
         .lightbox-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: 600;
         }
@@ -2277,7 +2277,7 @@
         }
 
         .whatsapp-modal-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 24px;
             font-weight: 600;
             display: flex;
@@ -2413,7 +2413,7 @@
             font-weight: 500;
             line-height: 1.4;
             margin-top: 15px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
@@ -2466,7 +2466,7 @@
             border-radius: 10px;
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             outline: none;
             height: 60px;
@@ -2546,7 +2546,7 @@
             gap: 12px;
             transition: var(--transition);
             letter-spacing: 1.2px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             cursor: pointer;
             border: none;
             white-space: nowrap;
