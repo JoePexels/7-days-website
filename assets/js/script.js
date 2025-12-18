@@ -80,23 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const bookingRoomSubtitle = document.getElementById('bookingRoomSubtitle');
     const checkInDate = document.getElementById('checkInDate');
     const checkOutDate = document.getElementById('checkOutDate');
-    const whatsappRedirect = document.getElementById('whatsappRedirect');
-    const redirectCountdown = document.getElementById('redirectCountdown');
-    const countdownElement = document.getElementById('countdown');
-    const redirectFallback = document.getElementById('redirectFallback');
-    const whatsappDirectLink = document.getElementById('whatsappDirectLink');
-
-    // Custom Date Picker Elements
-    const checkInDatePicker = document.getElementById('checkInDatePicker');
-    const checkOutDatePicker = document.getElementById('checkOutDatePicker');
-    const dateGridIn = document.getElementById('dateGridIn');
-    const dateGridOut = document.getElementById('dateGridOut');
-    const currentMonthIn = document.getElementById('currentMonthIn');
-    const currentMonthOut = document.getElementById('currentMonthOut');
-    const prevMonthIn = document.getElementById('prevMonthIn');
-    const nextMonthIn = document.getElementById('nextMonthIn');
-    const prevMonthOut = document.getElementById('prevMonthOut');
-    const nextMonthOut = document.getElementById('nextMonthOut');
 
     // Set minimum dates for booking form
     const today = new Date();
@@ -109,11 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set default dates
     checkInDate.value = today.toISOString().split('T')[0];
     checkOutDate.value = tomorrow.toISOString().split('T')[0];
-
-    // Date picker state
-    let currentDateIn = new Date();
-    let currentDateOut = new Date();
-    currentDateOut.setMonth(currentDateOut.getMonth() + 1);
 
     const roomData = [
         {
@@ -296,74 +274,31 @@ document.addEventListener('DOMContentLoaded', function () {
         bookingModal.style.display = 'none';
     });
 
-    // WhatsApp redirect functionality
+    // WhatsApp redirect functionality - Simplified
     function redirectToWhatsApp(whatsappURL) {
-        // Try direct navigation first (most reliable)
+        // Try different methods to ensure redirection works
         try {
+            // Method 1: Direct navigation
             window.location.href = whatsappURL;
-            return true;
         } catch (e) {
-            console.log("Direct navigation failed:", e);
-        }
-
-        // Fallback: Try window.open
-        try {
-            const newWindow = window.open(whatsappURL, '_blank', 'noopener,noreferrer');
-            if (newWindow) {
-                return true;
+            try {
+                // Method 2: Open in new tab
+                window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+            } catch (e2) {
+                // Method 3: Create and click a link
+                const link = document.createElement('a');
+                link.href = whatsappURL;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             }
-        } catch (e) {
-            console.log("Window.open failed:", e);
         }
-
-        // Final fallback: Create and click a link
-        try {
-            const tempLink = document.createElement('a');
-            tempLink.href = whatsappURL;
-            tempLink.target = '_blank';
-            tempLink.rel = 'noopener noreferrer';
-            tempLink.style.display = 'none';
-            document.body.appendChild(tempLink);
-            tempLink.click();
-            document.body.removeChild(tempLink);
-            return true;
-        } catch (e) {
-            console.log("Link click method failed:", e);
-        }
-
-        return false;
     }
 
-    // Start WhatsApp redirect process
-    function startWhatsAppRedirect(whatsappURL) {
-        let countdown = 3;
-        const countdownElement = document.getElementById('countdown');
-        const redirectFallback = document.getElementById('redirectFallback');
-        const redirectCountdown = document.getElementById('redirectCountdown');
-
-        // Update countdown immediately
-        countdownElement.textContent = countdown;
-
-        const countdownInterval = setInterval(() => {
-            countdown--;
-            countdownElement.textContent = countdown;
-
-            if (countdown <= 0) {
-                clearInterval(countdownInterval);
-
-                // Try to redirect
-                const redirected = redirectToWhatsApp(whatsappURL);
-
-                // If redirect failed, show fallback
-                if (!redirected) {
-                    redirectFallback.classList.add('show');
-                    redirectCountdown.style.display = 'none';
-                }
-            }
-        }, 1000);
-    }
-
-    // Confirm booking - redirect to WhatsApp
+    // Confirm booking - redirect directly to WhatsApp
     confirmBooking.addEventListener('click', function () {
         // Validate form
         if (!validateBookingForm()) {
@@ -371,19 +306,15 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Show WhatsApp redirect screen
-        whatsappRedirect.classList.add('show');
-        bookingModal.style.display = 'none';
-
         // Prepare WhatsApp message
         const message = prepareWhatsAppMessage();
         const whatsappURL = `https://wa.me/256762017465?text=${encodeURIComponent(message)}`;
 
-        // Set the direct link
-        whatsappDirectLink.href = whatsappURL;
+        // Close booking modal
+        bookingModal.style.display = 'none';
 
-        // Start the countdown and redirect process
-        startWhatsAppRedirect(whatsappURL);
+        // Redirect directly to WhatsApp
+        redirectToWhatsApp(whatsappURL);
     });
 
     // Like room functionality
@@ -420,45 +351,29 @@ document.addEventListener('DOMContentLoaded', function () {
         updateViewAllButton();
     });
 
-    // Custom Date Picker Functionality
-    checkInDate.addEventListener('focus', function () {
-        checkInDatePicker.style.display = 'block';
-        checkOutDatePicker.style.display = 'none';
-        renderCalendar(currentDateIn, dateGridIn, currentMonthIn, true);
+    // Date validation for check-out date
+    checkInDate.addEventListener('change', function () {
+        const checkInValue = new Date(this.value);
+        const nextDay = new Date(checkInValue);
+        nextDay.setDate(nextDay.getDate() + 1);
+        
+        // Update check-out minimum date
+        checkOutDate.min = nextDay.toISOString().split('T')[0];
+        
+        // If current check-out date is before the new minimum, update it
+        if (new Date(checkOutDate.value) < nextDay) {
+            checkOutDate.value = nextDay.toISOString().split('T')[0];
+        }
+        
+        // Update booking summary if room is selected
+        if (currentRoom) {
+            updateBookingSummary(currentRoom);
+        }
     });
 
-    checkOutDate.addEventListener('focus', function () {
-        checkOutDatePicker.style.display = 'block';
-        checkInDatePicker.style.display = 'none';
-        renderCalendar(currentDateOut, dateGridOut, currentMonthOut, false);
-    });
-
-    // Date picker navigation
-    prevMonthIn.addEventListener('click', function () {
-        currentDateIn.setMonth(currentDateIn.getMonth() - 1);
-        renderCalendar(currentDateIn, dateGridIn, currentMonthIn, true);
-    });
-
-    nextMonthIn.addEventListener('click', function () {
-        currentDateIn.setMonth(currentDateIn.getMonth() + 1);
-        renderCalendar(currentDateIn, dateGridIn, currentMonthIn, true);
-    });
-
-    prevMonthOut.addEventListener('click', function () {
-        currentDateOut.setMonth(currentDateOut.getMonth() - 1);
-        renderCalendar(currentDateOut, dateGridOut, currentMonthOut, false);
-    });
-
-    nextMonthOut.addEventListener('click', function () {
-        currentDateOut.setMonth(currentDateOut.getMonth() + 1);
-        renderCalendar(currentDateOut, dateGridOut, currentMonthOut, false);
-    });
-
-    // Close date pickers when clicking outside
-    document.addEventListener('click', function (event) {
-        if (!event.target.closest('.date-input-group')) {
-            checkInDatePicker.style.display = 'none';
-            checkOutDatePicker.style.display = 'none';
+    checkOutDate.addEventListener('change', function () {
+        if (currentRoom) {
+            updateBookingSummary(currentRoom);
         }
     });
 
@@ -475,6 +390,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // Simple email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
+            return false;
+        }
+
+        // Validate dates
+        const checkInValue = new Date(checkInDate.value);
+        const checkOutValue = new Date(checkOutDate.value);
+        
+        if (checkOutValue <= checkInValue) {
+            alert('Check-out date must be after check-in date.');
             return false;
         }
 
@@ -534,7 +458,7 @@ Please confirm my booking. Thank you!`;
         return message;
     }
 
-    // Initialize carousels with room cards - FIXED: Added data-base-price attribute
+    // Initialize carousels with room cards
     function initializeCarousels() {
         // Clear existing content
         carousels.innerHTML = '';
@@ -564,7 +488,7 @@ Please confirm my booking. Thank you!`;
         updateViewAllButton();
     }
 
-    // Create room card element - FIXED: Added data-base-price attribute
+    // Create room card element
     function createRoomCard(room) {
         const card = document.createElement('div');
         card.className = 'room-card';
@@ -787,7 +711,7 @@ Please confirm my booking. Thank you!`;
         }
     }
 
-    // Open room modal with data - FIXED: Added data-base-price attribute to modal price
+    // Open room modal with data
     function openRoomModal(roomId) {
         const room = roomData.find(r => r.id === roomId);
         if (!room) return;
@@ -857,7 +781,7 @@ Please confirm my booking. Thank you!`;
         bookingModal.style.display = 'flex';
     }
 
-    // Update booking summary based on room and dates - FIXED: Uses basePrice
+    // Update booking summary based on room and dates
     function updateBookingSummary(room) {
         // Use basePrice if available, otherwise extract from price string
         const pricePerNight = room.basePrice || parseFloat(room.price.replace(/[^0-9.]/g, ''));
@@ -874,118 +798,6 @@ Please confirm my booking. Thank you!`;
         // Update DOM
         document.getElementById('roomRate').textContent = `$${roomRate.toFixed(2)}`;
         document.getElementById('totalAmount').textContent = `$${total.toFixed(2)}`;
-    }
-
-    // Update booking summary when dates change
-    checkInDate.addEventListener('change', function () {
-        if (currentRoom) {
-            updateBookingSummary(currentRoom);
-        }
-    });
-
-    checkOutDate.addEventListener('change', function () {
-        if (currentRoom) {
-            updateBookingSummary(currentRoom);
-        }
-    });
-
-    // Render calendar function
-    function renderCalendar(date, container, monthElement, isCheckIn) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-
-        // Update month display
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-        monthElement.textContent = `${monthNames[month]} ${year}`;
-
-        // Clear previous dates
-        container.innerHTML = '';
-
-        // Add day headers
-        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        days.forEach(day => {
-            const dayElement = document.createElement('div');
-            dayElement.className = 'date-picker-day';
-            dayElement.textContent = day;
-            container.appendChild(dayElement);
-        });
-
-        // Get first day of month and number of days
-        const firstDay = new Date(year, month, 1).getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-        // Add empty cells for days before the first day of the month
-        for (let i = 0; i < firstDay; i++) {
-            const emptyElement = document.createElement('div');
-            emptyElement.className = 'date-picker-date';
-            container.appendChild(emptyElement);
-        }
-
-        // Add days of the month
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dateElement = document.createElement('div');
-            dateElement.className = 'date-picker-date';
-            dateElement.textContent = day;
-
-            const currentDate = new Date(year, month, day);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            // Check if this is today
-            if (currentDate.getTime() === today.getTime()) {
-                dateElement.classList.add('today');
-            }
-
-            // Disable past dates
-            if (currentDate < today) {
-                dateElement.classList.add('disabled');
-            } else {
-                dateElement.addEventListener('click', function () {
-                    // Update the selected date
-                    const selectedDate = new Date(year, month, day);
-                    const formattedDate = selectedDate.toISOString().split('T')[0];
-
-                    if (isCheckIn) {
-                        checkInDate.value = formattedDate;
-                        checkInDatePicker.style.display = 'none';
-
-                        // Update check-out min date
-                        const nextDay = new Date(selectedDate);
-                        nextDay.setDate(nextDay.getDate() + 1);
-                        checkOutDate.min = nextDay.toISOString().split('T')[0];
-
-                        // If check-out date is before check-in, update it
-                        if (new Date(checkOutDate.value) < nextDay) {
-                            checkOutDate.value = nextDay.toISOString().split('T')[0];
-                        }
-                    } else {
-                        checkOutDate.value = formattedDate;
-                        checkOutDatePicker.style.display = 'none';
-                    }
-
-                    // Update selected style
-                    const allDates = container.querySelectorAll('.date-picker-date');
-                    allDates.forEach(d => d.classList.remove('selected'));
-                    dateElement.classList.add('selected');
-
-                    // Update booking summary
-                    updateBookingSummary(currentRoom);
-                });
-            }
-
-            // Check if this date is selected
-            const selectedDate = isCheckIn ? checkInDate.value : checkOutDate.value;
-            if (selectedDate) {
-                const compareDate = new Date(selectedDate);
-                if (currentDate.getTime() === compareDate.getTime()) {
-                    dateElement.classList.add('selected');
-                }
-            }
-
-            container.appendChild(dateElement);
-        }
     }
 });
 
@@ -1022,8 +834,6 @@ function stabilizeRoomCards() {
 
 // Call this function after room cards are created
 document.addEventListener('DOMContentLoaded', function () {
-    // ... existing code ...
-
     // After creating room cards in initializeCarousels()
     setTimeout(stabilizeRoomCards, 100);
 
@@ -2445,8 +2255,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
-
 
     // Close mobile menu when window is resized to larger size
     window.addEventListener('resize', function () {

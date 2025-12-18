@@ -908,7 +908,6 @@
     overflow: hidden;
 }
 
-
 .booking-modal-title {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
@@ -971,6 +970,7 @@
     background: var(--white);
     font-family: 'Roboto', sans-serif;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .form-input:focus,
@@ -980,135 +980,50 @@
     box-shadow: 0 0 0 3px rgba(195, 32, 38, 0.1);
 }
 
-/* Enhanced Date Input Styles - Hide default picker */
+/* FIXED: Date Input Styles - Allow default picker */
 .date-input-group {
     position: relative;
 }
 
 .date-input-group .form-input {
     padding-right: 45px;
+    color: var(--dark-gray) !important; /* Force visible text */
+}
+
+/* REMOVED the code that hides the date picker */
+/* Show default calendar picker indicator */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1 !important;
+    display: block !important;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    color: transparent;
-}
-
-.date-input-group .form-input:focus,
-.date-input-group .form-input:valid {
-    color: var(--dark-gray);
-}
-
-.date-icon {
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 2;
+}
+
+/* Ensure date input text is visible */
+input[type="date"] {
+    position: relative;
+    z-index: 1;
+}
+
+.date-icon {
+    position: absolute;
+    right: 40px; /* Moved further right to make room for calendar icon */
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--crimson);
     pointer-events: none;
+    z-index: 1;
 }
 
-/* Hide default date picker */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-clear-button {
-    display: none;
-}
-
-/* Custom Date Picker Styles */
+/* REMOVED the custom date picker styles since we're using native picker */
 .custom-date-picker {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    padding: 20px;
-    margin-top: 5px;
-    border: 1px solid #e0e0e0;
-}
-
-.date-picker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.date-picker-nav {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    color: var(--evergreen);
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: var(--transition);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.date-picker-nav:hover {
-    background: rgba(15, 58, 52, 0.1);
-}
-
-.date-picker-month {
-    font-weight: 600;
-    color: var(--evergreen);
-    font-size: 1.1rem;
-}
-
-.date-picker-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-}
-
-.date-picker-day {
-    text-align: center;
-    font-weight: 600;
-    color: var(--evergreen);
-    padding: 8px 0;
-    font-size: 0.9rem;
-}
-
-.date-picker-date {
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 500;
-}
-
-.date-picker-date:hover {
-    background: rgba(15, 58, 52, 0.1);
-}
-
-.date-picker-date.selected {
-    background: var(--crimson);
-    color: white;
-}
-
-.date-picker-date.disabled {
-    color: #ccc;
-    cursor: not-allowed;
-}
-
-.date-picker-date.disabled:hover {
-    background: transparent;
-}
-
-.date-picker-date.today {
-    background: rgba(255, 180, 0, 0.1);
-    color: var(--star);
-    font-weight: 600;
+    display: none !important; /* Completely hide custom date picker */
 }
 
 /* Enhanced Dropdown Styles */
@@ -1126,6 +1041,7 @@ input[type="date"]::-webkit-clear-button {
     transform: translateY(-50%);
     color: var(--crimson);
     pointer-events: none;
+    z-index: 1;
 }
 
 .form-select {
@@ -1168,103 +1084,31 @@ input[type="date"]::-webkit-clear-button {
     border-top: 1px solid #e0e0e0;
 }
 
-/* WhatsApp redirect animation */
-.whatsapp-redirect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    flex-direction: column;
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* Add this CSS to ensure date inputs work properly on all browsers */
+input[type="date"] {
+    /* Ensure consistent styling across browsers */
+    min-height: 45px;
 }
 
-.whatsapp-redirect.show {
-    display: flex;
-    animation: fadeIn 0.3s ease;
+/* Firefox specific fixes */
+input[type="date"]::-moz-focus-inner {
+    border: 0;
+    padding: 0;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+input[type="date"]:focus {
+    outline: none;
+}
+
+/* For better mobile experience */
+@media (max-width: 768px) {
+    .date-input-group .form-input {
+        font-size: 16px; /* Prevents iOS zoom on focus */
     }
-
-    to {
-        opacity: 1;
+    
+    input[type="date"] {
+        font-size: 16px; /* Prevents iOS zoom on focus */
     }
-}
-
-.whatsapp-icon {
-    font-size: 5rem;
-    color: #25D366;
-    margin-bottom: 20px;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.redirect-text {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    max-width: 80%;
-}
-
-.redirect-text h3 {
-    margin-bottom: 15px;
-    color: #25D366;
-}
-
-.redirect-countdown {
-    font-size: 1.2rem;
-    margin-top: 20px;
-    color: #25D366;
-}
-
-.redirect-fallback {
-    margin-top: 20px;
-    display: none;
-}
-
-.redirect-fallback.show {
-    display: block;
-}
-
-.whatsapp-direct-link {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 15px;
-    transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-direct-link:hover {
-    background: #128C7E;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
 /* Responsive Design */
@@ -1286,7 +1130,6 @@ input[type="date"]::-webkit-clear-button {
 }
 
 @media (max-width: 768px) {
-
     .modal-content,
     .booking-modal-content {
         width: 100%;
@@ -1357,11 +1200,6 @@ input[type="date"]::-webkit-clear-button {
 
     .redirect-text {
         font-size: 1.2rem;
-    }
-
-    .custom-date-picker {
-        width: 95%;
-        left: 2.5%;
     }
 }
 
