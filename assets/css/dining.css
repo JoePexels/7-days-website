@@ -475,7 +475,7 @@ h5 {
 /* Mobile Menu Styles */
 .mobile-menu {
     position: fixed;
-    top: 90px;
+    top: 100px;
     right: -400px;
     width: 300px;
     height: 85vh;
