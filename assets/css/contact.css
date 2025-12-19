@@ -1280,6 +1280,10 @@
                 padding: 0 10px;
             }
 
+            .motel-tag{
+                display: none;
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
             }
