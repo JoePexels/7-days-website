@@ -190,7 +190,7 @@
     left: 30px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%);
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
