@@ -672,14 +672,14 @@
         width: 60px;
         height: 60px;
         font-size: 1.8rem;
-        bottom: 20px;
+        bottom: 40px;
         right: 20px;
     }
 
     .whatsapp-overlay {
         width: 300px;
         right: 20px;
-        bottom: 90px;
+        bottom: 100px;
         padding: 1.5rem;
     }
 
@@ -687,7 +687,7 @@
         width: 55px;
         height: 55px;
         font-size: 1.5rem;
-        bottom: 20px;
+        bottom: 50px;
         left: 20px;
     }
 
