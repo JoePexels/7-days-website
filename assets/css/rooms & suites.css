@@ -2499,14 +2499,14 @@ select:hover {
     }
 
     .hero-btns {
-        width: 100%;
-        flex-direction: column;
+         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
-    .btn {
+    .btns {
         width: 100%;
-        max-width: 400px;
+        max-width: 300px;
         justify-content: center;
     }
 
