@@ -2308,7 +2308,7 @@ h5 {
 .modal-cta-section {
     background: linear-gradient(135deg, #f8f5f0, var(--white));
     border-radius: 20px;
-    padding: 50px;
+    padding: 10px;
     text-align: center;
     border: 2px solid rgba(212, 175, 55, 0.2);
 }
