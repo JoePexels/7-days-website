@@ -1,0 +1,741 @@
+:root {
+    --crimson: #C32026;
+    --crimson-dark: #741721;
+    --evergreen: #0F3A34;
+    --evergreen-dark: #0D2F2B;
+    --gold: #D4AF37;
+    --star: #FFB400;
+    --dark-gold: #B8860B;
+    --text-dark: #1A1A1A;
+    --text-light: #777777;
+    --blue: #3498db;
+    --light-blue: #5dade2;
+    --gold-light: #E8C55C;
+    --white: #FFFFFF;
+    --off-white: #FAFAFA;
+    --gray-light: #6B7280;
+    --gray: #4B5563;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.18);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.22);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gold-dark: #C7B8A2;
+    --ivory: #F7F4EC;
+    --charcoal: #1A1A1A;
+    --mist: #E2E2E2;
+    --smoke: #444444;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* WhatsApp Button Styling */
+.whatsapp-btns {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.2rem;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    z-index: 1000;
+    transition: var(--transition);
+    border: 3px solid white;
+}
+
+.whatsapp-btns:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Add this to your existing CSS if not present */
+.whatsapp-overlay {
+    position: fixed;
+    bottom: 115px;
+    right: 30px;
+    width: 320px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+    padding: 1.8rem;
+    z-index: 9999;
+    /* Increased z-index */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition);
+    border-top: 6px solid var(--crimson);
+    border-bottom: 6px solid var(--evergreen);
+}
+
+.whatsapp-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Ensure other overlays have proper z-index */
+.protection-popup,
+.cookie-settings {
+    z-index: 10000;
+}
+
+.protection-overlay {
+    z-index: 9998;
+}
+
+.overlay-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.overlay-header i {
+    font-size: 1.8rem;
+    color: #25D366;
+    margin-right: 10px;
+}
+
+.overlay-header h3 {
+    color: var(--evergreen);
+    font-size: 1.3rem;
+}
+
+.overlay-body p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.motel-info {
+    background: var(--ivory);
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.motel-info h4 {
+    color: var(--evergreen);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.motel-info h4 i {
+    color: var(--crimson);
+    margin-right: 8px;
+}
+
+.motel-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.motel-info p i {
+    color: var(--crimson);
+    margin-right: 10px;
+    width: 16px;
+    text-align: center;
+}
+
+.whatsapp-link {
+    display: block;
+    background: linear-gradient(to right, #25D366, #128C7E);
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.whatsapp-link:hover {
+    background: linear-gradient(to right, #128C7E, #25D366);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.close-overlay {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--gray-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-overlay:hover {
+    color: var(--crimson);
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 40px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    border: 3px solid white;
+}
+
+.scroll-top-btn.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, var(--evergreen-dark) 0%, var(--evergreen) 100%);
+}
+
+/* Anti-right-click Popup - Smaller & Clean */
+.protection-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    width: 90%;
+    max-width: 360px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    padding: 1.8rem;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    text-align: center;
+    border-top: 5px solid var(--crimson);
+}
+
+.protection-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-icon {
+    font-size: 2.5rem;
+    color: var(--crimson);
+    margin-bottom: 1rem;
+}
+
+.popup-title {
+    color: var(--evergreen);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.popup-text {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.contact-link {
+    display: inline-block;
+    background: linear-gradient(to right, var(--evergreen), var(--evergreen-dark));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.contact-link:hover {
+    background: linear-gradient(to right, var(--evergreen-dark), var(--evergreen));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.popup-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--gray-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.popup-close:hover {
+    color: var(--crimson);
+}
+
+.protection-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.protection-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Premium Cookie Consent - Horizontal on Desktop, Vertical on Mobile */
+.cookie-consent {
+    position: fixed;
+    bottom: 30px;
+    left: 20%;
+    transform: translateX(-50%) translateY(20px);
+    width: 90%;
+    max-width: 600px;
+    background: linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    padding: 1.8rem;
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.cookie-consent.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.cookie-text {
+    flex: 1;
+    color: white;
+}
+
+.cookie-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cookie-text h3 i {
+    color: var(--gold);
+}
+
+.cookie-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.cookie-btn.accept-all {
+    background: var(--crimson);
+    color: white;
+    box-shadow: 0 5px 15px rgba(195, 32, 38, 0.3);
+}
+
+.cookie-btn.accept-all:hover {
+    background: var(--crimson-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(195, 32, 38, 0.4);
+}
+
+.cookie-btn.necessary-only {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn.necessary-only:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.cookie-btn.settings {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn.settings:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.cookie-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cookie-close:hover {
+    background: var(--crimson);
+    transform: rotate(90deg);
+}
+
+/* Simple Cookie Settings Modal */
+.cookie-settings {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    border-top: 5px solid var(--crimson);
+}
+
+.cookie-settings.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cookie-settings h3 {
+    color: var(--evergreen);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cookie-settings h3 i {
+    color: var(--crimson);
+}
+
+.cookie-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cookie-option {
+    background: var(--ivory);
+    padding: 1.2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--evergreen);
+}
+
+.cookie-option.essential {
+    border-left-color: var(--crimson);
+}
+
+.option-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.option-header h4 {
+    color: var(--evergreen);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.option-header h4 i {
+    color: var(--crimson);
+}
+
+.option-status {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.status-essential {
+    background: rgba(195, 32, 38, 0.1);
+    color: var(--crimson);
+}
+
+.status-on {
+    background: rgba(15, 58, 52, 0.1);
+    color: var(--evergreen);
+}
+
+.status-off {
+    background: rgba(119, 119, 119, 0.1);
+    color: var(--text-light);
+}
+
+.cookie-option p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Simple Toggle Switch */
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: var(--transition);
+    margin-right: 10px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.toggle input:checked+.toggle-slider {
+    background-color: var(--evergreen);
+}
+
+.toggle input:checked+.toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.cookie-settings-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.save-settings {
+    flex: 1;
+    background: linear-gradient(to right, var(--evergreen), var(--evergreen-dark));
+    color: white;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.save-settings:hover {
+    background: linear-gradient(to right, var(--evergreen-dark), var(--evergreen));
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(15, 58, 52, 0.3);
+}
+
+.settings-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--gray-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.settings-close:hover {
+    color: var(--crimson);
+}
+
+/* Cookie Message */
+.cookie-message {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: linear-gradient(to right, var(--evergreen), var(--evergreen-dark));
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    z-index: 1001;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.cookie-message.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.cookie-message i {
+    color: var(--gold);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .whatsapp-btns {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-overlay {
+        width: 300px;
+        right: 20px;
+        bottom: 90px;
+        padding: 1.5rem;
+    }
+
+    .scroll-top-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .protection-popup {
+        max-width: 300px;
+        padding: 1.5rem;
+    }
+
+    .cookie-consent {
+        left: 50%;
+        width: 95%;
+        padding: 1.5rem;
+        bottom: 20px;
+    }
+
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-text h3 {
+        justify-content: center;
+    }
+
+    .cookie-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cookie-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cookie-consent {
+        width: 95%;
+        padding: 1.2rem;
+    }
+
+    .whatsapp-overlay {
+        width: 280px;
+        right: 10px;
+    }
+
+    .cookie-settings {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+}

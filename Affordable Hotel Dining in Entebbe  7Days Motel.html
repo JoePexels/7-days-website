@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
     <link rel="stylesheet" href="assets/css/dining.css">
+    <link rel="stylesheet" href="assets/css/cookie.css">
     <link rel="stylesheet" href="assets/css/loader.css">
 
 </head>
@@ -993,6 +994,134 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-btns" id="whatsappBtns">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- WhatsApp Overlay - Now with Motel Info -->
+    <div class="whatsapp-overlay" id="whatsappOverlay">
+        <button class="close-overlay" id="closeOverlay">&times;</button>
+        <div class="overlay-header">
+            <i class="fab fa-whatsapp"></i>
+            <h3>Chat with 7Days Motel</h3>
+        </div>
+        <div class="overlay-body">
+            <p>We're here to help! Contact us for reservations, inquiries, or any assistance you may need. Our team
+                responds quickly during business hours.</p>
+
+            <a href="https://wa.me/256762017465" class="whatsapp-link" target="_blank">
+                <i class="fab fa-whatsapp"></i> Start Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Premium Cookie Consent - Horizontal on Desktop -->
+    <div class="cookie-consent" id="cookieConsent">
+        <button class="cookie-close" id="cookieClose">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h3><i class="fas fa-cookie-bite"></i> Cookie Preferences</h3>
+                <p>We use cookies to enhance your experience on our website. By continuing to browse, you agree to our
+                    use of essential cookies. You can customize your preferences.</p>
+            </div>
+
+            <div class="cookie-actions">
+                <button class="cookie-btn accept-all" id="acceptAllCookies">
+                    <i class="fas fa-check-circle"></i> Accept All
+                </button>
+                <button class="cookie-btn necessary-only" id="necessaryOnlyCookies">
+                    <i class="fas fa-cog"></i> Essential Only
+                </button>
+                <button class="cookie-btn settings" id="openCookieSettings">
+                    <i class="fas fa-sliders-h"></i> Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Cookie Settings Modal -->
+    <div class="cookie-settings" id="cookieSettings">
+        <button class="settings-close" id="closeCookieSettings">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <h3><i class="fas fa-sliders-h"></i> Cookie Settings</h3>
+
+        <div class="cookie-options">
+            <div class="cookie-option essential">
+                <div class="option-header">
+                    <h4><i class="fas fa-shield-alt"></i> Essential Cookies</h4>
+                    <span class="option-status status-essential">Always On</span>
+                </div>
+                <p>Required for the website to function properly. These cannot be disabled.</p>
+            </div>
+
+            <div class="cookie-option">
+                <div class="option-header">
+                    <h4><i class="fas fa-chart-line"></i> Analytics Cookies</h4>
+                    <span class="option-status status-off" id="analyticsStatus">Off</span>
+                </div>
+                <p>Help us understand how visitors use our website to improve user experience.</p>
+                <label class="toggle">
+                    <input type="checkbox" id="analyticsToggle">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Enable Analytics</span>
+                </label>
+            </div>
+
+            <div class="cookie-option">
+                <div class="option-header">
+                    <h4><i class="fas fa-bullhorn"></i> Marketing Cookies</h4>
+                    <span class="option-status status-off" id="marketingStatus">Off</span>
+                </div>
+                <p>Used to show relevant advertisements and measure campaign performance.</p>
+                <label class="toggle">
+                    <input type="checkbox" id="marketingToggle">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Enable Marketing</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="cookie-settings-buttons">
+            <button class="save-settings" id="saveCookieSettings">
+                <i class="fas fa-save"></i> Save Preferences
+            </button>
+        </div>
+    </div>
+
+    <!-- Cookie Confirmation Message -->
+    <div class="cookie-message" id="cookieMessage">
+        <i class="fas fa-check-circle"></i>
+        <span id="cookieMessageText">Cookie preferences saved successfully!</span>
+    </div>
+
+    <!-- Anti-right-click Popup - Clean & Simple -->
+    <div class="protection-popup" id="protectionPopup">
+        <button class="popup-close" id="closePopup">&times;</button>
+        <div class="popup-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+        <h2 class="popup-title">Content Protected</h2>
+        <p class="popup-text">This website's code and content are protected. If you'd like to use any part of this code
+            for your project, please contact the developer for permission.</p>
+        <a href="mailto:vernoxtechnologies@gmail.com?subject=Code Access Request for 7Days Motel Website" class="contact-link">
+            <i class="fas fa-envelope"></i> Contact Developer for Access
+        </a>
+    </div>
+
+    <!-- Overlay for popup -->
+    <div class="protection-overlay" id="protectionOverlay"></div>
+
     <script>
         // ============================================
         // MAIN JAVASCRIPT FUNCTIONALITY
@@ -1326,7 +1455,7 @@
             }
         });
     </script>
+    <script src="assets/js/cookie.js"></script>
     <script src="assets/js/loader.js"></script>
 </body>
-
 </html>
