@@ -422,7 +422,7 @@ function updateRoomDetails(room) {
 function updateRoomSummary(room) {
   selectedRoomSummary.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 20px; padding: 20px; background-color: var(--light-gray); border-radius: 10px;">
-                    <div style="width: 100px; height: 80px; border-radius: 8px; overflow: hidden;">
+                    <div style="width: 100px; height: 80px; border-radius: 8px; overflow: hidden;" class="summary-room-image";>
                         <img src="${
                           roomImages[room.image] ||
                           "https://images2.imgbox.com/a8/5d/JUlkNJLq_o.jpg"
