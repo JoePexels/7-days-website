@@ -1919,7 +1919,7 @@ h5 {
 
 /* Gallery Section - Now First After Hero */
 .gallery-section {
-    padding: 40px;
+    padding: 10px;
     background: linear-gradient(to bottom, #f8f5f0, var(--white));
 }
 
@@ -1974,7 +1974,7 @@ h5 {
 
 /* Modal Body */
 .modal-body {
-    padding: 40px;
+    padding: 10px;
 }
 
 /* Section Headers */
