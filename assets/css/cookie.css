@@ -213,7 +213,7 @@
 
 .scroll-top-btn:hover {
     transform: translateY(-5px);
-    background: linear-gradient(135deg, var(--evergreen-dark) 0%, var(--evergreen) 100%);
+    background: linear-gradient(135deg, var(--crimson-dark) 0%, var(--crimson) 100%);
 }
 
 /* Anti-right-click Popup - Smaller & Clean */
