@@ -686,6 +686,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+        // Close mobile menu when window is resized to larger size
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            if (hamburgerCheckbox) {
+                hamburgerCheckbox.checked = false;
+            }
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+            }
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.classList.remove('active');
+            }
+            document.body.style.overflow = 'auto';
+        }
+    });
+
     // Close mobile menu when clicking links
     document
       .querySelectorAll(".mobile-links a, .mobile-reserve-now")
