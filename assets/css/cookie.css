@@ -317,7 +317,7 @@
 /* Premium Cookie Consent - Horizontal on Desktop, Vertical on Mobile */
 .cookie-consent {
     position: fixed;
-    bottom: 25px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     width: 80%;
@@ -326,7 +326,7 @@
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
     padding: 1rem;
-    z-index: 997;
+    z-index: 1001;
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
