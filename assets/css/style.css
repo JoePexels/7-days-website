@@ -2876,6 +2876,7 @@ h5 {
 
 .coffee-text {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
     border-radius: 20px;
     flex: 1;
     min-width: 300px;
@@ -3177,7 +3178,7 @@ h5 {
     }
 
     coffee-text {
-        padding: 50px;
+        padding: 40px;
     }
 }
 
