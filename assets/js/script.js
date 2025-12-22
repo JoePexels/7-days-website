@@ -1662,7 +1662,7 @@ document.addEventListener("DOMContentLoaded", function () {
       icons: ["fas fa-spa", "fas fa-hot-tub", "fas fa-leaf"],
     },
     {
-      image: "https://images2.imgbox.com/f3/ee/azS0f2Yp_o.jpg",
+      image: "https://images2.imgbox.com/d8/6b/QKNSSdNm_o.jpg",
       title: "Fine Dining",
       description:
         "Savor exquisite culinary experiences at our fine dining restaurant. Our chefs create innovative dishes using locally sourced ingredients and international flavors.",

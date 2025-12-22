@@ -289,10 +289,20 @@ h5 {
     border: 1px solid var(--mist);
 }
 
-.dropdown.active .dropdown-menu {
+.dropdown-menu.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+.language-dropdown-mobile.show {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.mobile-currency-menu.show {
+    max-height: 320px;
+    overflow-y: auto;
 }
 
 .dropdown-item {
@@ -1019,7 +1029,7 @@ h5 {
 /* Hero Section */
 .hero-section {
     height: 75vh;
-    background: linear-gradient(135deg, rgba(13, 47, 43, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%), url('https://images2.imgbox.com/bb/d4/Y6j5TwoE_o.jpg');
+    background: linear-gradient(135deg, rgba(13, 47, 43, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%), url('https://images2.imgbox.com/72/6a/0vamLi1v_o.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1849,7 +1859,7 @@ h5 {
 /* Modern Hero Section */
 .modal-hero {
     height: 380px;
-    background: linear-gradient(rgba(13, 47, 43, 0.6), rgba(15, 58, 52, 0.45)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background: linear-gradient(rgba(13, 47, 43, 0.6), rgba(15, 58, 52, 0.45)), url('https://images2.imgbox.com/08/87/zkDDu7T2_o.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
