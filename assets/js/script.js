@@ -1691,6 +1691,20 @@ document.addEventListener("DOMContentLoaded", function () {
       icons: ["fas fa-coffee", "fas fa-cookie", "fas fa-mug-hot"],
     },
     {
+      image: "https://images2.imgbox.com/8b/2c/VtUw83PQ_o.jpg",
+      title: "Garden Terrace View",
+      description:
+        "Enjoy a peaceful view of our lush gardens from above, overlooking the UN Base across the street—a perfect spot to relax and unwind.",
+      brief: "Relaxing garden terrace with a view of the UN Base.",
+      features: [
+        "Overlooking Lush Gardens",
+        "View of UN Base",
+        "Elevated Seating Area",
+        "Peaceful Relaxation Spot",
+      ],
+      icons: ["fas fa-tree", "fas fa-building", "fas fa-chair"],
+    },
+    {
       image:
         "https://strapi.inorain.com/uploads/Blog_15_hero_image_79e61d6d41.webp",
       title: "High-Speed WiFi",
