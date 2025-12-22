@@ -2869,6 +2869,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("newsletterForm");
   const emailInput = document.getElementById("emailInput");
   const successMessage = document.getElementById("successMessage");
+  
+  // Store original form attributes
+  const originalAction = form.getAttribute("action");
+  const originalMethod = form.getAttribute("method");
+
+  // Update the form action to use FormSubmit.co
+  form.setAttribute("action", "https://formsubmit.co/ajax/7dayshotel2@gmail.com");
+  form.setAttribute("method", "POST");
+  
+  // Add hidden fields for FormSubmit configuration
+  const hiddenFields = [
+    { name: "_subject", value: "New Newsletter Subscription" },
+    { name: "_template", value: "table" },
+    { name: "_autoresponse", value: "Thank you for subscribing to our newsletter! You'll receive updates about our latest offers and news." },
+    { name: "_captcha", value: "false" },
+    { name: "_replyto", value: "" } // Will be populated with user's email
+  ];
+
+  // Remove existing hidden fields to prevent duplicates
+  const existingHiddenFields = form.querySelectorAll('input[type="hidden"]');
+  existingHiddenFields.forEach(field => field.remove());
+
+  // Add the hidden fields
+  hiddenFields.forEach(field => {
+    const hiddenInput = document.createElement("input");
+    hiddenInput.type = "hidden";
+    hiddenInput.name = field.name;
+    hiddenInput.value = field.value;
+    form.appendChild(hiddenInput);
+  });
 
   // Add modern input interaction
   emailInput.addEventListener("focus", function () {
@@ -2899,6 +2929,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Form submission
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    e.stopPropagation();
 
     // Simple email validation
     const email = emailInput.value.trim();
@@ -2931,46 +2962,120 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // In a real implementation, you would send this to a server
-    // For demo purposes, we'll just show a success message
-
-    // Show success message
-    successMessage.style.display = "block";
-
-    // Add animation to button
+    // Show loading state
     const submitBtns = form.querySelector(".btns-primary");
     const originalHTML = submitBtns.innerHTML;
-    submitBtns.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
-    submitBtns.style.background =
-      "linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%)";
+    const originalBackground = submitBtns.style.background;
+    const originalPointerEvents = submitBtns.style.pointerEvents;
+    
+    submitBtns.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+    submitBtns.style.background = "linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%)";
     submitBtns.style.pointerEvents = "none";
 
-    // Change input to success state
-    emailInput.style.borderColor = "var(--evergreen)";
-    emailInput.style.boxShadow = "0 5px 15px rgba(15, 58, 52, 0.25)";
-    emailInput.style.backgroundColor = "rgba(244, 228, 166, 0.2)";
-    emailInput.disabled = true;
+    // Update _replyto field with user's email
+    const replyToField = form.querySelector('input[name="_replyto"]');
+    if (replyToField) {
+      replyToField.value = email;
+    }
 
-    // Reset form after 4 seconds
-    setTimeout(() => {
-      form.reset();
-      submitBtns.innerHTML = originalHTML;
-      submitBtns.style.background = "";
-      submitBtns.style.pointerEvents = "";
+    // Prepare FormData
+    const formData = new FormData(form);
+    
+    // Alternative: Use JSON format for cleaner submission
+    const formDataObject = {};
+    formData.forEach((value, key) => {
+      formDataObject[key] = value;
+    });
 
-      emailInput.style.borderColor = "rgba(255, 255, 255, 0.5)";
-      emailInput.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.08)";
-      emailInput.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
-      emailInput.style.color = "var(--charcoal)";
-      emailInput.disabled = false;
-    }, 4000);
+    // Send to FormSubmit.co using AJAX endpoint
+    fetch("https://formsubmit.co/ajax/7dayshotel2@gmail.com", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        _subject: "New Newsletter Subscription",
+        _template: "table",
+        _autoresponse: "Thank you for subscribing to our newsletter! You'll receive updates about our latest offers and news.",
+        _captcha: "false"
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success === "true" || data.success === true) {
+        // Success - FormSubmit received the data
+        successMessage.style.display = "block";
+        
+        // Update button to success state
+        submitBtns.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+        submitBtns.style.background = "linear-gradient(135deg, var(--evergreen) 0%, var(--evergreen-dark) 100%)";
 
-    // Hide success message after 5 seconds
+        // Change input to success state
+        emailInput.style.borderColor = "var(--evergreen)";
+        emailInput.style.boxShadow = "0 5px 15px rgba(15, 58, 52, 0.25)";
+        emailInput.style.backgroundColor = "rgba(244, 228, 166, 0.2)";
+        emailInput.disabled = true;
+
+        console.log("Newsletter subscription sent successfully to 7dayshotel2@gmail.com:", email);
+
+        // Reset form after 4 seconds
+        setTimeout(() => {
+          form.reset();
+          submitBtns.innerHTML = originalHTML;
+          submitBtns.style.background = originalBackground;
+          submitBtns.style.pointerEvents = originalPointerEvents;
+
+          emailInput.style.borderColor = "rgba(255, 255, 255, 0.5)";
+          emailInput.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.08)";
+          emailInput.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+          emailInput.style.color = "var(--charcoal)";
+          emailInput.disabled = false;
+          
+          // Hide success message
+          successMessage.style.display = "none";
+        }, 4000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    })
+    .catch(error => {
+      console.error("FormSubmit error:", error);
+      
+      // Show error state
+      submitBtns.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Try Again';
+      submitBtns.style.background = "linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%)";
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        submitBtns.innerHTML = originalHTML;
+        submitBtns.style.background = originalBackground;
+        submitBtns.style.pointerEvents = originalPointerEvents;
+      }, 2000);
+      
+      // Optional: Show a subtle error message
+      const errorMsg = document.createElement('div');
+      errorMsg.className = 'error-message';
+      errorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Subscription failed. Please try again.';
+      errorMsg.style.cssText = 'margin-top: 0.5rem; padding: 0.5rem; background: #fff0f0; color: var(--crimson); border-radius: 4px; font-size: 0.9rem;';
+      
+      // Remove any existing error message
+      const existingError = form.querySelector('.error-message');
+      if (existingError) existingError.remove();
+      
+      form.appendChild(errorMsg);
+      
+      // Remove error message after 3 seconds
+      setTimeout(() => {
+        if (errorMsg.parentNode) errorMsg.remove();
+      }, 3000);
+    });
+
+    // Hide success message after 5 seconds (fallback)
     setTimeout(() => {
       successMessage.style.display = "none";
     }, 5000);
-
-    console.log("Newsletter subscription for:", email);
   });
 
   // Initialize label position if browser autofills
@@ -2984,12 +3089,21 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add shake animation for error state
 const style = document.createElement("style");
 style.textContent = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-                20%, 40%, 60%, 80% { transform: translateX(5px); }
-            }
-        `;
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  .error-message {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+`;
 document.head.appendChild(style);
 
 // Testimonial Carousel Functionality
