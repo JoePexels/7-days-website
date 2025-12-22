@@ -2192,8 +2192,9 @@ select:hover {
     padding: 20px 15px;
     border-bottom: 1px solid var(--gold);
     position: sticky;
-    top: 140px; /* Adjusted for header height */
+    top: 100px; /* Adjusted for header height */
     z-index: 100;
+    margin: 10px auto;
 }
 
 .mobile-progress-steps {
@@ -2202,11 +2203,10 @@ select:hover {
     position: sticky;
     top: 0;
     background: linear-gradient(180deg, var(--evergreen) 0%, var(--evergreen-dark) 100%);
-    padding: 20px 0;
+    padding: 10px 0;
     z-index: 101;
     margin: 0 -15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    
 }
 
 .mobile-step {
@@ -2538,8 +2538,10 @@ select:hover {
 /* Fix for very small mobile devices */
 @media (max-width: 576px) {
     .hero {
+        margin-bottom: -10px;
         height: 80vh;
         min-height: 600px;
+        border-radius: 0 !important;
     }
 
     .hero-content h1 {
