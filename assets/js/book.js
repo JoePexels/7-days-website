@@ -664,7 +664,7 @@ function setupEventListeners() {
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     // Create WhatsApp URL
-    const whatsappNumber = "256762017465";
+    const whatsappNumber = "256709093939";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
     // Open WhatsApp in a new tab

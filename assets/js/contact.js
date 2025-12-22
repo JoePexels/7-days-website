@@ -579,7 +579,7 @@ Sent via 7Days Motel Website`;
     // Confirm and open WhatsApp
     if (confirmWhatsapp) {
         confirmWhatsapp.addEventListener('click', function() {
-            const phoneNumber = "256762017465";
+            const phoneNumber = "256709093939";
             const message = window.whatsappMessageToSend;
 
             if (message) {

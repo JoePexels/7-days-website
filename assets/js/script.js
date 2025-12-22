@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = prepareWhatsAppMessage();
     console.log("WhatsApp message prepared:", message);
 
-    const whatsappURL = `https://wa.me/256762017465?text=${encodeURIComponent(
+    const whatsappURL = `https://wa.me/256709093939?text=${encodeURIComponent(
       message
     )}`;
     console.log("WhatsApp URL:", whatsappURL);
@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Final fallback: Show the URL for manual copy
           console.log("All methods failed, showing alert");
           alert(
-            `Unable to open WhatsApp automatically. Please copy this link and open it manually:\n\n${whatsappURL}\n\nYou can also manually send this message to +256762017465 on WhatsApp.`
+            `Unable to open WhatsApp automatically. Please copy this link and open it manually:\n\n${whatsappURL}\n\nYou can also manually send this message to +256709093939 on WhatsApp.`
           );
         }
       }

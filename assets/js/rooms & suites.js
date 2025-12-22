@@ -1189,7 +1189,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const message = formatWhatsAppMessage(bookingDetails);
-      const phoneNumber = "+256762017465";
+      const phoneNumber = "+256709093939";
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
         message
       )}`;
