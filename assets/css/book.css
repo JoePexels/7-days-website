@@ -58,6 +58,29 @@ body {
     }
 }
 
+/* Google Translate Fixes */
+.skiptranslate {
+    display: none !important;
+}
+
+.notranslate {
+    transform: none !important;
+}
+
+/* Hide Google Translate banner and toolbar */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.goog-te-menu-frame {
+    max-width: 100% !important;
+}
+
+.goog-te-menu2 {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
 /* Top Header Styles */
 .top-header {
     background: linear-gradient(90deg, var(--evergreen-dark) 0%, var(--evergreen) 100%);
@@ -71,29 +94,9 @@ body {
     box-shadow: var(--shadow);
 }
 
-@media (max-width: 900px) {
-    .top-header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 5%;
-    }
-}
-
-@media (max-width: 768px) {
-    .top-header {
-        display: none;
-    }
-}
-
 .top-info {
     display: flex;
     gap: 30px;
-}
-
-@media (max-width: 900px) {
-    .top-info {
-        gap: 20px;
-    }
 }
 
 .top-item {
@@ -127,19 +130,6 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-@media (max-width: 900px) {
-    .header-controls {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-controls {
-        display: none;
-    }
 }
 
 .reserve-now {
@@ -199,7 +189,7 @@ body {
 
 .dropdown-toggle:hover {
     background: rgba(255, 255, 255, 0.2);
-    color: var(--crimson);
+    color: var(--gold);
 }
 
 .dropdown-menu {
@@ -324,13 +314,6 @@ body {
     padding: 10px;
 }
 
-@media (max-width: 768px) {
-    .logo {
-        width: 100px;
-        padding: 5px;
-    }
-}
-
 .nav-links {
     display: flex;
     list-style: none;
@@ -338,18 +321,6 @@ body {
     background: rgba(255, 255, 255, 0.1);
     padding: 8px;
     border-radius: 6px;
-}
-
-@media (max-width: 1100px) {
-    .nav-links {
-        gap: 5px;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
 }
 
 .nav-links li {
@@ -366,13 +337,6 @@ body {
     padding: 10px 20px;
     border-radius: 6px;
     display: block;
-}
-
-@media (max-width: 1100px) {
-    .nav-links a {
-        padding: 10px 15px;
-        font-size: 0.95rem;
-    }
 }
 
 .nav-links a:hover {
@@ -396,12 +360,6 @@ body {
     height: 50px;
     position: relative;
     z-index: 1001;
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
 }
 
 .hamburger input {
@@ -457,16 +415,8 @@ body {
     border-left: 1px solid var(--mist);
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
     margin-top: 0;
-    /* Enhanced scrollbar styling */
     scrollbar-width: thin;
     scrollbar-color: var(--crimson) var(--ivory);
-}
-
-@media (max-width: 480px) {
-    .mobile-menu {
-        width: 100%;
-        right: -100%;
-    }
 }
 
 .mobile-menu.active {
@@ -524,18 +474,6 @@ body {
 
 .mobile-menu::-webkit-scrollbar-thumb:active {
     background: var(--crimson-dark);
-}
-
-@media (max-width: 480px) {
-    .mobile-menu::-webkit-scrollbar {
-        width: 6px;
-    }
-}
-
-/* Firefox scrollbar */
-.mobile-menu {
-    scrollbar-width: thin;
-    scrollbar-color: var(--crimson) var(--ivory);
 }
 
 /* Updated Mobile Language Dropdown Styles */
@@ -827,22 +765,13 @@ body {
 }
 
 .goog-te-gadget {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .goog-te-gadget-simple {
     background-color: transparent !important;
     border: none !important;
     padding: 0 !important;
-}
-
-/* Hide mobile menu on larger screens */
-@media (min-width: 769px) {
-
-    .mobile-menu,
-    .mobile-menu-overlay {
-        display: none !important;
-    }
 }
 
 /* Currency Price Display */

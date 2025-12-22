@@ -994,6 +994,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Header language and currency
 // Language data with country flags
 const languages = [
   { code: "en", name: "English", flag: "us" },
@@ -1022,6 +1023,8 @@ const currencies = [
   { code: "EUR", name: "Euro", symbol: "€" },
   { code: "GBP", name: "British Pound", symbol: "£" },
   { code: "AED", name: "UAE Dirham", symbol: "د.إ" },
+
+  // Added East African currencies
   { code: "UGX", name: "Ugandan Shilling", symbol: "USh" },
   { code: "KES", name: "Kenyan Shilling", symbol: "KSh" },
   { code: "TZS", name: "Tanzanian Shilling", symbol: "TSh" },
@@ -1034,265 +1037,179 @@ const exchangeRates = {
   EUR: 0.92,
   GBP: 0.79,
   AED: 3.67,
-  UGX: 3850,
-  KES: 160,
-  TZS: 2600,
-  RWF: 1320,
+  // East African currencies
+  UGX: 3850, // Ugandan Shilling
+  KES: 160, // Kenyan Shilling
+  TZS: 2600, // Tanzanian Shilling
+  RWF: 1320, // Rwandan Franc
 };
 
-// Fix Google Translate to prevent layout shifting
+// Initialize Google Translate
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
-    {
-      pageLanguage: "en",
-      autoDisplay: false,
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    },
+    { pageLanguage: "en", autoDisplay: false },
     "google_translate_element"
   );
 
-  // Add CSS to prevent layout shifting
+  // Hide Google Translate toolbar and banner
   var style = document.createElement("style");
   style.innerHTML = `
-            /* Completely hide Google Translate banner and frame */
-            .goog-te-banner-frame, .skiptranslate {
-                display: none !important;
-                height: 0 !important;
-                width: 0 !important;
-                overflow: hidden !important;
-                visibility: hidden !important;
-                position: absolute !important;
-                top: -9999px !important;
-                left: -9999px !important;
-            }
-            
-            /* Reset body positioning */
-            body {
-                top: 0 !important;
-                position: static !important;
-                margin-top: 0 !important;
-                padding-top: 0 !important;
-            }
-            
-            /* Fix for translate element */
-            #google_translate_element {
-                position: relative;
-                z-index: 1000;
-                height: 0;
-                overflow: hidden;
-            }
-            
-            /* Hide Google Translate toolbar */
-            .goog-te-menu-frame {
-                display: none !important;
-            }
-            
-            /* Prevent any Google Translate layout shifts */
-            .goog-te-gadget {
-                font-size: 0 !important;
-            }
-            
-            /* Ensure no extra space is created */
-            .goog-te-banner {
-                display: none !important;
-                height: 0 !important;
-                overflow: hidden !important;
-                visibility: hidden !important;
-            }
-            
-            /* Footer fix */
-            footer {
-                margin-bottom: 0 !important;
-                position: relative !important;
-            }
-            
-            /* Additional safety styles */
-            .goog-tooltip {
-                display: none !important;
-            }
-            .goog-text-highlight {
-                background-color: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
-        `;
+                .goog-te-banner-frame, .goog-te-menu-frame { 
+                    display: none !important; 
+                }
+                body { 
+                    top: 0px !important; 
+                }
+                .goog-tooltip {
+                    display: none !important;
+                }
+                .goog-tooltip:hover {
+                    display: none !important;
+                }
+                .goog-text-highlight {
+                    background-color: transparent !important;
+                    border: none !important;
+                    box-shadow: none !important;
+                }
+            `;
   document.head.appendChild(style);
-
-  // Additional cleanup after Google Translate loads
-  setTimeout(function () {
-    // Remove any inline styles Google adds to body
-    document.body.style.top = "0";
-    document.body.style.position = "static";
-    document.body.style.marginTop = "0";
-    document.body.style.paddingTop = "0";
-
-    // Force hide any remaining Google Translate elements
-    const translateElements = document.querySelectorAll(
-      ".goog-te-banner-frame, .skiptranslate, .goog-te-banner"
-    );
-    translateElements.forEach(function (element) {
-      element.style.display = "none";
-      element.style.height = "0";
-      element.style.width = "0";
-      element.style.overflow = "hidden";
-      element.style.visibility = "hidden";
-      element.style.position = "absolute";
-      element.style.top = "-9999px";
-      element.style.left = "-9999px";
-    });
-  }, 1000); // Increased timeout to ensure Google Translate is loaded
 }
 
-// Load Google Translate script with proper timing
-function loadGoogleTranslate() {
-  // First, check if script is already loaded
-  if (window.google && google.translate) {
-    googleTranslateElementInit();
-    return;
-  }
-
+// Load Google Translate script
+window.addEventListener("load", function () {
   const gtScript = document.createElement("script");
   gtScript.type = "text/javascript";
   gtScript.src =
     "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-  gtScript.async = true;
-  gtScript.defer = true;
-
-  // Add error handling
-  gtScript.onerror = function () {
-    console.log("Failed to load Google Translate script");
-  };
-
   document.body.appendChild(gtScript);
-}
+});
 
 // Populate language dropdowns
 function populateLanguageDropdowns() {
   // Desktop dropdown
   const desktopDropdown = document.getElementById("languageDropdownMenu");
-  if (desktopDropdown) {
-    languages.forEach((lang) => {
-      const option = document.createElement("button");
-      option.className = "dropdown-item notranslate";
-      option.setAttribute("data-lang", lang.code);
+  languages.forEach((lang) => {
+    const option = document.createElement("button");
+    option.className = "dropdown-item notranslate";
+    option.setAttribute("data-lang", lang.code);
 
-      const flagElement = document.createElement("span");
-      flagElement.className = `flag fi fi-${lang.flag}`;
+    // Create flag element using flag-icons CSS classes
+    const flagElement = document.createElement("span");
+    flagElement.className = `flag fi fi-${lang.flag}`;
 
-      const nameElement = document.createElement("span");
-      nameElement.textContent = lang.name;
+    // Create language name element
+    const nameElement = document.createElement("span");
+    nameElement.textContent = lang.name;
 
-      option.appendChild(flagElement);
-      option.appendChild(nameElement);
-      desktopDropdown.appendChild(option);
-    });
-  }
+    option.appendChild(flagElement);
+    option.appendChild(nameElement);
+    desktopDropdown.appendChild(option);
+  });
 
   // Mobile dropdown
-  const mobileDropdown = document.getElementById("mobileLanguageDropdown");
-  if (mobileDropdown) {
-    const mobileDropdownContent = mobileDropdown.querySelector(".py-2");
-    if (mobileDropdownContent) {
-      languages.forEach((lang) => {
-        const option = document.createElement("button");
-        option.className = "mobile-language-option notranslate";
-        option.setAttribute("data-lang", lang.code);
+  const mobileDropdown = document
+    .getElementById("mobileLanguageDropdown")
+    .querySelector(".py-2");
+  languages.forEach((lang) => {
+    const option = document.createElement("button");
+    option.className = "mobile-language-option notranslate";
+    option.setAttribute("data-lang", lang.code);
 
-        const flagElement = document.createElement("span");
-        flagElement.className = `flag fi fi-${lang.flag}`;
+    // Create flag element using flag-icons CSS classes
+    const flagElement = document.createElement("span");
+    flagElement.className = `flag fi fi-${lang.flag}`;
 
-        const nameElement = document.createElement("span");
-        nameElement.textContent = lang.name;
+    // Create language name element
+    const nameElement = document.createElement("span");
+    nameElement.textContent = lang.name;
 
-        option.appendChild(flagElement);
-        option.appendChild(nameElement);
-        mobileDropdownContent.appendChild(option);
-      });
-    }
-  }
+    option.appendChild(flagElement);
+    option.appendChild(nameElement);
+    mobileDropdown.appendChild(option);
+  });
 }
 
 // Populate currency dropdowns
 function populateCurrencyDropdowns() {
   // Desktop dropdown
   const desktopDropdown = document.getElementById("currency-dropdown-menu");
-  if (desktopDropdown) {
-    currencies.forEach((currency) => {
-      const option = document.createElement("button");
-      option.className = "dropdown-item notranslate";
-      option.setAttribute("data-currency", currency.code);
+  currencies.forEach((currency) => {
+    const option = document.createElement("button");
+    option.className = "dropdown-item notranslate";
+    option.setAttribute("data-currency", currency.code);
 
-      const iconElement = document.createElement("i");
-      iconElement.className = `fas fa-${
-        currency.code === "EUR"
-          ? "euro-sign"
-          : currency.code === "GBP"
-          ? "pound-sign"
-          : currency.code === "JPY" || currency.code === "CNY"
-          ? "yen-sign"
-          : currency.code === "INR"
-          ? "rupee-sign"
-          : currency.code === "RUB"
-          ? "ruble-sign"
-          : currency.code === "THB"
-          ? "baht-sign"
-          : currency.code === "KRW"
-          ? "won-sign"
-          : currency.code === "TRY"
-          ? "lira-sign"
-          : currency.code === "AED" || currency.code === "SAR"
-          ? "hashtag"
-          : "dollar-sign"
-      }`;
+    // Create icon element
+    const iconElement = document.createElement("i");
+    iconElement.className = `fas fa-${
+      currency.code === "EUR"
+        ? "euro-sign"
+        : currency.code === "GBP"
+        ? "pound-sign"
+        : currency.code === "JPY" || currency.code === "CNY"
+        ? "yen-sign"
+        : currency.code === "INR"
+        ? "rupee-sign"
+        : currency.code === "RUB"
+        ? "ruble-sign"
+        : currency.code === "THB"
+        ? "baht-sign"
+        : currency.code === "KRW"
+        ? "won-sign"
+        : currency.code === "TRY"
+        ? "lira-sign"
+        : currency.code === "AED" || currency.code === "SAR"
+        ? "hashtag"
+        : "dollar-sign"
+    }`;
 
-      const nameElement = document.createElement("span");
-      nameElement.textContent = `${currency.code} - ${currency.name}`;
+    // Create currency name element
+    const nameElement = document.createElement("span");
+    nameElement.textContent = `${currency.code} - ${currency.name}`;
 
-      option.appendChild(iconElement);
-      option.appendChild(nameElement);
-      desktopDropdown.appendChild(option);
-    });
-  }
+    option.appendChild(iconElement);
+    option.appendChild(nameElement);
+    desktopDropdown.appendChild(option);
+  });
 
   // Mobile dropdown
   const mobileDropdown = document.querySelector(".mobile-currency-menu");
-  if (mobileDropdown) {
-    currencies.forEach((currency) => {
-      const option = document.createElement("button");
-      option.className = "mobile-currency-item notranslate";
-      option.setAttribute("data-currency", currency.code);
+  currencies.forEach((currency) => {
+    const option = document.createElement("button");
+    option.className = "mobile-currency-item notranslate";
+    option.setAttribute("data-currency", currency.code);
 
-      const iconElement = document.createElement("i");
-      iconElement.className = `fas fa-${
-        currency.code === "EUR"
-          ? "euro-sign"
-          : currency.code === "GBP"
-          ? "pound-sign"
-          : currency.code === "JPY" || currency.code === "CNY"
-          ? "yen-sign"
-          : currency.code === "INR"
-          ? "rupee-sign"
-          : currency.code === "RUB"
-          ? "ruble-sign"
-          : currency.code === "THB"
-          ? "baht-sign"
-          : currency.code === "KRW"
-          ? "won-sign"
-          : currency.code === "TRY"
-          ? "lira-sign"
-          : currency.code === "AED" || currency.code === "SAR"
-          ? "hashtag"
-          : "dollar-sign"
-      }`;
+    // Create icon element
+    const iconElement = document.createElement("i");
+    iconElement.className = `fas fa-${
+      currency.code === "EUR"
+        ? "euro-sign"
+        : currency.code === "GBP"
+        ? "pound-sign"
+        : currency.code === "JPY" || currency.code === "CNY"
+        ? "yen-sign"
+        : currency.code === "INR"
+        ? "rupee-sign"
+        : currency.code === "RUB"
+        ? "ruble-sign"
+        : currency.code === "THB"
+        ? "baht-sign"
+        : currency.code === "KRW"
+        ? "won-sign"
+        : currency.code === "TRY"
+        ? "lira-sign"
+        : currency.code === "AED" || currency.code === "SAR"
+        ? "hashtag"
+        : "dollar-sign"
+    }`;
 
-      const nameElement = document.createElement("span");
-      nameElement.textContent = `${currency.code} - ${currency.name}`;
+    // Create currency name element
+    const nameElement = document.createElement("span");
+    nameElement.textContent = `${currency.code} - ${currency.name}`;
 
-      option.appendChild(iconElement);
-      option.appendChild(nameElement);
-      mobileDropdown.appendChild(option);
-    });
-  }
+    option.appendChild(iconElement);
+    option.appendChild(nameElement);
+    mobileDropdown.appendChild(option);
+  });
 }
 
 // Function to change language
@@ -1324,8 +1241,10 @@ function changeLanguage(lang) {
   // Update flag on desktop
   const langData = languages.find((l) => l.code === lang);
   if (langData && document.getElementById("currentFlag")) {
+    // Remove all existing flag classes
     const flagElement = document.getElementById("currentFlag");
     flagElement.className = "flag fi";
+    // Add the new flag class
     flagElement.classList.add(`fi-${langData.flag}`);
   }
 
@@ -1333,6 +1252,7 @@ function changeLanguage(lang) {
 
   // Trigger Google Translate if available
   if (typeof google !== "undefined" && google.translate) {
+    // Wait for the Google Translate element to be fully loaded
     setTimeout(function () {
       const select = document.querySelector(".goog-te-combo");
       if (select) {
@@ -1359,6 +1279,7 @@ function convertPrices(currency) {
   document.querySelectorAll(".price").forEach((priceElement) => {
     const basePrice = parseFloat(priceElement.getAttribute("data-base-price"));
     const convertedPrice = (basePrice * rate).toFixed(2);
+    // Get text after the price (like "per night")
     const originalText = priceElement.textContent;
     const textParts = originalText.split(" ");
     const textAfterPrice = textParts.slice(1).join(" ");
@@ -1395,6 +1316,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const languageDropdown = document.getElementById("languageDropdown");
 
   if (languageButton && languageDropdown) {
+    // Toggle dropdown
     languageButton.addEventListener("click", function (e) {
       e.stopPropagation();
       languageDropdown.classList.toggle("active");
@@ -1409,6 +1331,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+    // Close when clicking outside
     document.addEventListener("click", function (e) {
       if (
         !languageButton.contains(e.target) &&
@@ -1418,6 +1341,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // Language selection
     document
       .querySelectorAll("#languageDropdownMenu .dropdown-item")
       .forEach((option) => {
@@ -1441,6 +1365,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.stopPropagation();
       mobileLanguageDropdown.classList.toggle("active");
 
+      // Rotate chevron
       const icon = this.querySelector(".fa-chevron-down");
       if (mobileLanguageDropdown.classList.contains("active")) {
         icon.style.transform = "rotate(180deg)";
@@ -1448,6 +1373,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.style.transform = "rotate(0)";
       }
 
+      // Close other dropdowns
       document
         .querySelectorAll(".mobile-currency-dropdown")
         .forEach((dropdown) => {
@@ -1461,6 +1387,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Mobile language selection
     document
       .querySelectorAll("#mobileLanguageDropdown .mobile-language-option")
       .forEach((option) => {
@@ -1481,6 +1408,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const currencyDropdown = document.getElementById("currency-dropdown");
 
   if (currencyButton && currencyDropdown) {
+    // Toggle dropdown
     currencyButton.addEventListener("click", function (e) {
       e.stopPropagation();
       currencyDropdown.classList.toggle("active");
@@ -1495,6 +1423,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+    // Close when clicking outside
     document.addEventListener("click", function (e) {
       if (
         !currencyButton.contains(e.target) &&
@@ -1504,6 +1433,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // Currency selection
     document
       .querySelectorAll("#currency-dropdown-menu .dropdown-item")
       .forEach((option) => {
@@ -1529,6 +1459,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.stopPropagation();
       mobileCurrencyDropdown.classList.toggle("active");
 
+      // Rotate chevron
       const icon = this.querySelector("i");
       if (mobileCurrencyDropdown.classList.contains("active")) {
         icon.style.transform = "rotate(180deg)";
@@ -1536,6 +1467,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.style.transform = "rotate(0)";
       }
 
+      // Close other dropdowns
       if (
         mobileLanguageDropdown &&
         mobileLanguageDropdown.classList.contains("active")
@@ -1548,6 +1480,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // Mobile currency selection
     document.querySelectorAll(".mobile-currency-item").forEach((option) => {
       option.addEventListener("click", function (e) {
         e.preventDefault();
@@ -1584,6 +1517,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // Close mobile menu when clicking on overlay
     mobileMenuOverlay.addEventListener("click", function () {
       hamburgerCheckbox.checked = false;
       mobileMenu.classList.remove("active");
@@ -1591,6 +1525,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.style.overflow = "auto";
     });
 
+    // Close mobile menu when clicking on a link
     document
       .querySelectorAll(".mobile-links a, .mobile-reserve-now")
       .forEach((link) => {
@@ -1618,36 +1553,4 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.style.overflow = "auto";
     }
   });
-
-  // Load Google Translate after a delay to ensure DOM is ready
-  setTimeout(function () {
-    loadGoogleTranslate();
-
-    // Additional cleanup after Google Translate loads
-    setTimeout(function () {
-      // Remove any Google Translate elements that might push content down
-      const unwantedElements = document.querySelectorAll(
-        ".goog-te-banner-frame, .skiptranslate, .goog-te-banner"
-      );
-
-      unwantedElements.forEach(function (element) {
-        if (element && element.parentNode) {
-          element.style.display = "none";
-          element.style.height = "0";
-          element.style.width = "0";
-          element.style.overflow = "hidden";
-          element.style.visibility = "hidden";
-          element.style.position = "absolute";
-          element.style.top = "-9999px";
-          element.style.left = "-9999px";
-        }
-      });
-
-      // Ensure body stays in place
-      document.body.style.top = "0";
-      document.body.style.position = "static";
-      document.body.style.marginTop = "0";
-      document.body.style.paddingTop = "0";
-    }, 1500); // Additional delay for Google Translate to fully initialize
-  }, 1000); // Initial delay to load Google Translate
 });
