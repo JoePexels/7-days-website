@@ -2206,6 +2206,8 @@ select:hover {
     padding: 10px 0;
     z-index: 101;
     margin: 0 -15px;
+    padding-left: 10px;
+    padding-right: 10px;
     
 }
 
@@ -2262,6 +2264,7 @@ select:hover {
 }
 
 .mobile-step-name {
+    display: none;
     font-size: 0.8rem;
     color: var(--white);
     text-align: center;
